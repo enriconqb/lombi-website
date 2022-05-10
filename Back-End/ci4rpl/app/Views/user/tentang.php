@@ -57,10 +57,10 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="<?= base_url();  ?>/images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="<?= base_url();  ?>/images/team/team1.png" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Founder / CEO</p>
+                        <h5 class="card-title">Enrico NQB</h5>
+                        <p class="card-text">Developer</p>
                     </div>
                 </div>
             </div>
@@ -68,17 +68,17 @@
                 <div class="card my-3 my-lg-0">
                     <img class="card-img-top" src="<?= base_url();  ?>/images/team/team2.jpg" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Founder / CEO</p>
+                        <h5 class="card-title">Ayesha Aprilia</h5>
+                        <p class="card-text">Developer</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card my-3 my-lg-0">
-                    <img class="card-img-top" src="<?= base_url();  ?>/images/team/team3.jpg" class="img-fluid w-100" alt="Card image cap">
+                    <img class="card-img-top" src="<?= base_url();  ?>/images/team/team3.png" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Founder / CEO</p>
+                        <h5 class="card-title">Anbar Bahira</h5>
+                        <p class="card-text">Developer</p>
                     </div>
                 </div>
             </div>
@@ -86,8 +86,8 @@
                 <div class="card my-3 my-lg-0">
                     <img class="card-img-top" src="<?= base_url();  ?>/images/team/team4.jpg" class="img-fluid w-100" alt="Card image cap">
                     <div class="card-body bg-gray text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text">Founder / CEO</p>
+                        <h5 class="card-title">Rochma Ayu</h5>
+                        <p class="card-text">Developer</p>
                     </div>
                 </div>
             </div>

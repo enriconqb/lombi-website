@@ -40,7 +40,7 @@ class Filters extends BaseConfig
             // 'invalidchars',
         ],
         'after' => [
-            'authFilter' => ['except' => ['/tentang', '/tentang/*']],
+            'authFilter' => ['except' => ['/tentang', '/tentang/*', '/daftarlomba', '/daftarlomba/*']],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',
