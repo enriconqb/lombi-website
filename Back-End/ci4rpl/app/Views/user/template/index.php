@@ -38,7 +38,9 @@
 
 <body class="body-wrapper">
 
-
+<!--============================
+=            Navbar            =
+=============================-->
 <section>
 	<div class="container">
 		<div class="row">
