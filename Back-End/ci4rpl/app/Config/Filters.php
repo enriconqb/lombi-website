@@ -9,6 +9,9 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 
+// === add Auth === 
+use App\Filters\AuthFilter;
+
 class Filters extends BaseConfig
 {
     /**
@@ -34,13 +37,13 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-            'authFilter' => ['except' => ['/', 'auth/register', 'auth/*', '/home', '/daftar']],
+            // 'authFilter' => [],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
-            'authFilter' => ['except' => ['/tentang', '/tentang/*', '/daftarlomba', '/daftarlomba/*']],
+            // 'authFilter' => [],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

@@ -44,7 +44,7 @@
                         </tr>
                     </table>
                     <div class="text-center py-3">
-                        <a href="<?='kumpulberkas'; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kumbulkan Berkas Lomba</button></a>
+                        <a href="<?='kumpulberkas'; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kumpulkan Berkas Lomba</button></a>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,6 @@ class Daftar extends BaseController
         $data = [
             'validate' => \Config\Services::validation(),
         ];
-        return view('auth/register', $data);
+        return view('auth/v_register', $data);
     }
 }

@@ -1,4 +1,5 @@
-<?php namespace App\Controllers;
+<?php 
+namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
@@ -44,6 +45,8 @@ class Auth extends Controller
       }
     }
 
+
+
     public function login(){
 
         $model = new AuthModel;
@@ -53,7 +56,7 @@ class Auth extends Controller
         $row = $model->get_data_login($email,$table);
         if ($row == NULL){
             session()->setFlashdata('pesan','username anda salah');
-            return redirect()->to('/');
+            return redirect()->to(base_url('login'));
         }
         if ($password === $row->password){
                 $data = array(
@@ -63,7 +66,7 @@ class Auth extends Controller
                 );
                 session()->set($data);
                 session()->setFlashdata('pesan','Berhasil Login');
-                return redirect()->to('/tentang');
+                return redirect()->to(base_url('/home'));
         }
                 session()->setFlashdata('pesan','Password Salah');
                 return redirect()->to('/');

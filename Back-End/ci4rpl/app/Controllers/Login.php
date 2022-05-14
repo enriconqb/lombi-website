@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class Tentang extends BaseController
+class Login extends BaseController
 {
     public function index()
     {
-        return view('user/v_tentang');
+        return view('auth/v_login');
     }
 }

@@ -47,7 +47,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand col-3 d-flex justify-content-center" href="index.html">
+					<a class="navbar-brand col-3 d-flex justify-content-center" href="/home">
 						<img src="images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -57,7 +57,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Beranda</a>
+								<a class="nav-link" href="/home">Beranda</a>
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Kategori<span><i class="fa fa-angle-down"></i></span>
@@ -73,7 +73,7 @@
 								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="index.html">Tentang Kami</a>
+								<a class="nav-link" href="/tentang">Tentang Kami</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="index.html">Hubungi Kami</a>
@@ -81,10 +81,10 @@
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
 							<li class="nav-item">
-								<a class="nav-link login-button" href="login.html">Login</a>
+								<a class="nav-link login-button" href="/login">Login</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="ad-listing.html">Register</a>
+								<a class="nav-link text-white add-button" href="/daftar">Register</a>
 							</li>
 						</ul>
 					</div>

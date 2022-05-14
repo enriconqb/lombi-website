@@ -12,7 +12,7 @@
                 <div class="border">
                     <h3 class="bg-info text-white p-4">Login dulu ya!</h3>
                     <?= session()->get('pesan'); ?>
-                    <form action="<?='auth/login'; ?>" method="post">
+                    <form action="<?='Auth/login'; ?>" method="post">
                         <fieldset class="p-4">
                             <input type="email" class="border p-3 w-100 my-2" name="email" placeholder="Email">
                             <input type="password" class="border p-3 w-100 my-2" placeholder="Password" name="password">
