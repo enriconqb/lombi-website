@@ -50,6 +50,10 @@ label {
 
 /* NAVBAR */
 
+.navbar-brand img{
+  max-height: 70px;
+}
+
 .nav-pills .nav-link {
   font-size: 16px;
 }
@@ -78,7 +82,7 @@ label {
   color: #5672f9;
 }
 
-.nav-pills.with-background .nav-link.active {
+.nav-pills.with-background .nav-link .active {
   background: #5672f9;
   position: relative;
   transition: 0s;
@@ -707,7 +711,7 @@ ul.pagination .active a {
 }
 
 .add-button {
-  background: #28a745;
+  background: #336B86;
   color: #fff;
   padding: 8px 20px !important;
   display: inline-block;
@@ -719,9 +723,11 @@ ul.pagination .active a {
 
 .main-nav .nav-item .nav-link {
   font-size: 16px;
+  font-weight: 600;
   line-height: 43px;
   padding: 0 20px;
 }
+
 
 .main-nav .nav-item .nav-link span {
   margin-left: 4px;
@@ -736,7 +742,7 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item.active .nav-link {
-  color: #5672f9;
+  color: #336B86;
 }
 
 .main-nav .search .nav-link i {
