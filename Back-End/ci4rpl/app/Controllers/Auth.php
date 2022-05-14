@@ -41,7 +41,7 @@ class Auth extends Controller
         $model = new UsersModel;
         $model->insert($data);
         session()->setFlashdata('pesan','Selamat Anda berhasil Registrasi, silakan login!');
-        return redirect()->to('/');
+        return redirect()->to('/login');
       }
     }
 
@@ -55,7 +55,7 @@ class Auth extends Controller
         $password = $this->request->getPost('password');
         $row = $model->get_data_login($email,$table);
         if ($row == NULL){
-            session()->setFlashdata('pesan','username anda salah');
+            session()->setFlashdata('pesan','Email anda salah');
             return redirect()->to(base_url('login'));
         }
         if ($password === $row->password){
@@ -69,7 +69,7 @@ class Auth extends Controller
                 return redirect()->to(base_url('/home'));
         }
                 session()->setFlashdata('pesan','Password Salah');
-                return redirect()->to('/');
+                return redirect()->to('/login');
 
 
     }
@@ -78,6 +78,6 @@ class Auth extends Controller
         $session = session();
         $session->destroy();
         session()->setFlashdata('pesan','Berhasil Logout');
-        return redirect()->to('/');
+        return redirect()->to('/login');
     }
 }

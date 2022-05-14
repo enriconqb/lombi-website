@@ -80,12 +80,22 @@
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="/login">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="/daftar">Register</a>
-							</li>
+              <?php 
+              if(session()->get('logged_in')){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
+                </li>
+                <!-- <a href="<?php echo site_url('auth/logout')?>" class="btn btn-primary mt-3">Logout</a> -->
+              <?php
+              }else{?>
+                <li class="nav-item">
+								  <a class="nav-link login-button" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="/daftar">Register</a>
+                </li>
+              <?php
+              }?>
 						</ul>
 					</div>
 				</nav>
