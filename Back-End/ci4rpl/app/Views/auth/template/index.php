@@ -73,10 +73,10 @@
 								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="index.html">Tentang Kami</a>
+								<a class="nav-link" href="/tentang">Tentang Kami</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="index.html">Hubungi Kami</a>
+								<a class="nav-link" href="/hubungi">Hubungi Kami</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
