@@ -1,19 +1,19 @@
 /*=== MEDIA QUERY ===*/
-@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700;800;900");
 body {
   line-height: 1.5;
-  font-family: "Muli", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 p, li, input, select, button {
-  font-family: "Muli", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Muli", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 600;
   color: #333;
 }
@@ -48,6 +48,12 @@ label {
   color: #848484;
 }
 
+/* NAVBAR */
+
+.navbar-brand img{
+  max-height: 70px;
+}
+
 .nav-pills .nav-link {
   font-size: 16px;
 }
@@ -76,7 +82,7 @@ label {
   color: #5672f9;
 }
 
-.nav-pills.with-background .nav-link.active {
+.nav-pills.with-background .nav-link .active {
   background: #5672f9;
   position: relative;
   transition: 0s;
@@ -325,17 +331,17 @@ button {
 
 .section-title {
   position: relative;
-  margin-bottom: 75px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .section-title h2 {
   font-size: 30px;
   letter-spacing: 0.05em;
-  text-align: center;
+  text-align: left;
 }
 
-.section-title h2:before {
+/* .section-title h2:before {
   content: " ";
   display: block;
   margin: 0 auto;
@@ -359,7 +365,7 @@ button {
   width: 40px;
   height: 5px;
   background-color: #5672f9;
-}
+} */
 
 .section-title p {
   font-size: 18px;
@@ -367,6 +373,7 @@ button {
   color: #848484;
 }
 
+/* PROFILE */
 .user-profile, .dashboard {
   padding-top: 50px;
 }
@@ -592,6 +599,7 @@ ul.pagination .active a {
   border-color: transparent !important;
 }
 
+/* Page Search Advance Search */
 .page-search {
   background: #5672f9;
   padding: 30px 0;
@@ -703,7 +711,7 @@ ul.pagination .active a {
 }
 
 .add-button {
-  background: #28a745;
+  background: #336B86;
   color: #fff;
   padding: 8px 20px !important;
   display: inline-block;
@@ -715,9 +723,11 @@ ul.pagination .active a {
 
 .main-nav .nav-item .nav-link {
   font-size: 16px;
+  font-weight: 600;
   line-height: 43px;
   padding: 0 20px;
 }
+
 
 .main-nav .nav-item .nav-link span {
   margin-left: 4px;
@@ -732,7 +742,7 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item.active .nav-link {
-  color: #5672f9;
+  color: #336B86;
 }
 
 .main-nav .search .nav-link i {
@@ -869,6 +879,8 @@ ul.pagination .active a {
   }
 }
 
+/* HERO AREA */
+
 .hero-area .content-block h1, .hero-area-2 .content-block h1 {
   color: #fff;
   font-size: 65px;
@@ -876,6 +888,19 @@ ul.pagination .active a {
   letter-spacing: 0.05em;
   margin-bottom: 15px;
 }
+
+.hero-area .content-block h2, .hero-area-2 .content-block h2 {
+  color: #fff;
+} 
+
+.hero-area .content-block .btn-primary {
+  color: #fff;
+  font-weight: 600;
+  background: #336B86;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+} 
 
 @media (max-width: 768px) {
   .hero-area .content-block h1, .hero-area-2 .content-block h1 {
@@ -899,7 +924,7 @@ ul.pagination .active a {
 }
 
 .hero-area .content-block {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 .hero-area .advance-search {
@@ -908,6 +933,13 @@ ul.pagination .active a {
   border-radius: 3px;
   margin-bottom: -50px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.hero-area .advance-search .btn-primary{
+  background: #336B86;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 50px;
 }
 
 @media (max-width: 480px) {
@@ -935,7 +967,7 @@ ul.pagination .active a {
     width: 100%;
   }
 }
-
+/* SHORT POPULAR LIST */
 .short-popular-category-list {
   margin-top: 40px;
 }
@@ -1447,6 +1479,17 @@ ul.pagination .active a {
   left: -18px;
 }
 
+/* Product Item Category */
+.category .product-item {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+  /* margin-bottom: 30px; */
+  border-radius: 100%;
+  padding: 30px 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product Item */
 .product-item {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
@@ -1495,7 +1538,7 @@ ul.pagination .active a {
 
 .product-item .product-meta li a {
   color: #888;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .product-item .product-meta li a i {

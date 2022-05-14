@@ -163,9 +163,9 @@
   $('.trending-ads-slide').slick({
     dots: false,
     arrows: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    autoplay: false,
     autoplaySpeed: 800,
     responsive: [{
         breakpoint: 1024,
@@ -185,6 +185,7 @@
       },
       {
         breakpoint: 480,
+        // settings : "unslick"
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
