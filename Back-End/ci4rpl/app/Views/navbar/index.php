@@ -112,7 +112,7 @@
 									<a class="dropdown-item" href="dashboard.html">Sastra</a>
 									<a class="dropdown-item" href="dashboard-my-ads.html">Programming</a>
 									<a class="dropdown-item" href="dashboard-favourite-ads.html">Seni</a>
-									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
+									<a class="dropdown-item" href="/daftarlombafinal">Daftar Lomba Final</a>
 									<a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
 								</div>
 							</li>
