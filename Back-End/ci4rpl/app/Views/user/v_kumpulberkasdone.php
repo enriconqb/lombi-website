@@ -33,7 +33,7 @@
                         </tr>
                     </table>
                     <div class="text-center py-3">
-                        <a href="<?='/tentang'; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kembali ke beranda</button></a>
+                        <a href="<?='/home'; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kembali ke beranda</button></a>
                     </div>
                 </div>
             </div>

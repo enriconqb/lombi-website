@@ -20,10 +20,10 @@
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
                     <div class="row">
                         <div class="col-sm-6">
-                            <a href="" class="btn btn-primary font-weight-bold">Daftarkan dirimu sekarang</a>
+                            <a href="<?php echo site_url('daftarlomba')?>" class="btn btn-primary font-weight-bold">Daftarkan dirimu sekarang</a>
                         </div>
                         <div class="col-sm-6">
-                            <a href="" class="btn btn-warning font-weight-bold text-white">Pengumuman Pemenang</a>
+                            <a href="<?php echo site_url('pengumuman')?>" class="btn btn-warning font-weight-bold text-white">Pengumuman Pemenang</a>
                         </div>
                     </div>
                 </div>
