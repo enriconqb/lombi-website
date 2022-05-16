@@ -1,4 +1,4 @@
-<?= $this->extend('user/template/index'); ?>
+<?= $this->extend('navbar/index'); ?>
 
 <?= $this->section('title'); ?>
 <title>About Us</title>

@@ -1,11 +1,10 @@
-<?php 
-namespace App\Controllers;
+<?php namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
 use App\Models\AuthModel;
 
-class Auth extends Controller
+class Auth extends BaseController
 {
     public function register(){
       $val = $this->validate(
@@ -41,23 +40,16 @@ class Auth extends Controller
         $model = new UsersModel;
         $model->insert($data);
         session()->setFlashdata('pesan','Selamat Anda berhasil Registrasi, silakan login!');
-        return redirect()->to('/login');
+        return redirect()->to('/');
       }
     }
 
-
-
     public function login(){
-
         $model = new AuthModel;
         $table = 'user';
-        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
-        $row = $model->get_data_login($email,$table);
-        if ($row == NULL){
-            session()->setFlashdata('pesan','Email anda salah');
-            return redirect()->to(base_url('login'));
-        }
+        $row = $model->get_data_login($username,$table);
         if ($password === $row->password){
                 $data = array(
                     'log' => TRUE,
@@ -70,14 +62,13 @@ class Auth extends Controller
         }
                 session()->setFlashdata('pesan','Password Salah');
                 return redirect()->to('/login');
-
-
+        
     }
 
     public function logout(){
         $session = session();
         $session->destroy();
         session()->setFlashdata('pesan','Berhasil Logout');
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }

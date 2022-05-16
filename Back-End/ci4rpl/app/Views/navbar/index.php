@@ -35,7 +35,51 @@
   <![endif]-->
 
 </head>
-
+<style>
+  .chips-wrapper {
+    min-width: 100px;
+    width: auto;
+    height: 33px;
+    border-radius: 16px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+  .winner-item-wrapper .name-section-wrapper {
+    min-height: 98px;
+    width: 300px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 49px;
+    padding-right: 49px;
+    position: relative;
+  }
+  .winner-item-wrapper .name-section-wrapper .chips-wrapper {
+    position: absolute;
+    top: -15px;
+  }
+  .winner-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .content-section .winner-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
 <body class="body-wrapper">
 
 <!--===============================
@@ -76,16 +120,26 @@
 								<a class="nav-link" href="/tentang">Tentang Kami</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/hubungi">Hubungi Kami</a>
+								<a class="nav-link" href="index.html">Hubungi Kami</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
-							<li class="nav-item">
-								<a class="nav-link login-button" href="/login">Login</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white add-button" href="/daftar">Register</a>
-							</li>
+              <?php 
+              if(session()->get('log')){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
+                </li>
+                <!-- <a href="<?php echo site_url('auth/logout')?>" class="btn btn-primary mt-3">Logout</a> -->
+              <?php
+              }else{?>
+                <li class="nav-item">
+								  <a class="nav-link login-button" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="/daftar">Register</a>
+                </li>
+              <?php
+              }?>
 						</ul>
 					</div>
 				</nav>

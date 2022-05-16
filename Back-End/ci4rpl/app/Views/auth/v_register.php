@@ -1,4 +1,4 @@
-<?= $this->extend('auth/template/index'); ?>
+<?= $this->extend('navbar/index'); ?>
 
 <?= $this->section('title'); ?>
 <title>Register</title>
