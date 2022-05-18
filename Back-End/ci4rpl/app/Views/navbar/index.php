@@ -123,9 +123,12 @@
 								<a class="nav-link" href="index.html">Hubungi Kami</a>
 							</li>
 						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
+						<ul class="navbar-nav ml-auto mt-10 d-flex">
               <?php 
               if(session()->get('log')){?>
+                <li class="nav-item">
+                  <a class="nav-link px-3" href="#">Hai, <?php echo session()->get('username');?></a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
                 </li>
