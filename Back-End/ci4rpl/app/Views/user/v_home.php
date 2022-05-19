@@ -85,127 +85,34 @@
 			<div class="d-flex col-sm-12 justify-content-start">
 				<div class="category col-sm-12 col-lg-2 d-flex align-items-center justify-content-center">
 					<div class="product-item">
-						<a href="<?php echo base_url('detailLomba')?>">
+						<a href="">
 							<img src="images/logo/logo_sastra.png" alt="Card image cap">
 						</a>
-						<h4 class="text-center"><a href="<?php echo base_url('detailLomba')?>">Sastra</a></h4>
+						<h4 class="text-center"><a href="">Sastra</a></h4>
 					</div>
 				</div>
 				<div class="trending-ads-slide col-sm-12 col-lg-10 align-items-center align-self-center justify-content-start">
+					<?php foreach($datasastra as $row): ?>
 					<div class="col-sm-12 col-lg-4">
 						<div class="product-item bg-light">
 							<div class="card">
 								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+									<a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>">
+										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
+									<h4 class="card-title"><a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">11inch Macbook Air</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-4.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>	
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
@@ -214,127 +121,34 @@
 			<div class="d-flex col-sm-12 justify-content-start">
 				<div class="category col-sm-12 col-lg-2 d-flex align-items-center justify-content-center">
 					<div class="product-item">
-						<a href="<?php echo base_url('detailLomba')?>">
+						<a href="">
 							<img src="images/logo/logo_programming.png" alt="Card image cap">
 						</a>
-						<h4 class="text-center"><a href="<?php echo base_url('detailLomba')?>">Programming</a></h4>
+						<h4 class="text-center"><a href="">Programming</a></h4>
 					</div>
 				</div>
 				<div class="trending-ads-slide col-sm-12 col-lg-10 align-items-center align-self-center justify-content-start">
+				<?php foreach($dataprogramming as $row): ?>
 					<div class="col-sm-12 col-lg-4">
 						<div class="product-item bg-light">
 							<div class="card">
 								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+									<a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>">
+										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
+									<h4 class="card-title"><a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">11inch Macbook Air</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-4.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>	
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
@@ -343,127 +157,34 @@
 			<div class="d-flex col-sm-12 justify-content-start">
 				<div class="category col-sm-12 col-lg-2 d-flex align-items-center justify-content-center">
 					<div class="product-item">
-						<a href="<?php echo base_url('detailLomba')?>">
+						<a href="<?php echo site_url('detailLomba')?>">
 							<img src="images/logo/logo_seni.png" alt="Card image cap">
 						</a>
-						<h4 class="text-center"><a href="<?php echo base_url('detailLomba')?>">Seni</a></h4>
+						<h4 class="text-center"><a href="">Seni</a></h4>
 					</div>
 				</div>
 				<div class="trending-ads-slide col-sm-12 col-lg-10 align-items-center align-self-center justify-content-start">
+				<?php foreach($dataseni as $row): ?>
 					<div class="col-sm-12 col-lg-4">
 						<div class="product-item bg-light">
 							<div class="card">
 								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+									<a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>">
+										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
+									<h4 class="card-title"><a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">11inch Macbook Air</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-4.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>	
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<div class="product-item bg-light">
-							<div class="card">
-								<div class="thumb-content">
-									<a href="<?php echo base_url('detailLomba')?>">
-										<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
-									</a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('detailLomba')?>">Full Study Table Combo</a></h4>
-									<ul class="list-inline product-meta">
-										<li class="list-inline-item">
-											<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
