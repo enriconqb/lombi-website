@@ -30,29 +30,22 @@
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-lg-12 col-md-12 align-content-center">
-										<form>
+										<form action="home/cari" method="GET">
 											<div class="form-row">
-												<div class="form-group col-md-4">
-													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="Apa yang kamu cari">
+												<div class="form-group col-md-7">
+													<input type="text" class="form-control my-2 my-lg-1" id="keyword" placeholder="Apa yang kamu cari" name="keyword">
 												</div>
 												<div class="form-group col-md-3">
-													<select class="w-100 form-control mt-lg-1 mt-md-2">
+													<select class="w-100 form-control mt-lg-1 mt-md-2" name = "kategori">
 														<option>Kategori</option>
 														<option value="1">Sastra</option>
 														<option value="2">Programming</option>
-														<option value="4">Seni</option>
-													</select>
-												</div>
-												<div class="form-group col-md-3">
-													<select class="w-100 form-control mt-lg-1 mt-md-2">
-														<option>Tipe Lomba</option>
-														<option value="1">Online</option>
-														<option value="2">Offline</option>
+														<option value="3">Seni</option>
 													</select>
 												</div>
 												
 												<div class="form-group col-md-2 align-self-center">
-													<button type="submit" class="btn btn-primary">Cari</button>
+													<button type="submit" class="btn btn-primary" value="keyword">Cari</button>
 												</div>
 											</div>
 										</form>
