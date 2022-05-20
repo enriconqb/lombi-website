@@ -11,14 +11,8 @@ class LombaModel extends Model
     }
 
     function get_lomba_sastra(){
-        // if($keyword != ''){
-        //     $hsl = $this->db->query("SELECT * FROM lomba WHERE kategori_lomba = '1' AND 'nama_lomba' = '$keyword' ORDER BY tgl_daftar DESC");
-        //     return $hsl->getResult();
-        // }
-        // else{
-            $hsl = $this->db->query("SELECT * FROM lomba WHERE kategori_lomba = '1' ORDER BY tgl_daftar DESC");
-            return $hsl->getResult();
-        // }
+        $hsl = $this->db->query("SELECT * FROM lomba WHERE kategori_lomba = '1' ORDER BY tgl_daftar DESC");
+        return $hsl->getResult();
 
     }
 
@@ -36,13 +30,4 @@ class LombaModel extends Model
         $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba");
         return $hsl->getRow();
     }
-
-    // function cari($keyword = null){
-    //     $builder = $this->db->table('lomba');
-    //     if($keyword != ''){
-    //         $bulder->like('nama_lomba', $keyword);
-    //     }
-    //     return $builder->get()->getResult();
-    // }
-
 }
