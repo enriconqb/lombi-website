@@ -127,7 +127,7 @@
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-								  <a class="nav-link login-button" href="/login">Admin</a>
+								  <a class="nav-link login-button" href="/admin">Admin</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
