@@ -6,7 +6,7 @@ class LombaModel extends Model
 {
     protected $table = 'lomba';
     function get_lomba_home(){
-        $hsl = $this->db->query("SELECT * FROM lomba ORDER BY tgl_daftar DESC");
+        $hsl = $this->db->query("SELECT * FROM lomba ORDER BY kategori_lomba ASC");
         return $hsl->getResult();
     }
 
