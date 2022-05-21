@@ -125,7 +125,7 @@
           <img src="<?= base_url() ?>/template/dist/img/verifBerkas.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Verifikasi Berkas</a>
+          <a href="<?php echo base_url('verifberkas')?>" class="d-block">Verifikasi Berkas</a>
         </div> 
       </div>
 
