@@ -83,17 +83,6 @@
     </a>
 
     <!-- Sidebar -->
-    <!-- <div class="sidebar"> -->
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-0 pb-5 mb-3 d-flex bg-warning ">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block text-light"><b> Alexander Pierce </b></a>
-        </div>
-      </div>
-
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -118,7 +107,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pembayaran</a>
+          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
         </div>
       </div>
 

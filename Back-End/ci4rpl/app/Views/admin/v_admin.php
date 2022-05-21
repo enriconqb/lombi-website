@@ -29,7 +29,7 @@
   <nav class="main-header navbar navbar-expand navbar-danger navbar-light" >
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="d-none d-sm-inline-block">
         <a class="nav-link text-light ">Home</a>
       </li>
     </ul>
@@ -67,7 +67,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pembayaran</a>
+          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
         </div>
       </div>
 

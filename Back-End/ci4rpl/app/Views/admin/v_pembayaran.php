@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Upload Lomba</title>
+    <title>Data Pembayaran</title>
 
      <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -79,7 +79,7 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link bg-danger text-center">
-      <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
+      <span class="brand-text font-weight-light "><b>Admin Keuangan</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -107,7 +107,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
+          <a href="#" class="d-block">Pembayaran</a>
         </div>
       </div>
 
@@ -134,7 +134,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pengumuman</a>
+          <a href="<?php echo base_url('pengumumanadmin')?>" class="d-block">Pengumuman</a>
         </div>
       </div>
     </div>
@@ -148,115 +148,121 @@
       <div class="container-fluid">
         <!-- <div class="row mb-2"> -->
           <div class="col-sm-6">
-            <h1 class="m-0"><b>Pengumuman</b></h1>
+            <h1 class="m-0"><b>Data Pembayaran</b></h1>
       </div> <!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-  </div>
- 
 
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 1</h5>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </div>
-      </div>
-  </div>
   
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 2</h5>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </div>
-      </div>
-  </div>
-
-  <div class="content-wrapper">
-    <div class="col-lg-10">
-        <div class="card">
-            <div class="card-header bg-secondary">
-                <div class="m-0"> Juara 3</div>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login"></div>
-                </div>
-            </section>
-
-        </div>
+    
+    <div class="card-body">
+      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
+        Menulis Hiragana
+      </button>
+      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
+        Public Speaking
+      </button>
+      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
+        Menulis Cerpen
+      </button>
+      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
+        Bahasa C
+      </button>
+      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
+        Website
+      </button>
     </div>
-  </div>
-  
-  
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 3</h5>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
+
+    
+    <div class="mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <h3 class="card-title">Data Peserta Website </h3>
+
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
                 </div>
-            </section>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>Nama Tim/Sekolah</th>
+                    <th>Tanggal Pembayaran</th>
+                    <th>Bukti Pembayaran</th>
+                    <th>Status Pembayaran</th>
+                    <th>Cek Pembayaran</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah1</td>
+                    <td>10/04/2022</td>
+                    <td>bukti.jpg</td>
+                    <td><button class="btn btn-outline-success">Valid</button></td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Genap/Sekolah1</td>
+                    <td>10/04/2022</td>
+                    <td>bukti.jpg</td>
+                    <td><button class="btn btn-danger">Gagal</button></td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah2</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><button class="btn btn-outline-danger">Belum</button></td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>                  
+                  </tr>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah1</td>
+                    <td>10/04/2022</td>
+                    <td>bukti.jpg</td>
+                    <td><button class="btn btn-outline-success">Valid</button></td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Genap/Sekolah1</td>
+                    <td>10/04/2022</td>
+                    <td>bukti.jpg</td>
+                    <td><button class="btn btn-danger">Gagal</button></td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
+    </div>   
   </div>
+     
 </body>
 </html>
