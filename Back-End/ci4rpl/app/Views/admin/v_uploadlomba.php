@@ -78,7 +78,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="" class="brand-link bg-danger text-center">
+    <a class="brand-link bg-danger text-center">
       <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
     </a>
 
@@ -89,7 +89,7 @@
           <img src="<?= base_url() ?>/template/dist/img/dashboard.jpg" class="img-circle " alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('admin')?>" class="d-block">Dashboard</a>
+          <a href="#" class="d-block">Dashboard</a>
         </div>
       </div>
 
@@ -98,7 +98,7 @@
           <img src="<?= base_url() ?>/template/dist/img/uploadLomba.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
+          <a href="#" class="d-block">Upload Lomba</a>
         </div>
       </div>
 
@@ -134,7 +134,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pengumuman</a>
+          <a href="<?php echo base_url('pengumumanadmin')?>" class="d-block">Pengumuman</a>
         </div>
       </div>
     </div>
@@ -148,7 +148,7 @@
       <div class="container-fluid">
         <!-- <div class="row mb-2"> -->
           <div class="col-sm-6">
-            <h1 class="m-0"><b>Pengumuman</b></h1>
+            <h1 class="m-0"><b>Upload Lomba</b></h1>
       </div> <!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -160,103 +160,139 @@
       <div class="col-lg-10">
         <div class="card">
           <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 1</h5>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
-                </div>
-            </section>
+            <h5 class="m-0">Informasi Lomba</h5>
         </div>
+        <section>
+          <!-- <div class="card">
+            <div class="card-title">
+              <h3>Login</h3>
+            </div> -->
+            <div class="card-body">
+              <div class="card-login">
+                <form action="" method="POST">
+                 
+                    <tr>
+                      <td><label for="user">Nama Lomba</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="user" placeholder="Masukkan Nama Lomba" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="kategiri">Kategori Lomba</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="kategori" placeholder="Masukkan Kategori Lomba" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="deskripsi">Deskripsi Lomba</label></td>
+                    </tr>
+                    <tr>
+                      <td><textarea type="text" class="form-control" rows="3"  name="deskripsi" placeholder="Masukkan Deskripsi Lomba" required></textarea></td>
+                    </tr>
+                    <tr>
+                      <td><label for="penyelenggara">Penyelenggara</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="penyelenggara" placeholder="Masukkan Penyelenggara Lomba" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="persyaratan">Persyaratan</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="persyaratan" placeholder="Masukkan Persyaratan Lomba" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="hadiah">Hadiah</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="hadiah" placeholder="Masukkan Hadiah Lomba" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="biaya regist tim">Biaya Registrasi Tim</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="biaya regist tim" placeholder="Masukkan Biaya Registrasi Lomba Tim" required></td>
+                    </tr>
+                    <tr>
+                      <td><label for="biaya regist individu">Biaya Registrasi Individu</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="biaya regist individu" placeholder="Masukkan Biaya Registrasi Lomba Individu" required></td>
+                    </tr>
+
+                  <table>
+                    <tr>
+                      <td><label for="tgl pendaftaran">Tanggal Pendaftaran</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="date" name="tgl daftar awal"></td>
+                      <td><td></td></td>
+                      <td><input type="date" name="tgl daftar akhir"></td>
+                    </tr>
+                    <tr>
+                      <td><label for="tgl pengumpulan">Tanggal Pengumpulan</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="date"  name="tgl pengumpulan awal"></td>
+                      <td><td></td></td>
+                      <td><input type="date"  name="tgl pengumpulan akhir"></td>
+                    </tr>
+                    <tr>
+                      <td><label for="tgl pengumuman">Tanggal Pengumuman</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="date" name="tanggal"></td>
+                    </tr>
+                    <tr>
+                      <td><label for="upload">Upload Poster Lomba</label></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><input type="file" value="upload gambar"/></td>
+                    </tr>
+                    <tr>
+                      <td><label for="upload">Upload Booklet Lomba</label></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><input type="file" value="upload gambar"/></td>
+                    </tr>
+                  </table>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
   </div>
+
   
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 2</h5>
+  <div class="row justify-content-center">
+    <div class="btn">
+      <div class="col-sm-6">
+      <table>
+        <tr>
+          <td>
+            <div >
+              <button class="btn btn-danger" type="batal" value="Batalt">Batal</button>
             </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </div>
-      </div>
-  </div>
+          </td>
 
-  <div class="content-wrapper">
-    <div class="col-lg-10">
-        <div class="card">
-            <div class="card-header bg-secondary">
-                <div class="m-0"> Juara 3</div>
+          <td>
+            <div>
+              <button class="btn btn-info" type="edit" value="Edit">Edit</button>
             </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login"></div>
-                </div>
-            </section>
-
-        </div>
+          </td>
+    
+          <td>
+            <div>
+              <button class="btn btn-success" type="simpan" value="Simpan">Simpan</button>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
-  </div>
-  
-  
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Juara 3</h5>
-            </div>
-            <section>
-                <div class="card-body">
-                    <div class="card-login">
-                        <form action="" method="POST">
-                            <table cellpadding="5">
-                                <tr>
-                                    <td width="200px"><label for="user">Nama Tim        </label></td>
-                                    <td width="600px"><input type="text" class="form-control" name="user" placeholder="Tim Hore"></td>
-                                </tr>
-                                <tr>
-                                    <td width="200px"><label for="user">Karya Peserta        </label></td>
-                                    <td><div style="border: 1px solid black; padding: 3px; border-radius: 1px; width: 250px; height: 30px; text-align: center;">Karya Peserta</div></td>
-                                </tr>
-                            </table> 
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </div>
-      </div>
   </div>
 </body>
 </html>

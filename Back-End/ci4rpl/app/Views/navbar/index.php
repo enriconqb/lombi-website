@@ -127,14 +127,14 @@
               <?php 
               if(session()->get('hak_akses') === 'super_admin'){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Admin</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('admin')?>">Admin</a>
                 </li>
               <?php
               }?>
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Lomba</a>
+                  <a class="nav-link text-white add-button" href="<?php echo site_url('admin')?>">Lomba</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>

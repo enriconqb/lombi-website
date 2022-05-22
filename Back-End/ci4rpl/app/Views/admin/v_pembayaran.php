@@ -98,7 +98,7 @@
           <img src="<?= base_url() ?>/template/dist/img/uploadLomba.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Upload Lomba</a>
+          <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
         </div>
       </div>
 
@@ -153,27 +153,6 @@
     </div>
     <!-- /.content-header -->
 
-  
-    
-    <div class="card-body">
-      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
-        Menulis Hiragana
-      </button>
-      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
-        Public Speaking
-      </button>
-      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
-        Menulis Cerpen
-      </button>
-      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
-        Bahasa C
-      </button>
-      <button type="button" class="btn btn-secondary" data-toggle="" data-target="#">
-        Website
-      </button>
-    </div>
-
-    
     <div class="mt-3">
       <div class="row">
         <div class="col-12">

@@ -58,7 +58,7 @@
           <img src="<?= base_url() ?>/template/dist/img/uploadLomba.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Upload Lomba</a>
+          <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
         </div>
       </div>
 
