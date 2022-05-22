@@ -9,5 +9,15 @@ class UsersModel extends Model
 
     protected $allowedFields = ['email', 'username', 'password' ];
 
+    function user($id_user){
+        return $this->db->table('tim')
+        ->join('user', 'user.id_user = tim.id_user')
+        ->where('id_user', $id_user)
+        ->get()->getResultArray();
+    }
 
+    function get_data_user(){
+        $hsl = $this->db->query("SELECT * FROM user");
+        return $hsl->getResult();
+    }
 }

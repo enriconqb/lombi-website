@@ -12,13 +12,14 @@ class DaftarLomba extends BaseController
     public function __construct(){
         $this->datalomba = new LombaModel();
         $this->daftarlomba = new DaftarLombaModel();
-        $this->user = new UsersModel();
+        $this->userdata = new UsersModel();
     }
 
-    public function index()
+    public function daftar($id_lomba)
     {
         $data = array(
             'alldata' => $this->datalomba->get_lomba_home(),
+            'detail' => $this->datalomba->detail($id_lomba),
         );
         return view('user/v_daftarlomba', $data);
     }
@@ -26,12 +27,14 @@ class DaftarLomba extends BaseController
     public function payment(){
         $data = $this->request->getPost();
         $this->daftarlomba->insert($data);
-        $this->user->insert($data);
         return view('user/v_verifikasipayment');
     }
 
     public function verifpayment(){
-        $data = $this->request->getPost();
+        // $data = $this->request->getPost();
+        $data = array(
+            'daftar' => $this->request->getPost(),
+        );
         $this->daftarlomba->insert($data);
         return view('user/v_verifikasipayment');
     }

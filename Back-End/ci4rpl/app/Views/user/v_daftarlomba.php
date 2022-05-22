@@ -27,17 +27,8 @@
                                 <tbody>
                                     <tr>
                                         <td colspan="3" class="col-md-2">
-                                            <select class="border p-3 w-100 my-2" name="id_lomba">
-                                                <?php foreach ($alldata as $row => $value):?>
-                                                    <option value="<?= $value->id_lomba?>"> <?= $value->nama_lomba; ?> - <?php if($value->kategori_lomba === '1'){?>
-                                                        <?= $value->kategori_lomba = 'Sastra'; ?>
-                                                    <?php }elseif ($value->kategori_lomba === '2') { ?> 
-                                                        <?= $value->kategori_lomba = 'Programming'; ?>
-                                                    <?php }elseif ($value->kategori_lomba === '3') { ?> 
-                                                        <?= $value->kategori_lomba = 'Seni'; ?>
-                                                    <?php } ?> - Individu <?= $value->biaya_registrasiindividu; ?> - Tim <?= $value->biaya_registrasitim; ?>
-                                                    </option>
-                                                <?php endforeach; ?>
+                                            <select class="border w-100 my-2" name="id_lomba">
+                                                <option value="<?=$detail->id_lomba?>"><?= $detail->nama_lomba; ?> - Tim: Rp. <?= $detail->biaya_registrasitim; ?> - Individu: Rp. <?= $detail->biaya_registrasiindividu; ?></option>
                                             </select>
                                         </td>
                                     </tr>
