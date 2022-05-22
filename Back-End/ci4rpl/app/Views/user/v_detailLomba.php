@@ -18,7 +18,7 @@
                 <div class="about-content">
                     <h1 class="font-weight-bold"><?= $detail->nama_lomba; ?></h1>
                     <p class="text-justify"><?= $detail->deskripsi_lomba; ?></p>
-                    <div class="row">
+                    <div class="row text-center pb-1">
                         <div class="col-sm-6">
                             <a href="<?php echo site_url('daftarlomba')?>" class="btn btn-primary font-weight-bold">Daftarkan dirimu sekarang</a>
                         </div>

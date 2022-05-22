@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\LombaModel;
 use App\Models\DaftarLombaModel;
+use App\Models\UsersModel;
 
 class DaftarLomba extends BaseController
 {
@@ -11,6 +12,7 @@ class DaftarLomba extends BaseController
     public function __construct(){
         $this->datalomba = new LombaModel();
         $this->daftarlomba = new DaftarLombaModel();
+        $this->user = new UsersModel();
     }
 
     public function index()
@@ -22,30 +24,15 @@ class DaftarLomba extends BaseController
     }
 
     public function payment(){
-        $jenislomba =  $this->daftarlomba->getAll()->getResult();
-        $data = array(
-            'nama_tim' => $this->request->getPost('nama_tim'),
-            'jenislomba' => $this->request->getPost('jenislomba'),
-            'ketua_nama' => $this->request->getPost('ketua_nama'),
-            'ketua_nim' => $this->request->getPost('ketua_nim'),
-            'link_ktm_ketua' => $this->request->getPost('link_ktm_ketua'),
-            'norek' => $this->request->getPost('norek'),
-            'jenisbank' => $this->request->getPost('jenisbank'),
-            'anggota1_nama' => $this->request->getPost('anggota1_nama'),
-            'anggota1_nim' => $this->request->getPost('anggota1_nim'),
-            'anggota2_nama' => $this->request->getPost('anggota2_nama'),
-            'anggota2_nim' => $this->request->getPost('anggota2_nim'),
-            'anggota3_nama' => $this->request->getPost('anggota3_nama'),
-            'anggota3_nim' => $this->request->getPost('anggota3_nim'),
-            'anggota4_nama' => $this->request->getPost('anggota4_nama'),
-            'anggota4_nim' => $this->request->getPost('anggota4_nim'),
-        );
+        $data = $this->request->getPost();
         $this->daftarlomba->insert($data);
-        return redirect()->to('user/v_payment');
-        // return view('user/v_payment');
+        $this->user->insert($data);
+        return view('user/v_verifikasipayment');
     }
 
     public function verifpayment(){
+        $data = $this->request->getPost();
+        $this->daftarlomba->insert($data);
         return view('user/v_verifikasipayment');
     }
 
