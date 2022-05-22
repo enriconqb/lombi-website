@@ -112,7 +112,7 @@
 									<a class="dropdown-item" href="dashboard.html">Sastra</a>
 									<a class="dropdown-item" href="dashboard-my-ads.html">Programming</a>
 									<a class="dropdown-item" href="dashboard-favourite-ads.html">Seni</a>
-									<a class="dropdown-item" href="/daftarlombafinal">Daftar Lomba Final</a>
+									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
 									<a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
 								</div>
 							</li>
@@ -123,16 +123,22 @@
 								<a class="nav-link" href="index.html">Hubungi Kami</a>
 							</li>
 						</ul>
-						<ul class="navbar-nav ml-auto mt-10">
+						<ul class="navbar-nav ml-auto mt-10 d-flex flex-colomn">
+              <?php 
+              if(session()->get('hak_akses') === 'super_admin'){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Admin</a>
+                </li>
+              <?php
+              }?>
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-								  <a class="nav-link login-button" href="/admin">Admin</a>
+                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Lomba</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
                 </li>
-                <!-- <a href="<?php echo site_url('auth/logout')?>" class="btn btn-primary mt-3">Logout</a> -->
               <?php
               }else{?>
                 <li class="nav-item">
