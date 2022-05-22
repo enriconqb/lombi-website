@@ -90,12 +90,12 @@
 						<div class="product-item bg-light">
 							<div class="card">
 								<div class="thumb-content">
-									<a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>">
+									<a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>">
 										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo site_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
+									<h4 class="card-title"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
 											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
