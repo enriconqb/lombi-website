@@ -24,7 +24,7 @@
                         <?php } ?>
                         <?php
                         if(session()->getFlashdata('pesan')){
-                            echo '<div class="alert alert-warning mb-0" role="alert">';
+                            echo '<div class="alert alert-warning" role="alert">';
                             echo session()->getFlashdata('pesan');
                             echo '</div>';
                         }

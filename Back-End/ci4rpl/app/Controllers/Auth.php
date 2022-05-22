@@ -36,11 +36,12 @@ class Auth extends BaseController
             'email' => $this->request->getPost('email'),
             'username' => $this->request->getPost('username'),
             'password' => $password,
+            'hak_akses' => 'peserta',
         );
         $model = new UsersModel;
         $model->insert($data);
         session()->setFlashdata('pesan','Selamat Anda berhasil Registrasi, silakan login!');
-        return redirect()->to('/login');
+        return redirect()->to(base_url('/login'));
       }
     }
 
@@ -51,21 +52,22 @@ class Auth extends BaseController
         $password = $this->request->getPost('password');
         $row = $model->get_data_login($username,$table);
         if ($row === NULL){
-          session()->setFlashdata('pesan','Username Salah');
-          return redirect()->to('/login');
+          session()->setFlashdata('pesan','Username tidak terdaftar');
+          return redirect()->to(base_url('/login'));
         }
         if ($password === $row->password){
                 $data = array(
                     'log' => TRUE,
                     'email' => $row->email,
                     'username' => $row->username,
+                    'hak_akses' => $row->hak_akses,
                 );
                 session()->set($data);
                 session()->setFlashdata('pesan','Berhasil Login');
                 return redirect()->to(base_url('/home'));
         }
         session()->setFlashdata('pesan','Password Salah');
-        return redirect()->to('/login');
+        return redirect()->to(base_url('/login'));
         
     }
 
@@ -73,6 +75,6 @@ class Auth extends BaseController
         $session = session();
         $session->destroy();
         session()->setFlashdata('pesan','Berhasil Logout');
-        return redirect()->to('/');
+        return redirect()->to(base_url('/login'));
     }
 }
