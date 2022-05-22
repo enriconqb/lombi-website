@@ -60,6 +60,7 @@ class Auth extends BaseController
                     'log' => TRUE,
                     'email' => $row->email,
                     'username' => $row->username,
+                    'hak_akses' => $row->hak_akses,
                 );
                 session()->set($data);
                 session()->setFlashdata('pesan','Berhasil Login');
