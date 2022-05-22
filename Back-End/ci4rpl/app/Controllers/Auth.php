@@ -73,6 +73,6 @@ class Auth extends BaseController
         $session = session();
         $session->destroy();
         session()->setFlashdata('pesan','Berhasil Logout');
-        return redirect()->to('/');
+        return redirect()->to(base_url('/home'));
     }
 }
