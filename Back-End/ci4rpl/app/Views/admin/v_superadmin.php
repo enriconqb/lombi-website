@@ -39,7 +39,7 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link bg-danger text-center">
-      <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
+      <span class="brand-text font-weight-light "><b>Super Admin</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -49,7 +49,7 @@
           <img src="<?= base_url() ?>/template/dist/img/dashboard.jpg" class="img-circle " alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('admin')?>" class="d-block">Dashboard</a>
+          <a href="<?php echo base_url('superadmin')?>" class="d-block">Dashboard</a>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
           <img src="<?= base_url() ?>/template/dist/img/uploadLomba.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
+          <a href="<?php echo base_url('dataakun')?>" class="d-block">Data Akun</a>
         </div>
       </div>
 
@@ -67,7 +67,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
+          <a href="<?php echo base_url('buatakun')?>" class="d-block">Buat Akun Admin</a>
         </div>
       </div>
 
@@ -76,28 +76,9 @@
           <img src="<?= base_url() ?>/template/dist/img/peserta.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('peserta')?>" class="d-block">Peserta</a>
+          <a href="<?php echo base_url('hakakses')?>" class="d-block">Hak Akses</a>
         </div> 
       </div>
-      
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/verifBerkas.jpg" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('verifberkas')?>" class="d-block">Verifikasi Berkas</a>
-        </div> 
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('pengumuman')?>" class="d-block">Pengumuman</a>
-        </div>
-      </div>
-    </div>
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
@@ -120,9 +101,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h2>Upload Lomba</h2>
-  
-                  <p>Admin Panitia Lomba</p>
+                  <h2>Data Akun</h2>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -132,9 +111,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h2>Pembayaran</h2>
-  
-                  <p>Admin Keuangan</p>
+                  <h2>Buat Akun Admin</h2>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
@@ -144,42 +121,14 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h2>Peserta</h2>
-  
-                  <p>Admin Peserta</p>
+                  <h2>Hak Akses</h2>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-danger">
-                <div class="inner">
-                  <h2>Verifikasi Berkas</h2>
-  
-                  <p>Admin Verifikasi Berkas</p>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                  <div class="inner">
-                    <h2>Pengumuman</h2>
-    
-                    <p>Admin Panitia Lomba</p>
-                  </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-              </div>
-          </div>
           <!-- /.row -->
         </div>
       </section>
       <!-- /.content -->
-  
   </div>
 </section>

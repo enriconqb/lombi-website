@@ -35,7 +35,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link text-light ">Home</a>
+        <a href="<?php echo base_url('home')?>" class="nav-link text-light ">Home</a>
       </li>
     </ul>
   
