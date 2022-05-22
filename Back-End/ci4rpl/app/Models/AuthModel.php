@@ -10,6 +10,4 @@ class AuthModel extends Model
         $log = $builder->get()->getRow();
         return $log;
     }
-
-
 }

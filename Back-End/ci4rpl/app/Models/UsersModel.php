@@ -7,7 +7,7 @@ class UsersModel extends Model
     protected $table      = 'user';
     protected $primaryKey = 'id_user';
 
-    protected $allowedFields = ['email', 'username', 'password' ];
+    protected $allowedFields = ['email', 'username', 'password','hak_akses'];
 
     function user($id_user){
         return $this->db->table('tim')
