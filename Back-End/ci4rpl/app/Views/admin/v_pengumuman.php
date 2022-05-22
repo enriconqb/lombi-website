@@ -116,7 +116,7 @@
           <img src="<?= base_url() ?>/template/dist/img/peserta.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Peserta</a>
+          <a href="<?php echo base_url('peserta')?>" class="d-block">Peserta</a>
         </div> 
       </div>
       
@@ -134,12 +134,11 @@
           <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pengumuman</a>
+          <a href="<?php echo base_url('pengumuman')?>" class="d-block">Pengumuman</a>
         </div>
       </div>
     </div>
   </aside>
-
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

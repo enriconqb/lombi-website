@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Upload Lomba</title>
+    <title>Data Peserta Lomba Website</title>
 
      <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -147,151 +147,88 @@
       <div class="container-fluid">
         <!-- <div class="row mb-2"> -->
           <div class="col-sm-6">
-            <h1 class="m-0"><b>Upload Lomba</b></h1>
+            <h1 class="m-0"><b>Data Peserta Lomba</b></h1>
       </div> <!-- /.container-fluid -->
     </div>
+
     <!-- /.content-header -->
-  </div>
- 
+    <div class="mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <h3 class="card-title">Data Peserta Website </h3>
 
-  <div class="content-wrapper">
-    <!-- <div class="row justify-content-center"> -->
-      <div class="col-lg-10">
-        <div class="card">
-          <div class="card-header bg-secondary">
-            <h5 class="m-0">Informasi Lomba</h5>
-        </div>
-        <section>
-          <!-- <div class="card">
-            <div class="card-title">
-              <h3>Login</h3>
-            </div> -->
-            <div class="card-body">
-              <div class="card-login">
-                <form action="" method="POST">
-                 
-                    <tr>
-                      <td><label for="user">Nama Lomba</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="user" placeholder="Masukkan Nama Lomba" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="kategiri">Kategori Lomba</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="kategori" placeholder="Masukkan Kategori Lomba" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="deskripsi">Deskripsi Lomba</label></td>
-                    </tr>
-                    <tr>
-                      <td><textarea type="text" class="form-control" rows="3"  name="deskripsi" placeholder="Masukkan Deskripsi Lomba" required></textarea></td>
-                    </tr>
-                    <tr>
-                      <td><label for="penyelenggara">Penyelenggara</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="penyelenggara" placeholder="Masukkan Penyelenggara Lomba" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="persyaratan">Persyaratan</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="persyaratan" placeholder="Masukkan Persyaratan Lomba" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="hadiah">Hadiah</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="hadiah" placeholder="Masukkan Hadiah Lomba" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="biaya regist tim">Biaya Registrasi Tim</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="biaya regist tim" placeholder="Masukkan Biaya Registrasi Lomba Tim" required></td>
-                    </tr>
-                    <tr>
-                      <td><label for="biaya regist individu">Biaya Registrasi Individu</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="text" class="form-control" name="biaya regist individu" placeholder="Masukkan Biaya Registrasi Lomba Individu" required></td>
-                    </tr>
-
-                  <table>
-                    <tr>
-                      <td><label for="tgl pendaftaran">Tanggal Pendaftaran</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="date" name="tgl daftar awal"></td>
-                      <td><td></td></td>
-                      <td><input type="date" name="tgl daftar akhir"></td>
-                    </tr>
-                    <tr>
-                      <td><label for="tgl pengumpulan">Tanggal Pengumpulan</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="date"  name="tgl pengumpulan awal"></td>
-                      <td><td></td></td>
-                      <td><input type="date"  name="tgl pengumpulan akhir"></td>
-                    </tr>
-                    <tr>
-                      <td><label for="tgl pengumuman">Tanggal Pengumuman</label></td>
-                    </tr>
-                    <tr>
-                      <td><input type="date" name="tanggal"></td>
-                    </tr>
-                    <tr>
-                      <td><label for="upload">Upload Poster Lomba</label></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><input type="file" value="upload gambar"/></td>
-                    </tr>
-                    <tr>
-                      <td><label for="upload">Upload Booklet Lomba</label></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td><input type="file" value="upload gambar"/></td>
-                    </tr>
-                  </table>
-                  
-                </form>
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                </div>
               </div>
             </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>Nama Tim/Sekolah</th>
+                    <th>Nama Anggota</th>
+                    <th>NIS/NIM</th>
+                    <th>Alamat</th>
+                    <th>Cek Peserta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah1</td>
+                    <td>Nama Anggota</td>
+                    <td>1234567</td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Genap/Sekolah1</td>
+                    <td>Nama Anggota</td>
+                    <td>1234567</td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah2</td>
+                    <td>Nama Anggota</td>
+                    <td>1234567</td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>                  
+                  </tr>
+                  <tr>
+                    <td>Tim Ganjil/Sekolah1</td>
+                    <td>Nama Anggota</td>
+                    <td>1234567</td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td>
+                      <a href="#" class="btn btn-success">
+                        <span class="far fa-envelope"></span> Cek 
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </section>
+        </div>
       </div>
+    </div>   
   </div>
-
-  
-  <div class="row justify-content-center">
-    <div class="btn">
-      <div class="col-sm-6">
-      <table>
-        <tr>
-          <td>
-            <div >
-              <button class="btn btn-danger" type="batal" value="Batalt">Batal</button>
-            </div>
-          </td>
-
-          <td>
-            <div>
-              <button class="btn btn-info" type="edit" value="Edit">Edit</button>
-            </div>
-          </td>
-    
-          <td>
-            <div>
-              <button class="btn btn-success" type="simpan" value="Simpan">Simpan</button>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
+     
 </body>
 </html>

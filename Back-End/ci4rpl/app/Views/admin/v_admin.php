@@ -38,7 +38,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a class="brand-link bg-danger text-center">
+    <a href="" class="brand-link bg-danger text-center">
       <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
     </a>
 
@@ -49,7 +49,7 @@
           <img src="<?= base_url() ?>/template/dist/img/dashboard.jpg" class="img-circle " alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Dashboard</a>
+          <a href="<?php echo base_url('admin')?>" class="d-block">Dashboard</a>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
           <img src="<?= base_url() ?>/template/dist/img/peserta.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Peserta</a>
+          <a href="<?php echo base_url('peserta')?>" class="d-block">Peserta</a>
         </div> 
       </div>
       
@@ -94,7 +94,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('pengumumanadmin')?>" class="d-block">Pengumuman</a>
+          <a href="<?php echo base_url('pengumuman')?>" class="d-block">Pengumuman</a>
         </div>
       </div>
     </div>

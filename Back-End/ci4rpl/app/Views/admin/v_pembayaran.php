@@ -79,7 +79,7 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link bg-danger text-center">
-      <span class="brand-text font-weight-light "><b>Admin Keuangan</b></span>
+      <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -107,7 +107,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Pembayaran</a>
+          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
         </div>
       </div>
 
@@ -116,7 +116,7 @@
           <img src="<?= base_url() ?>/template/dist/img/peserta.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Peserta</a>
+          <a href="<?php echo base_url('peserta')?>" class="d-block">Peserta</a>
         </div> 
       </div>
       
@@ -134,7 +134,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('pengumumanadmin')?>" class="d-block">Pengumuman</a>
+          <a href="<?php echo base_url('pengumuman')?>" class="d-block">Pengumuman</a>
         </div>
       </div>
     </div>
