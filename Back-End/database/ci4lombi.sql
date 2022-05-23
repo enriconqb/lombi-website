@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 05:09 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: May 22, 2022 at 02:52 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,7 +72,6 @@ CREATE TABLE `juri` (
 
 CREATE TABLE `lomba` (
   `id_lomba` int(5) NOT NULL,
-  `id_user` int(5) NOT NULL,
   `nama_lomba` varchar(255) NOT NULL,
   `kategori_lomba` varchar(255) NOT NULL,
   `deskripsi_lomba` varchar(500) NOT NULL,
@@ -89,6 +88,29 @@ CREATE TABLE `lomba` (
   `link_template_penilaianjuri` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `lomba`
+--
+
+INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomba`, `nama_penyelenggara`, `persyaratan_lomba`, `hadiah`, `tgl_daftar`, `tgl_kumpul`, `tgl_pengumuman`, `file_poster`, `file_booklet`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_template_penilaianjuri`) VALUES
+(1, 'Puisi', '1', 'Puisi adalah', 'Hehe', '1. abcd\r\n2. efgh\r\n3. ijkl', 'Uang Tunai, Sertifikat', '2022-05-19', '2022-05-26', '2022-05-28', 'stupid.png', '-', '500000', '200000', 'link'),
+(2, 'Menulis Hiragana', '1', 'apaan', 'pe', 'anuan', 'rahasia', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '400000', '200000', 'link'),
+(5, 'Bahasa C', '2', 'pe', 'pe', 'pe', 'pe', '2022-05-28', '2022-05-31', '2022-06-01', 'stupid.png', 'gada', 'kepo', 'keo', 'gada'),
+(6, 'Mewarnai', '3', 'gatau', 'gatau', 'gada', 'motor', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '0', '0', 'gada'),
+(7, 'Pantun', '1', 'pantun aja yg bagus', 'pe', 'p', 'p', '2022-05-20', '2022-05-28', '2022-05-31', 'stupid.png', 'gada', '10', '10', 'o'),
+(8, 'Mendongen', '1', 'dongeng', 'p', 'p', 'p', '2022-05-25', '2022-05-26', '2022-05-27', 'stupid.png', 'g', 'p', 'p', 'p'),
+(10, 'gada', '1', 'p', 'p', 'p', 'p', '2022-05-26', '2022-05-26', '2022-05-27', 'stupid.png', 'gada', 'p', 'p', 'p'),
+(11, 'java', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-11', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
+(12, 'html', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
+(13, 'CSS', '2', '2', '2', '2', '2', '2022-05-12', '2022-05-12', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
+(14, 'Python', '2', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
+(15, 'gatau', '2', 'p', 'p', 'p', 'p', '2022-05-11', '2022-05-11', '2022-05-11', 'stupid.png', 'p', 'p', 'p', 'p'),
+(16, 'tari', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
+(17, 'modern dance', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
+(18, 'menyanyi', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
+(19, 'beat box', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
+(20, 'apa', '3', 'p', 'p', 'p', 'p', '2022-05-24', '2022-05-24', '2022-05-24', 'stupid.png', 'p', 'p', 'p', 'p');
+
 -- --------------------------------------------------------
 
 --
@@ -97,8 +119,10 @@ CREATE TABLE `lomba` (
 
 CREATE TABLE `tim` (
   `id_tim` int(5) NOT NULL,
+  `emailketua` varchar(50) NOT NULL,
+  `id_lomba` int(5) NOT NULL,
   `id_user` int(5) NOT NULL,
-  `nama_tim` varchar(255) NOT NULL,
+  `nama_tim` varchar(100) NOT NULL,
   `nama_instansi` varchar(255) NOT NULL,
   `ketua_nama` varchar(255) NOT NULL,
   `ketua_nim` varchar(20) NOT NULL,
@@ -125,6 +149,14 @@ CREATE TABLE `tim` (
   `link_ktm_anggota4` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tim`
+--
+
+INSERT INTO `tim` (`id_tim`, `emailketua`, `id_lomba`, `id_user`, `nama_tim`, `nama_instansi`, `ketua_nama`, `ketua_nim`, `link_ktm_ketua`, `norek`, `jenisbank`, `anggota1_nama`, `anggota1_nim`, `anggota2_nama`, `anggota2_nim`, `anggota3_nama`, `anggota3_nim`, `anggota4_nama`, `anggota4_nim`, `link_buktibayar`, `status_verif_bayar`, `link_karya`, `link_orisinalitas`, `status_finalist`, `link_suratfinalis`, `link_ktm_anggota1`, `link_ktm_anggota2`, `link_ktm_anggota3`, `link_ktm_anggota4`) VALUES
+(31, 'inooo@gmail.com', 8, 0, 'hiuhu', 'sekolah', 'gatauu', '1234', 'abcd', '1234', 'abc', '', '', '', '', '', '', '', '', 'link', '', '', '', '', '', '', '', '', ''),
+(33, 'ayeshaprilia10@upi.edu', 10, 0, 'pppp', 'ppp', 'ppp', 'pppp', 'ppp', 'ppp', 'ppp', '', '', '', '', '', '', '', '', 'link', '', '', '', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -145,7 +177,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `email`, `username`, `password`, `hak_akses`) VALUES
 (6, 'inooo@gmail.com', 'inoteri', 'inookei', 'peserta'),
-(7, 'abc@gmail.com', 'abc', 'jjj', 'peserta');
+(7, 'abc@gmail.com', 'abc', 'jjj', 'peserta'),
+(11, 'admin@gmail.com', 'admin', 'admin', 'super_admin');
 
 --
 -- Indexes for dumped tables
@@ -182,16 +215,14 @@ ALTER TABLE `juri`
 --
 ALTER TABLE `lomba`
   ADD PRIMARY KEY (`id_lomba`),
-  ADD KEY `id_user` (`id_user`);
+  ADD UNIQUE KEY `nama_lomba` (`nama_lomba`);
 
 --
 -- Indexes for table `tim`
 --
 ALTER TABLE `tim`
   ADD PRIMARY KEY (`id_tim`),
-  ADD UNIQUE KEY `nama_tim` (`nama_tim`),
-  ADD KEY `status_verif_bayar` (`status_verif_bayar`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `status_verif_bayar` (`status_verif_bayar`);
 
 --
 -- Indexes for table `user`
@@ -209,54 +240,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lomba`
 --
 ALTER TABLE `lomba`
-  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `bayar`
---
-ALTER TABLE `bayar`
-  ADD CONSTRAINT `bayar_ibfk_1` FOREIGN KEY (`id_tim`) REFERENCES `tim` (`id_tim`),
-  ADD CONSTRAINT `bayar_ibfk_2` FOREIGN KEY (`id_lomba`) REFERENCES `lomba` (`id_lomba`);
-
---
--- Constraints for table `berkas`
---
-ALTER TABLE `berkas`
-  ADD CONSTRAINT `berkas_ibfk_1` FOREIGN KEY (`id_tim`) REFERENCES `tim` (`id_tim`);
-
---
--- Constraints for table `juri`
---
-ALTER TABLE `juri`
-  ADD CONSTRAINT `juri_ibfk_1` FOREIGN KEY (`id_tim`) REFERENCES `tim` (`id_tim`);
-
---
--- Constraints for table `lomba`
---
-ALTER TABLE `lomba`
-  ADD CONSTRAINT `lomba_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
-
---
--- Constraints for table `tim`
---
-ALTER TABLE `tim`
-  ADD CONSTRAINT `tim_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

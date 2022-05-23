@@ -5,9 +5,19 @@ use CodeIgniter\Model;
 class UsersModel extends Model
 {
     protected $table      = 'user';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id_user';
 
-    protected $allowedFields = ['email', 'username', 'password' ];
+    protected $allowedFields = ['email', 'username', 'password','hak_akses'];
 
+    function user($id_user){
+        return $this->db->table('tim')
+        ->join('user', 'user.id_user = tim.id_user')
+        ->where('id_user', $id_user)
+        ->get()->getResultArray();
+    }
 
+    function get_data_user(){
+        $hsl = $this->db->query("SELECT * FROM user");
+        return $hsl->getResult();
+    }
 }
