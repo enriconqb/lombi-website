@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/enriconqb/web-lombi">
+  <a href="https://github.com/enriconqb/lombi-website">
     <img src="images/1.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -38,10 +38,10 @@
   <p align="center">
     Website Lomba Untuk Lomba Terkini
     <br />
-    <a href="https://github.com/enriconqb/web-lombi"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/enriconqb/lombi-website"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/enriconqb/web-lombi">View Demo</a>
+    <a href="https://github.com/enriconqb/lombi-website">View Demo</a>
   </p>
 </div>
 
@@ -100,15 +100,15 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/enriconqb/web-lombi.svg?style=for-the-badge
-[contributors-url]: https://github.com/enriconqb/web-lombi/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/enriconqb/web-lombi.svg?style=for-the-badge
-[forks-url]: https://github.com/enriconqb/web-lombi/network/members
-[stars-shield]: https://img.shields.io/github/stars/enriconqb/web-lombi.svg?style=for-the-badge
-[stars-url]: https://github.com/enriconqb/web-lombi/stargazers
-[issues-shield]: https://img.shields.io/github/issues/enriconqb/web-lombi.svg?style=for-the-badge
-[issues-url]: https://github.com/enriconqb/web-lombi/issues
-[license-shield]: https://img.shields.io/github/license/enriconqb/web-lombi.svg?style=for-the-badge
-[license-url]: https://github.com/enriconqb/web-lombi/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/enriconqb/lombi-website.svg?style=for-the-badge
+[contributors-url]: https://github.com/enriconqb/lombi-website/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/enriconqb/lombi-website.svg?style=for-the-badge
+[forks-url]: https://github.com/enriconqb/lombi-website/network/members
+[stars-shield]: https://img.shields.io/github/stars/enriconqb/lombi-website.svg?style=for-the-badge
+[stars-url]: https://github.com/enriconqb/lombi-website/stargazers
+[issues-shield]: https://img.shields.io/github/issues/enriconqb/lombi-website.svg?style=for-the-badge
+[issues-url]: https://github.com/enriconqb/lombi-website/issues
+[license-shield]: https://img.shields.io/github/license/enriconqb/lombi-website.svg?style=for-the-badge
+[license-url]: https://github.com/enriconqb/lombi-website/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/enriconqb
