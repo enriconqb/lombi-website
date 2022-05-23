@@ -23,6 +23,7 @@ class Home extends BaseController
 
     public function detail($id_lomba)
     {
+        //Memasukkan data lomba ke variabel "detail"
         $data = array(
             'detail' => $this->datalomba->detail($id_lomba),
         );

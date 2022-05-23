@@ -24,4 +24,16 @@ class DaftarLombaModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    function getDetailTim($id_tim){
+        $hsl = $this->db->query("SELECT * FROM tim WHERE id_tim = $id_tim");
+        return $hsl->getRow();
+    }
+
+    function getDataTerbaru(){
+        $array = $this->db->getLastRow();
+        $hsl = $array->id_tim;
+        return $hsl;
+    }
+    
 }

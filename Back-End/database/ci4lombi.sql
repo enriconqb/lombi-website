@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 02:52 PM
+-- Generation Time: May 23, 2022 at 06:16 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -30,13 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `bayar` (
   `id_tim` int(5) NOT NULL,
   `nama_tim` varchar(255) NOT NULL,
-  `tgl_dibayar` date NOT NULL,
+  `tgl_dibayar` date NOT NULL DEFAULT current_timestamp(),
   `status_verif_bayar` varchar(20) NOT NULL,
   `biaya_registrasitim` varchar(20) NOT NULL,
   `biaya_registrasiindividu` varchar(20) NOT NULL,
   `link_buktibayar` varchar(255) NOT NULL,
   `id_lomba` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bayar`
+--
+
+INSERT INTO `bayar` (`id_tim`, `nama_tim`, `tgl_dibayar`, `status_verif_bayar`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_buktibayar`, `id_lomba`) VALUES
+(141, 'Tim1', '2022-05-23', 'Sudah Verifikasi', '50000', '', 'Tim1', 10),
+(142, 'Ulala', '2022-05-23', 'Belum Verifikasi', '50000', '', 'Ulala', 10);
 
 -- --------------------------------------------------------
 
@@ -49,6 +57,13 @@ CREATE TABLE `berkas` (
   `nama_tim` varchar(255) NOT NULL,
   `status_kelengkapanberkas` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `berkas`
+--
+
+INSERT INTO `berkas` (`id_tim`, `nama_tim`, `status_kelengkapanberkas`) VALUES
+(141, 'Tim1', 'Belum Verifikasi');
 
 -- --------------------------------------------------------
 
@@ -63,6 +78,30 @@ CREATE TABLE `juri` (
   `link_template_penilaian_juri` varchar(255) NOT NULL,
   `link_penilaianjuri` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list_lomba`
+--
+
+CREATE TABLE `list_lomba` (
+  `id_user` int(5) NOT NULL,
+  `nama_lomba` varchar(255) NOT NULL,
+  `nama_tim` varchar(255) NOT NULL,
+  `status_verif_bayar` varchar(255) DEFAULT NULL,
+  `status_kelengkapanberkas` varchar(255) DEFAULT NULL,
+  `id_lomba` int(5) NOT NULL,
+  `id_tim` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `list_lomba`
+--
+
+INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bayar`, `status_kelengkapanberkas`, `id_lomba`, `id_tim`) VALUES
+(16, 'gada', 'Tim1', 'Sudah Verifikasi', 'Belum Verifikasi', 10, 141),
+(17, 'gada', 'Ulala', 'Belum Verifikasi', NULL, 10, 142);
 
 -- --------------------------------------------------------
 
@@ -99,7 +138,7 @@ INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomb
 (6, 'Mewarnai', '3', 'gatau', 'gatau', 'gada', 'motor', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '0', '0', 'gada'),
 (7, 'Pantun', '1', 'pantun aja yg bagus', 'pe', 'p', 'p', '2022-05-20', '2022-05-28', '2022-05-31', 'stupid.png', 'gada', '10', '10', 'o'),
 (8, 'Mendongen', '1', 'dongeng', 'p', 'p', 'p', '2022-05-25', '2022-05-26', '2022-05-27', 'stupid.png', 'g', 'p', 'p', 'p'),
-(10, 'gada', '1', 'p', 'p', 'p', 'p', '2022-05-26', '2022-05-26', '2022-05-27', 'stupid.png', 'gada', 'p', 'p', 'p'),
+(10, 'gada', '1', 'p', 'p', 'p', 'p', '2022-05-26', '2022-05-26', '2022-05-27', 'stupid.png', 'gada', '50000', 'p', 'p'),
 (11, 'java', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-11', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
 (12, 'html', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
 (13, 'CSS', '2', '2', '2', '2', '2', '2022-05-12', '2022-05-12', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
@@ -154,8 +193,8 @@ CREATE TABLE `tim` (
 --
 
 INSERT INTO `tim` (`id_tim`, `emailketua`, `id_lomba`, `id_user`, `nama_tim`, `nama_instansi`, `ketua_nama`, `ketua_nim`, `link_ktm_ketua`, `norek`, `jenisbank`, `anggota1_nama`, `anggota1_nim`, `anggota2_nama`, `anggota2_nim`, `anggota3_nama`, `anggota3_nim`, `anggota4_nama`, `anggota4_nim`, `link_buktibayar`, `status_verif_bayar`, `link_karya`, `link_orisinalitas`, `status_finalist`, `link_suratfinalis`, `link_ktm_anggota1`, `link_ktm_anggota2`, `link_ktm_anggota3`, `link_ktm_anggota4`) VALUES
-(31, 'inooo@gmail.com', 8, 0, 'hiuhu', 'sekolah', 'gatauu', '1234', 'abcd', '1234', 'abc', '', '', '', '', '', '', '', '', 'link', '', '', '', '', '', '', '', '', ''),
-(33, 'ayeshaprilia10@upi.edu', 10, 0, 'pppp', 'ppp', 'ppp', 'pppp', 'ppp', 'ppp', 'ppp', '', '', '', '', '', '', '', '', 'link', '', '', '', '', '', '', '', '', '');
+(141, 'Tim1@email.com', 10, 16, 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Sudah Verifikasi', 'Team2', 'Team2', '', '', '', '', '', ''),
+(142, 'Ulala@gmail.com', 10, 17, 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Belum Verifikasi', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -176,9 +215,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `email`, `username`, `password`, `hak_akses`) VALUES
-(6, 'inooo@gmail.com', 'inoteri', 'inookei', 'peserta'),
-(7, 'abc@gmail.com', 'abc', 'jjj', 'peserta'),
-(11, 'admin@gmail.com', 'admin', 'admin', 'super_admin');
+(16, 'admin@gmail.com', 'admin', 'admin', 'super_admin'),
+(17, 'user@gmail.com', 'user', 'user', 'peserta');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +226,7 @@ INSERT INTO `user` (`id_user`, `email`, `username`, `password`, `hak_akses`) VAL
 -- Indexes for table `bayar`
 --
 ALTER TABLE `bayar`
-  ADD PRIMARY KEY (`status_verif_bayar`),
+  ADD UNIQUE KEY `id_tim_2` (`id_tim`),
   ADD KEY `id_tim` (`id_tim`),
   ADD KEY `nama_tim` (`nama_tim`),
   ADD KEY `biaya_registrasitim` (`biaya_registrasitim`),
@@ -200,6 +238,7 @@ ALTER TABLE `bayar`
 -- Indexes for table `berkas`
 --
 ALTER TABLE `berkas`
+  ADD UNIQUE KEY `id_tim_2` (`id_tim`),
   ADD KEY `id_tim` (`id_tim`),
   ADD KEY `nama_tim` (`nama_tim`);
 
@@ -209,6 +248,14 @@ ALTER TABLE `berkas`
 ALTER TABLE `juri`
   ADD KEY `id_tim` (`id_tim`),
   ADD KEY `nama_tim` (`nama_tim`);
+
+--
+-- Indexes for table `list_lomba`
+--
+ALTER TABLE `list_lomba`
+  ADD UNIQUE KEY `id_tim` (`id_tim`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_lomba` (`id_lomba`,`id_tim`);
 
 --
 -- Indexes for table `lomba`
@@ -221,8 +268,7 @@ ALTER TABLE `lomba`
 -- Indexes for table `tim`
 --
 ALTER TABLE `tim`
-  ADD PRIMARY KEY (`id_tim`),
-  ADD KEY `status_verif_bayar` (`status_verif_bayar`);
+  ADD PRIMARY KEY (`id_tim`);
 
 --
 -- Indexes for table `user`
@@ -246,13 +292,13 @@ ALTER TABLE `lomba`
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

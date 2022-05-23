@@ -21,7 +21,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-11 col-md-11 align-item-center">
                 <div class="border">
-                    <form action="<?='/daftarlomba/verifpayment'?>" method="post">
+                    <form action="<?='/daftarlomba/payment/'.$detail->id_lomba?>" method="post">
                         <fieldset class="p-4">
                             <table>
                                 <tbody>
@@ -92,18 +92,6 @@
                                         </td>
                                         <td class="col-md-2">
                                             <input type="text" class="border p-3 w-100 my-2" name="anggota4_nim" placeholder="NIM/NIS Anggota 4">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2" colspan="2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="link_buktibayar" placeholder="Link Bukti Pembayaran" required>
-                                        </td>
-                                        <td class="col-md-2">
-                                            <ul>
-                                                <li>Dana: 081234567890 a.n Pacar Raiya</li>
-                                                <li>OVO: 081234567890 a.n Pacar Raiya</li>
-                                                <li>GoPay: 081234567890 a.n Pacar Raiya</li>
-                                            </ul>
                                         </td>
                                     </tr>
                                     <tr>

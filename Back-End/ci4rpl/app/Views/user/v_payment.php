@@ -22,7 +22,7 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <p class="pl-4 pt-4">Jumlah yang harus di bayar:</p>
-                    <h2 class="pl-4 py-1">Rp. 50,000</h2>
+                    <h2 class="pl-4 py-1">Rp. <?=$detaillomba->biaya_registrasitim?></h2>
                     <p class="pl-4">Pembayaran dapat dilakukan melalui salah satu rekening berikut:</p>
                     <table>
                         <tr>
@@ -45,9 +45,9 @@
                         </tr>
                     </table>
                     
-                    <form action="<?='verifpayment'; ?>" method="post">
+                    <form action="<?='daftarlomba/verifpayment/'.$detailtim->id_tim?>" method="post">
                         <fieldset class="p-4">
-                            <input type="text" class="border p-3 w-100 my-2" name="buktibayar" placeholder="Link Bukti Pembayaran">
+                            <input type="text" class="border p-3 w-100 my-2" name="link_buktibayar" placeholder="Link Bukti Pembayaran" required>
                             <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Simpan</button>
                         </fieldset>
                     </form>

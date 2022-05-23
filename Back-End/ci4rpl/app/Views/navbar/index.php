@@ -127,6 +127,7 @@
               <?php 
               if(session()->get('hak_akses') === 'super_admin'){?>
                 <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Admin</a>
                   <a class="nav-link text-white add-button" href="<?php echo base_url('superadmin')?>">Admin</a>
                 </li>
               <?php
@@ -134,10 +135,10 @@
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo site_url('admin')?>">Lomba</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('daftarlomba/verifdone')?>">Lomba</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Logout</a>
                 </li>
               <?php
               }else{?>

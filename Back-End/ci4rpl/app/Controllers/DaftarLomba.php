@@ -24,19 +24,26 @@ class DaftarLomba extends BaseController
         return view('user/v_daftarlomba', $data);
     }
 
-    public function payment(){
-        $data = $this->request->getPost();
-        $this->daftarlomba->insert($data);
-        return view('user/v_verifikasipayment');
+    public function payment($id_lomba){
+        $data = $this->request->getPost(); //ambil data form
+        $this->daftarlomba->insert($data); //input data ke database lomba
+        $id_tim = $this->daftarlomba->getDataTerbaru;
+        $data = array( //ambil data lomba
+            'detaillomba' => $this->datalomba->detail($id_lomba),
+            'detailtim' => $this->daftarlomba->getDetailTim($id_tim),
+        );
+        return view('user/v_payment',$data);
     }
 
-    public function verifpayment(){
-        // $data = $this->request->getPost();
-        $data = array(
-            'daftar' => $this->request->getPost(),
+    public function verifpayment($id_lomba){
+        $data = $this->request->getPost(); //ambil data form
+        $daftarlomba->update($id_lomba, [
+            'link_buktibayar' => $data,
+        ]);
+        $data = array( //ambil data lomba
+            'detaillomba' => $this->datalomba->detail($id_lomba),
         );
-        $this->daftarlomba->insert($data);
-        return view('user/v_verifikasipayment');
+        return view('user/v_verifikasipayment',$data);
     }
 
     public function verifdone(){
