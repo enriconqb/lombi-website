@@ -11,10 +11,10 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <h3 class="bg-info text-white p-4">Upload Berkas Persyaratan dan Karya</h3>
-                    <form action="<?='kumpulberkasdone'; ?>" method="post">
+                    <form action="<?=base_url('kumpulberkas/save/'.$list_lomba['id_tim']) ?>" method="post">
                         <fieldset class="p-4">
-                            <input type="text" class="border p-3 w-100 my-2" name="karya" placeholder="Link Karya">
-                            <input type="text" class="border p-3 w-100 my-2" placeholder="Link Surat Orisinalitas Karya" name="syarat">
+                            <input type="text" class="border p-3 w-100 my-2" name="karya" placeholder="Link Karya" required>
+                            <input type="text" class="border p-3 w-100 my-2" name="syarat" placeholder="Link Surat Orisinalitas Karya" required>
                             <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Simpan</button>
                         </fieldset>
                     </form>

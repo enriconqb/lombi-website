@@ -44,7 +44,7 @@
                         </tr>
                     </table>
                     <div class="text-center py-3">
-                        <a href="<?='kumpulberkas'; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kumpulkan Berkas Lomba</button></a>
+                        <a href="<?php echo base_url(); ?>/kumpulberkas/pengisihan/<?php echo $list_lomba['id_tim'].'/'.$list_lomba['id_lomba']; ?>"><button type="submit" class="py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kumpulkan Berkas Lomba</button></a>
                     </div>
                 </div>
             </div>

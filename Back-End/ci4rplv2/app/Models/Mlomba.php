@@ -1,10 +1,20 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LombaModel extends Model
+class Mlomba extends Model
 {
-    protected $table = 'lomba';
+    protected $table      = 'lomba';
+
+    protected $allowedFields = ['id_lomba','nama_lomba', 'kategori_lomba','deskripsi_lomba','nama_penyelenggara',
+    'persyaratan_lomba','hadiah',
+    'tgl_daftar','tgl_kumpul','tgl_pengumuman',
+    'file_poster','file_booklet','biaya_regisrasitim','biaya_regitrasiindividu',
+    'link_template_penilaianjuri',
+    ];
+
     function get_lomba_home(){
         $hsl = $this->db->query("SELECT * FROM lomba ORDER BY kategori_lomba ASC");
         return $hsl->getResult();
@@ -30,4 +40,10 @@ class LombaModel extends Model
         $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba");
         return $hsl->getRow();
     }
+
+    function detailArray($id_lomba){
+        $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba");
+        return $hsl->getRowArray();
+    }
+
 }
