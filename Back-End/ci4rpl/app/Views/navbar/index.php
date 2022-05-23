@@ -123,12 +123,12 @@
 								<a class="nav-link" href="index.html">Hubungi Kami</a>
 							</li>
 						</ul>
-<<<<<<< HEAD
 						<ul class="navbar-nav ml-auto mt-10 d-flex flex-colomn">
               <?php 
               if(session()->get('hak_akses') === 'super_admin'){?>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Admin</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('superadmin')?>">Admin</a>
                 </li>
               <?php
               }?>
@@ -139,16 +139,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Logout</a>
-=======
-						<ul class="navbar-nav ml-auto mt-10 d-flex">
-              <?php 
-              if(session()->get('log')){?>
-                <li class="nav-item">
-                  <a class="nav-link px-3" href="#">Hai, <?php echo session()->get('username');?></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo site_url('auth/logout')?>">Logout</a>
->>>>>>> b3748a1ab156007af0f85ab7cf32cf46b1ee740c
                 </li>
               <?php
               }else{?>
