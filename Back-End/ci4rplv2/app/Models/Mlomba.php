@@ -11,8 +11,8 @@ class Mlomba extends Model
     protected $allowedFields = ['id_lomba','nama_lomba', 'kategori_lomba','deskripsi_lomba','nama_penyelenggara',
     'persyaratan_lomba','hadiah',
     'tgl_daftar','tgl_kumpul','tgl_pengumuman',
-    'file_poster','file_booklet','biaya_regisrasitim','biaya_regitrasiindividu',
-    'link_template_penilaianjuri',
+    'file_poster','link_booklet','biaya_regisrasitim','biaya_regitrasiindividu',
+    'link_template_penilaianjuri', 'id_user',
     ];
 
     function get_lomba_home(){

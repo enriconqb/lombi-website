@@ -39,7 +39,6 @@ class KumpulBerkas extends BaseController
             ];
             $modelberkas->save($data);
         }
-
         $save = $modellistlomba
         ->whereIn('id_tim',[$id_tim])
         ->set([

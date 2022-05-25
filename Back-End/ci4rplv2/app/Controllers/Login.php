@@ -56,8 +56,8 @@ class Login extends BaseController
     {
         $session = session();
         $session->destroy();
-        session()->setFlashdata('pesan','Berhasil Logout');
-        return redirect()->to(base_url('/login'));
+        $pesan = session()->setFlashdata('pesan','Berhasil Logout');
+        return redirect()->to(base_url('/login'))->with($pesan);
     }
 
 }

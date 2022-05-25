@@ -127,7 +127,6 @@
               <?php 
               if(session()->get('hak_akses') === 'super_admin'){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Admin</a>
                   <a class="nav-link text-white add-button" href="<?php echo base_url('superadmin')?>">Admin</a>
                 </li>
               <?php
