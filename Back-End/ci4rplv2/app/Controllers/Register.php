@@ -44,7 +44,7 @@ class Register extends Controller
                 // HARUS menggunakan 'password_verify()' ketika membandingkan password 
                 // 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
                 'password' => $this->request->getVar('password'),
-                'hak_akses'=> 'peserta',
+                'hak_akses'=> 'user',
             ];
             $model->save($data);
             session()->setFlashdata('pesan','Berhasil Membuat Akun');

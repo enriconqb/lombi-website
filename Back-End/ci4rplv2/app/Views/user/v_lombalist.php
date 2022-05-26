@@ -34,7 +34,7 @@
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa'){?>
-						<a href="<?php echo base_url(); ?>/pengumuman/info/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
+						<a href="<?php echo base_url(); ?>/pengumuman/info/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman Finalis</button></a>
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi'){?>
