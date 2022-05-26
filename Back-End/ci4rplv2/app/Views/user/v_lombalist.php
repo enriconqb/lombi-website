@@ -29,11 +29,16 @@
 				<td><?php echo $dt['status_kelengkapanberkas']?></td>
 				<td>
 					<?php
-					if($dt['status_verif_bayar'] === 'Sudah Verifikasi'){?>
-					<a href="<?php echo base_url(); ?>/Clistlomba/verifdone/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-warning me-3">Berkas</button></a>
+					if( $dt['status_verif_bayar'] === 'Belum Verifikasi'){?>
+						<a href="<?php echo base_url(); ?>/Clomba/vpayment/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-danger">Bayar</button></a>
 					<?php
-					}else{?>
-					<a href="<?php echo base_url(); ?>/Clomba/vpayment/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-danger">Bayar</button></a>
+					}
+					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa'){?>
+						<a href="<?php echo base_url(); ?>/pengumuman/info/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
+					<?php
+					}
+					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi'){?>
+						<a href="<?php echo base_url(); ?>/Clistlomba/verifdone/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-warning me-3">Berkas</button></a>
 					<?php
 					}?>
 				</td>

@@ -24,7 +24,7 @@ class KumpulBerkas extends BaseController
         
     }
 
-    public function save($id_tim)
+    public function save($id_tim,$id_lomba)
     {
         helper(['forms']);
         $modeltim = new Mtim();
@@ -35,16 +35,19 @@ class KumpulBerkas extends BaseController
             $data = [
                 'id_tim' => $id_tim,
                 'nama_tim' => $modeltim->getDetailTim($id_tim)['nama_tim'],
-                'status_kelengkapanberkas' => 'Belum Verifikasi',
+                'status_kelengkapanberkas' => 'Belum Diperiksa',
+                'id_lomba' => $id_lomba,
             ];
             $modelberkas->save($data);
         }
-        $save = $modellistlomba
-        ->whereIn('id_tim',[$id_tim])
-        ->set([
-            'status_kelengkapanberkas' => 'Belum Verifikasi',
-            ])
-        ->update();
+        else{
+            $save = $modellistlomba
+            ->whereIn('id_tim',[$id_tim])
+            ->set([
+                'status_kelengkapanberkas' => 'Belum Diperiksa',
+                ])
+            ->update();
+        }
 
 
         $data = [

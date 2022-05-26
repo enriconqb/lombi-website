@@ -165,7 +165,6 @@
                       <td><input type="text" class="form-control" name="password" placeholder="Masukkan Password Anda" required></td>
                     </tr>
                     
-                    
                     <div class="form-group">
                       <label for="sel1">Select</label>
                       <select class="form-control" id="pilihJurusan">

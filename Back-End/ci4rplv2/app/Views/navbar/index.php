@@ -131,6 +131,13 @@
                 </li>
               <?php
               }?>
+              <?php
+              if(session()->get('hak_akses') === 'user'){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('admin')?>">Panitia Lomba</a>
+                </li>
+              <?php
+              }?>
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">

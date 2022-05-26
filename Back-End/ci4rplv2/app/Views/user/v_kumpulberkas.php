@@ -11,7 +11,7 @@
             <div class="col-lg-5 col-md-8 align-item-center">
                 <div class="border">
                     <h3 class="bg-info text-white p-4">Upload Berkas Persyaratan dan Karya</h3>
-                    <form action="<?=base_url('kumpulberkas/save/'.$list_lomba['id_tim']) ?>" method="post">
+                    <form action="<?=base_url('kumpulberkas/save/'.$list_lomba['id_tim'].'/'.$list_lomba['id_lomba']) ?>" method="post">
                         <fieldset class="p-4">
                             <input type="text" class="border p-3 w-100 my-2" name="karya" placeholder="Link Karya" required>
                             <input type="text" class="border p-3 w-100 my-2" name="syarat" placeholder="Link Surat Orisinalitas Karya" required>
