@@ -131,13 +131,20 @@
                 </li>
               <?php
               }?>
+              <?php
+              if(session()->get('hak_akses') === 'user'){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('admin')?>">Panitia Lomba</a>
+                </li>
+              <?php
+              }?>
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('daftarlomba/verifdone')?>">Lomba</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('clistlomba/read')?>">Lomba</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Logout</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('/logout')?>">Logout</a>
                 </li>
               <?php
               }else{?>
@@ -145,7 +152,7 @@
 								  <a class="nav-link login-button" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="/daftar">Register</a>
+                  <a class="nav-link text-white add-button" href="/register">Register</a>
                 </li>
               <?php
               }?>
