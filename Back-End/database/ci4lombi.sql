@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 06:16 PM
+-- Generation Time: May 25, 2022 at 12:23 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -44,7 +44,9 @@ CREATE TABLE `bayar` (
 
 INSERT INTO `bayar` (`id_tim`, `nama_tim`, `tgl_dibayar`, `status_verif_bayar`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_buktibayar`, `id_lomba`) VALUES
 (141, 'Tim1', '2022-05-23', 'Sudah Verifikasi', '50000', '', 'Tim1', 10),
-(142, 'Ulala', '2022-05-23', 'Belum Verifikasi', '50000', '', 'Ulala', 10);
+(142, 'Ulala', '2022-05-23', 'Belum Verifikasi', '50000', '', 'Ulala', 10),
+(143, 'Tim5', '2022-05-25', 'Belum Verifikasi', '50000', '', 'Tim5', 10),
+(144, 'Meow', '2022-05-25', 'Belum Verifikasi', '50000', '', 'Meow', 10);
 
 -- --------------------------------------------------------
 
@@ -72,6 +74,7 @@ INSERT INTO `berkas` (`id_tim`, `nama_tim`, `status_kelengkapanberkas`) VALUES
 --
 
 CREATE TABLE `juri` (
+  `id_lomba` int(5) NOT NULL,
   `id_tim` int(5) NOT NULL,
   `nama_tim` varchar(255) NOT NULL,
   `status_penilaian_juri` varchar(100) NOT NULL,
@@ -101,7 +104,9 @@ CREATE TABLE `list_lomba` (
 
 INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bayar`, `status_kelengkapanberkas`, `id_lomba`, `id_tim`) VALUES
 (16, 'gada', 'Tim1', 'Sudah Verifikasi', 'Belum Verifikasi', 10, 141),
-(17, 'gada', 'Ulala', 'Belum Verifikasi', NULL, 10, 142);
+(17, 'gada', 'Ulala', 'Belum Verifikasi', NULL, 10, 142),
+(16, 'gada', 'Tim5', 'Belum Verifikasi', NULL, 10, 143),
+(18, 'gada', 'Meow', 'Belum Verifikasi', NULL, 10, 144);
 
 -- --------------------------------------------------------
 
@@ -121,34 +126,36 @@ CREATE TABLE `lomba` (
   `tgl_kumpul` date NOT NULL,
   `tgl_pengumuman` date NOT NULL,
   `file_poster` varchar(255) NOT NULL,
-  `file_booklet` varchar(255) NOT NULL,
-  `biaya_registrasitim` varchar(50) NOT NULL,
-  `biaya_registrasiindividu` varchar(50) NOT NULL,
-  `link_template_penilaianjuri` varchar(255) NOT NULL
+  `link_booklet` varchar(255) DEFAULT NULL,
+  `biaya_registrasitim` varchar(50) DEFAULT NULL,
+  `biaya_registrasiindividu` varchar(50) DEFAULT NULL,
+  `link_template_penilaianjuri` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `lomba`
 --
 
-INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomba`, `nama_penyelenggara`, `persyaratan_lomba`, `hadiah`, `tgl_daftar`, `tgl_kumpul`, `tgl_pengumuman`, `file_poster`, `file_booklet`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_template_penilaianjuri`) VALUES
-(1, 'Puisi', '1', 'Puisi adalah', 'Hehe', '1. abcd\r\n2. efgh\r\n3. ijkl', 'Uang Tunai, Sertifikat', '2022-05-19', '2022-05-26', '2022-05-28', 'stupid.png', '-', '500000', '200000', 'link'),
-(2, 'Menulis Hiragana', '1', 'apaan', 'pe', 'anuan', 'rahasia', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '400000', '200000', 'link'),
-(5, 'Bahasa C', '2', 'pe', 'pe', 'pe', 'pe', '2022-05-28', '2022-05-31', '2022-06-01', 'stupid.png', 'gada', 'kepo', 'keo', 'gada'),
-(6, 'Mewarnai', '3', 'gatau', 'gatau', 'gada', 'motor', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '0', '0', 'gada'),
-(7, 'Pantun', '1', 'pantun aja yg bagus', 'pe', 'p', 'p', '2022-05-20', '2022-05-28', '2022-05-31', 'stupid.png', 'gada', '10', '10', 'o'),
-(8, 'Mendongen', '1', 'dongeng', 'p', 'p', 'p', '2022-05-25', '2022-05-26', '2022-05-27', 'stupid.png', 'g', 'p', 'p', 'p'),
-(10, 'gada', '1', 'p', 'p', 'p', 'p', '2022-05-26', '2022-05-26', '2022-05-27', 'stupid.png', 'gada', '50000', 'p', 'p'),
-(11, 'java', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-11', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
-(12, 'html', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
-(13, 'CSS', '2', '2', '2', '2', '2', '2022-05-12', '2022-05-12', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p'),
-(14, 'Python', '2', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
-(15, 'gatau', '2', 'p', 'p', 'p', 'p', '2022-05-11', '2022-05-11', '2022-05-11', 'stupid.png', 'p', 'p', 'p', 'p'),
-(16, 'tari', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
-(17, 'modern dance', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p'),
-(18, 'menyanyi', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
-(19, 'beat box', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p'),
-(20, 'apa', '3', 'p', 'p', 'p', 'p', '2022-05-24', '2022-05-24', '2022-05-24', 'stupid.png', 'p', 'p', 'p', 'p');
+INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomba`, `nama_penyelenggara`, `persyaratan_lomba`, `hadiah`, `tgl_daftar`, `tgl_kumpul`, `tgl_pengumuman`, `file_poster`, `link_booklet`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_template_penilaianjuri`, `id_user`) VALUES
+(1, 'Puisi', '1', 'Puisi adalah', 'Hehe', '1. abcd\r\n2. efgh\r\n3. ijkl', 'Uang Tunai, Sertifikat', '2022-05-19', '2022-05-26', '2022-05-28', 'stupid.png', '-', '500000', '200000', 'link', 0),
+(2, 'Menulis Hiragana', '1', 'apaan', 'pe', 'anuan', 'rahasia', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '400000', '200000', 'link', 0),
+(5, 'Bahasa C', '2', 'pe', 'pe', 'pe', 'pe', '2022-05-28', '2022-05-31', '2022-06-01', 'stupid.png', 'gada', 'kepo', 'keo', 'gada', 0),
+(6, 'Mewarnai', '3', 'gatau', 'gatau', 'gada', 'motor', '2022-05-20', '2022-05-26', '2022-05-28', 'stupid.png', 'gada', '0', '0', 'gada', 0),
+(7, 'Pantun', '1', 'pantun aja yg bagus', 'pe', 'p', 'p', '2022-05-20', '2022-05-28', '2022-05-31', 'stupid.png', 'gada', '10', '10', 'o', 0),
+(8, 'Mendongen', '1', 'dongeng', 'p', 'p', 'p', '2022-05-25', '2022-05-26', '2022-05-27', 'stupid.png', 'g', 'p', 'p', 'p', 0),
+(10, 'gada', '1', 'p', 'p', 'p', 'p', '2022-05-26', '2022-05-26', '2022-05-27', 'stupid.png', 'gada', '50000', 'p', 'p', 0),
+(11, 'java', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-11', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(12, 'html', '2', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(13, 'CSS', '2', '2', '2', '2', '2', '2022-05-12', '2022-05-12', '2022-05-12', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(14, 'Python', '2', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(15, 'gatau', '2', 'p', 'p', 'p', 'p', '2022-05-11', '2022-05-11', '2022-05-11', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(16, 'tari', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(17, 'modern dance', '3', 'p', 'p', 'p', 'p', '2022-05-18', '2022-05-18', '2022-05-18', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(18, 'menyanyi', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(19, 'beat box', '3', 'p', 'p', 'p', 'p', '2022-05-10', '2022-05-10', '2022-05-10', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(20, 'apa', '3', 'p', 'p', 'p', 'p', '2022-05-24', '2022-05-24', '2022-05-24', 'stupid.png', 'p', 'p', 'p', 'p', 0),
+(28, 'Enak', '1', 'Enak', 'Enak', 'Enak', 'Enak', '2022-05-03', '2022-05-26', '2022-05-28', 'stupid.png', 'Enak', NULL, NULL, 'Enak', 19);
 
 -- --------------------------------------------------------
 
@@ -193,8 +200,10 @@ CREATE TABLE `tim` (
 --
 
 INSERT INTO `tim` (`id_tim`, `emailketua`, `id_lomba`, `id_user`, `nama_tim`, `nama_instansi`, `ketua_nama`, `ketua_nim`, `link_ktm_ketua`, `norek`, `jenisbank`, `anggota1_nama`, `anggota1_nim`, `anggota2_nama`, `anggota2_nim`, `anggota3_nama`, `anggota3_nim`, `anggota4_nama`, `anggota4_nim`, `link_buktibayar`, `status_verif_bayar`, `link_karya`, `link_orisinalitas`, `status_finalist`, `link_suratfinalis`, `link_ktm_anggota1`, `link_ktm_anggota2`, `link_ktm_anggota3`, `link_ktm_anggota4`) VALUES
-(141, 'Tim1@email.com', 10, 16, 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Sudah Verifikasi', 'Team2', 'Team2', '', '', '', '', '', ''),
-(142, 'Ulala@gmail.com', 10, 17, 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Belum Verifikasi', '', '', '', '', '', '', '', '');
+(141, 'Tim1@email.com', 10, 16, 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Sudah Verifikasi', 'Tim1', 'Tim1', '', '', '', '', '', ''),
+(142, 'Ulala@gmail.com', 10, 17, 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Ulala', 'Belum Verifikasi', '', '', '', '', '', '', '', ''),
+(143, 'Tim5@gmail.com', 10, 16, 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Belum Verifikasi', '', '', '', '', '', '', '', ''),
+(144, 'Meow@gmail.com', 10, 18, 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Meow', 'Belum Verifikasi', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -216,7 +225,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `email`, `username`, `password`, `hak_akses`) VALUES
 (16, 'admin@gmail.com', 'admin', 'admin', 'super_admin'),
-(17, 'user@gmail.com', 'user', 'user', 'peserta');
+(17, 'user@gmail.com', 'user', 'user', 'peserta'),
+(18, 'lomba@gmail.con', 'lomba', 'lomba', 'peserta'),
+(19, 'coco@gmail.com', 'coco', 'coco', 'peserta');
 
 --
 -- Indexes for dumped tables
@@ -246,6 +257,7 @@ ALTER TABLE `berkas`
 -- Indexes for table `juri`
 --
 ALTER TABLE `juri`
+  ADD UNIQUE KEY `id_tim_2` (`id_tim`),
   ADD KEY `id_tim` (`id_tim`),
   ADD KEY `nama_tim` (`nama_tim`);
 
@@ -261,8 +273,7 @@ ALTER TABLE `list_lomba`
 -- Indexes for table `lomba`
 --
 ALTER TABLE `lomba`
-  ADD PRIMARY KEY (`id_lomba`),
-  ADD UNIQUE KEY `nama_lomba` (`nama_lomba`);
+  ADD PRIMARY KEY (`id_lomba`);
 
 --
 -- Indexes for table `tim`
@@ -286,19 +297,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lomba`
 --
 ALTER TABLE `lomba`
-  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
