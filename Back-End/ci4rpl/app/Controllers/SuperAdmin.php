@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+use CodeIgniter\Controller;
+
 
 class SuperAdmin extends BaseController
 {

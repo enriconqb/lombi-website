@@ -20,7 +20,7 @@
                     <p class="text-justify"><?= $detail->deskripsi_lomba; ?></p>
                     <div class="row text-center pb-1">
                         <div class="col-sm-6">
-                            <a href="<?php echo base_url('daftarlomba/daftar/'.$detail->id_lomba)?>" class="btn btn-primary font-weight-bold">Daftarkan dirimu sekarang</a>
+                            <a href="<?php echo base_url('clomba/daftar/'.$detail->id_lomba)?>" class="btn btn-primary font-weight-bold">Daftarkan dirimu sekarang</a>
                         </div>
                         <div class="col-sm-6">
                             <a href="<?php echo base_url('pengumuman')?>" class="btn btn-warning font-weight-bold text-white">Pengumuman Pemenang</a>
