@@ -7,6 +7,7 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
+	<?php if (count($list_lomba)>0){ ?>
 	<table class="table table-hover">
 	  <thead>
 		<tr>
@@ -47,6 +48,9 @@
 		}?>
 	  </tbody>
 	</table>
+	<?php }else{ ?>
+		<h3 class = "text-center my-5">Kamu Belum Mendaftar Lomba Apapun</h3>
+	<?php } ?>
 </div>
 
 <?= $this->endSection(); ?>
