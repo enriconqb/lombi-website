@@ -1,4 +1,4 @@
-<?= $this->renderSection('title'); ?>
+<?= $this->section('title'); ?>
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -38,7 +38,7 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link bg-danger text-center">
-      <span class="brand-text font-weight-light "><b>Admin Panitia Lomba</b></span>
+      <span class="brand-text font-weight-light "><b>Super Admin</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -48,7 +48,7 @@
           <img src="<?= base_url() ?>/template/dist/img/dashboard.jpg" class="img-circle " alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('admin')?>" class="d-block">Dashboard</a>
+          <a href="<?php echo base_url('superadmin')?>" class="d-block">Dashboard</a>
         </div>
       </div>
 
@@ -57,16 +57,7 @@
           <img src="<?= base_url() ?>/template/dist/img/uploadLomba.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
-        </div>
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/avatar.png" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('akunstaff')?>" class="d-block">Akun Staff</a>
+          <a href="<?php echo base_url('dataakun')?>" class="d-block">Data Akun</a>
         </div>
       </div>
 
@@ -75,7 +66,7 @@
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('pembayaran')?>" class="d-block">Pembayaran</a>
+          <a href="<?php echo base_url('buatakun')?>" class="d-block">Buat Akun Admin</a>
         </div>
       </div>
 
@@ -84,30 +75,12 @@
           <img src="<?= base_url() ?>/template/dist/img/peserta.jpg" class="" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url('peserta')?>" class="d-block">Peserta</a>
+          <a href="<?php echo base_url('hakakses')?>" class="d-block">Hak Akses</a>
         </div> 
       </div>
-      
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/verifBerkas.jpg" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('verifberkas')?>" class="d-block">Verifikasi Berkas</a>
-        </div> 
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/pengumuman.jpg" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('pengumumanadmin')?>" class="d-block">Pengumuman</a>
-        </div>
-      </div>
-    </div>
   </aside>
 
     <?= $this->renderSection('content'); ?>
 
+  </div>
 </section>
