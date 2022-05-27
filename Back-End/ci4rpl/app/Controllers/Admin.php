@@ -37,7 +37,10 @@ class Admin extends BaseController
 
     public function edit($id_lomba){
         $model = new Mlomba();
-        $data['lomba_detail'] = $model->where('id_lomba',$id_lomba)->first();
+        $data= [
+            'lomba_detail'=> $model->where('id_lomba',$id_lomba)->first(),
+            'id_lomba'=> $id_lomba,
+        ];
         return view('admin/v_editlomba',$data);
     }
 
