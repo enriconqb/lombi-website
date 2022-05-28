@@ -34,10 +34,6 @@
             </div>
         <?php endif ?>
         <section>
-          <!-- <div class="card">
-            <div class="card-title">
-              <h3>Login</h3>
-            </div> -->
             <div class="card-body">
               <div class="card-login">
                 <form action="<?php echo base_url('admin/update').'/'.$lomba_detail['id_lomba']?>" method="post">
