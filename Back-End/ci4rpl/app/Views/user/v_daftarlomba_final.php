@@ -1,7 +1,7 @@
 <?= $this->extend('navbar/index'); ?>
 
 <?= $this->section('title'); ?>
-<title>Daftar Lomba</title>
+<title>Daftar Ulang</title>
 <?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>

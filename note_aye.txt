@@ -1,4 +1,5 @@
 logo navbar (done)
-kondisi pengumuman finalis
+kondisi pengumuman finalis (done)
 kondisi pengumuman pemenang
 kondisi daftar lomba (done)
+halaman daftar ulang
