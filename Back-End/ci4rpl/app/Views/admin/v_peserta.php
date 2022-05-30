@@ -49,7 +49,7 @@
                     <td><?php echo $dt['nama_instansi']?></td>
                     <td><?php echo $dt['ketua_nama']?></td>
                     <td>
-                      <a href="<?php echo base_url('peserta/data'); ?><?php echo '/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-warning me-3">Cek</button></a>
+                      <a href="<?php echo base_url('peserta/data'); ?><?php echo '/'.$dt['id_tim']; ?>"><button type="button" class="btn btn-warning me-3">Cek</button></a>
                     </td>
                     </tr>
                   <?php
