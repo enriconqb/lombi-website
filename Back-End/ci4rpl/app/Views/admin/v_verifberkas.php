@@ -1,7 +1,7 @@
 <?= $this->extend('admin/template/base_admin'); ?>
 
 <?= $this->section('title');?>
-<title>Upload Lomba</title>
+<title>Verifikasi Berkas</title>
 <?= $this->endSection();?>
 
 
@@ -23,7 +23,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header bg-secondary">
-              <h3 class="card-title">Data Peserta Website </h3>
+              <h3 class="card-title">Data Kelengkapan Berkas</h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -32,12 +32,13 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
-              <table class="table table-hover text-nowrap">
+            <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>Nama Tim/Sekolah</th>
+                    <th>Nama Tim</th>
                     <th>Status Kelengkapan </th>
-                    <th>Cek Berkas</th>
+                    <th>Status Berkas</th>
+                    <th>Lihat Berkas</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -61,6 +62,9 @@
                         <?php
                         }
                       }?>
+                    </td>
+                    <td>
+                      <a href="<?php echo base_url('cekberkas/linkberkas'); ?><?php echo '/'.$dt['id_tim']; ?>"><button type="button" class="btn btn-info me-3">Cek</button></a>
                     </td>
                     <td>
                       <form action="verifberkas/cek/<?php echo $dt['id_tim']?>" class="d-flex flex-colomn">

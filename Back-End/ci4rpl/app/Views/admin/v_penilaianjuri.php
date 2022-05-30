@@ -9,143 +9,80 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Data Penilaian Juri</h1>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <div class="col-sm-6">
+          <h1 class="m-0"><b>Data Penilaian Juri</b></h1>
+        </div> <!-- /.container-fluid -->
+      </div>
+    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+    <div class="mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header bg-secondary">
+              <h3 class="card-title">Data Penilaian</h3>
+
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
                   <tr>
                     <th>Nama Tim</th>
                     <th>Berkas Tim</th>
                     <th>Berkas Penilaian Tim</th>
                     <th>Status Penilaian</th>
-                    <th>Edit Penilaian</th>
+                    <th>Action</th>
                   </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
+                  <?php 
+                  $i=0; foreach($tbl_juri as $dt){?>
                   <tr>
-                    <td>Tim Ganjil</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-success">Sudah</button></td>
+                    <td><?php echo $dt['nama_tim']?></td>
+                    <td><?php echo $dt['tgl_dibayar']?></td>
+                    <td><?php echo $dt['link_penilaian juri']?></td>
                     <td>
-                      <a href="#" class="btn btn-warning">Cek</a> 
-                      <a href="#" class="btn btn-danger">Hapus</a>
+                      <?php if ($dt['status_penilaian_juri']==='belum')
+                      {?>
+                         <p class="text-warning"><b>Belum</b></p>
+                      <?php 
+                      }else{
+                        if($dt['status_verif_bayar']==='sudah'
+                        ){?>
+                          <p class="text-success"><b>Sudah</b></p>
+                        <?php
+                        }else{?>
+                          <p class="text-danger"><b>Gagal</b></p>
+                        <?php
+                        }
+                      }?>
+                    </td>
+                    <td>
+                      <form action="pembayaran/cek/<?php echo $dt['id_tim']?>" class="d-flex flex-colomn">
+                        <select class="form-control col-6"  name="status_verif_bayar">
+                          <option selected="Belum Verifikasi">Pilih Status Pembayaran</option>
+                          <option value="Belum">Belum</option>
+                          <option value="Sudah">Sudah</option>
+                        </select>
+                        <input class="btn btn-success" type="submit" value="Cek"></input>
+                      </form>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Tim Genap</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-danger">Belum</button></td>
-                    <td>
-                      <a href="#" class="btn btn-success">Tambah</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-success">Sudah</button></td>
-                    <td>
-                      <a href="#" class="btn btn-warning">Cek</a> 
-                      <a href="#" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Genap</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-danger">Belum</button></td>
-                    <td>
-                      <a href="#" class="btn btn-success">Tambah</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-success">Sudah</button></td>
-                    <td>
-                      <a href="#" class="btn btn-warning">Cek</a> 
-                      <a href="#" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Genap</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-danger">Belum</button></td>
-                    <td>
-                      <a href="#" class="btn btn-success">Tambah</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-success">Sudah</button></td>
-                    <td>
-                      <a href="#" class="btn btn-warning">Cek</a> 
-                      <a href="#" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Genap</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-danger">Belum</button></td>
-                    <td>
-                      <a href="#" class="btn btn-success">Tambah</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-success">Sudah</button></td>
-                    <td>
-                      <a href="#" class="btn btn-warning">Cek</a> 
-                      <a href="#" class="btn btn-danger">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Genap</td>
-                    <td>Ulalala.pdf</td>
-                    <td>Nilainya.pdf</td>
-                    <td align="center"><button class="btn btn-outline-danger">Belum</button></td>
-                    <td>
-                      <a href="#" class="btn btn-success">Tambah</a>
-                    </td>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-              <!-- /.card-body -->
+                  <?php
+                  }?>
+                </tbody>
+              </table>
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+    </div>   
   </div>
 <?= $this->endSection();?>
