@@ -11,7 +11,7 @@ class Mlomba extends Model
     protected $allowedFields = ['id_lomba','nama_lomba', 'kategori_lomba','deskripsi_lomba','nama_penyelenggara',
     'persyaratan_lomba','hadiah',
     'tgl_daftar','tgl_kumpul','tgl_pengumuman',
-    'file_poster','link_booklet','biaya_regisrasitim','biaya_regitrasiindividu',
+    'file_poster','link_booklet','biaya_registrasitim','biaya_registrasiindividu',
     'link_template_penilaianjuri', 'id_user',
     ];
 
@@ -44,6 +44,15 @@ class Mlomba extends Model
     function detailArray($id_lomba){
         $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba");
         return $hsl->getRowArray();
+    }
+
+    function getInfoLombaUser($id_user){
+        $value = false;
+        $data = $this->whereIn('id_user',[$id_user])->orderBy('nama_lomba')->findAll();
+        if($data != NULL){
+            $value = true;
+        }
+        return $value;
     }
 
 }

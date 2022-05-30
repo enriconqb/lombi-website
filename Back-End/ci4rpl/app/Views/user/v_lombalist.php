@@ -35,10 +35,18 @@
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa' && $dt['status_final'] === 'ya'){?>
-						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman Finalis</button></a>
+						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
 					<?php
 					}
-					else if($dt['status_final'] === 'tidak'){?>
+					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa'){?>
+						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
+					<?php
+					}
+					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi'){?>
+						<a href="<?php echo base_url(); ?>/kumpulberkas/pengisihan/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-warning">Berkas</button></a>
+					<?php
+					}
+					else if($dt['status_final'] === 'tidak' ){?>
 					Tidak masuk final
 					<?php } ?>
 				</td>

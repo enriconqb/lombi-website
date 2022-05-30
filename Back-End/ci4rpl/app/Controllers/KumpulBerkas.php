@@ -39,6 +39,14 @@ class KumpulBerkas extends BaseController
                 'id_lomba' => $id_lomba,
             ];
             $modelberkas->save($data);
+
+            $save = $modellistlomba
+            ->whereIn('id_tim',[$id_tim])
+            ->set([
+                'status_kelengkapanberkas' => 'Belum Diperiksa',
+                ])
+            ->update();
+            
         }
         else{
             $save = $modellistlomba
@@ -62,7 +70,6 @@ class KumpulBerkas extends BaseController
             ])
         ->update();
         return view('user/v_kumpulberkasdone');
-
 
     }
 }
