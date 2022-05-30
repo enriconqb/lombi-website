@@ -92,7 +92,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 					<a class="navbar-brand col-3 d-flex justify-content-center" href="/home">
-						<img src="images/logo.png" alt="">
+						<img src="<?= base_url();  ?>/images/logo.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,18 +127,24 @@
               <?php 
               if(session()->get('hak_akses') === 'super_admin'){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Admin</a>
                   <a class="nav-link text-white add-button" href="<?php echo base_url('superadmin')?>">Admin</a>
+                </li>
+              <?php
+              }?>
+              <?php
+              if(session()->get('hak_akses') === 'user'){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('admin')?>">Panitia Lomba</a>
                 </li>
               <?php
               }?>
               <?php 
               if(session()->get('log')){?>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('daftarlomba/verifdone')?>">Lomba</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('clistlomba/read')?>">Lomba</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('auth/logout')?>">Logout</a>
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('/logout')?>">Logout</a>
                 </li>
               <?php
               }else{?>
@@ -146,7 +152,7 @@
 								  <a class="nav-link login-button" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="/daftar">Register</a>
+                  <a class="nav-link text-white add-button" href="/register">Register</a>
                 </li>
               <?php
               }?>

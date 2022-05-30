@@ -14,7 +14,7 @@
 				<!-- Header Contetnt -->
 				<div class="content-block">
 					<h1>PEMENANG </h1>
-					<h1>LOMBA PUISI </h1>					
+					<h1 class="text-uppercase">LOMBA <?= $nama->nama_lomba; ?> </h1>					
 				</div>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 						<div class="chips-wrapper" style="background-color: rgb(30, 49, 116);">
 							<h3 class="font-quicksand font-weight-600 font-size-20 text-white">✨ Juara 1 ✨</h3>
 						</div>
-						<h2 class="font-quicksand font-weight-600mt-4" style="color: rgb(30, 49, 116);">Dari Belakang</h2>
+						<h2 class="font-quicksand font-weight-600mt-4 text-uppercase" style="color: rgb(30, 49, 116);"><?= $juara1->nama_tim; ?></h2>
 					</div>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 								<div class="chips-wrapper" style="background-color: rgb(30, 49, 116);">
 									<h3 class="font-quicksand font-weight-600 font-size-20 text-white">✨ Juara 2 ✨</h3>
 								</div>
-								<h2 class="font-quicksand font-weight-600 mt-4" style="color: rgb(30, 49, 116);">Yang Diduakan</h2>
+								<h2 class="font-quicksand font-weight-600 mt-4 text-uppercase" style="color: rgb(30, 49, 116);"><?= $juara2->nama_tim; ?></h2>
 							</div>
 						</div>
 					</div>
@@ -56,7 +56,7 @@
 								<div class="chips-wrapper" style="background-color: rgb(30, 49, 116);">
 									<h3 class="font-quicksand font-weight-600 font-size-20 text-white">✨ Juara 3 ✨</h3>
 								</div>
-								<h2 class="font-quicksand font-weight-600 mt-4" style="color: rgb(30, 49, 116);">Yang Terlupakan</h2>
+								<h2 class="font-quicksand font-weight-600 mt-4 text-uppercase" style="color: rgb(30, 49, 116);"><?= $juara3->nama_tim; ?></h2>
 							</div>
 						</div>
 					</div>

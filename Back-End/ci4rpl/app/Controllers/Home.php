@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\LombaModel;
+use CodeIgniter\Controller;
+use App\Models\Mlomba;
+
 
 class Home extends BaseController
 {
     protected $datalomba;
     
     public function __construct(){
-        $this->datalomba = new LombaModel();
+        $this->datalomba = new Mlomba();
     }
 
     public function index(){
@@ -41,4 +43,5 @@ class Home extends BaseController
             return view('user/v_kategori', compact('data'));
         }
     }
+
 }
