@@ -25,7 +25,6 @@ class Peserta extends BaseController
         $model = new Mtim();
         $data= [
             'tim_detail'=> $model->where('id_tim',$id_tim)->first(),
-            'id_tim'=> $id_tim,
         ];
         return view('admin/v_detaildatapeserta',$data);
     }

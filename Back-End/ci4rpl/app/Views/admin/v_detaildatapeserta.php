@@ -27,14 +27,14 @@
         <section>
             <div class="card-body">
               <div class="card-login">
-                <form action="<?php echo base_url('peserta/data').'/'.$tim_detail['id_tim']?>" method="POST">
+                <form action="<?php echo base_url('peserta/update').'/'.$tim_detail['id_tim']?>" method="POST">
                     <tr>
                       <td><label style="margin-top: 10px;" for="tim">Nama Tim</label></td>
                       <td><input style="margin-left: 10px; width: 500px; margin-top: 10px;"  type="text" class="form-control" name="tim" placeholder="Nama Tim" value="<?php echo $tim_detail['nama_tim']?>"></td>
                     </tr>
                     <tr>
                       <td><label style="margin-top: 10px;" for="ketua">Nama Ketua</label></td>
-                      <td><input style="margin-left: 10px; width: 500px; margin-top: 10px;" type="text" class="form-control" name="ketua" placeholder="Nama Ketua Lomba" value="<?php echo $tim_detail['nama_ketua']?>"></textarea></td>
+                      <td><input style="margin-left: 10px; width: 500px; margin-top: 10px;" type="text" class="form-control" name="ketua" placeholder="Nama Ketua Lomba" value="<?php echo $tim_detail['ketua_nama']?>"></textarea></td>
                     </tr>
                     <tr>
                       <td><label for="anggota1">Nama Anggota 1</label></td>
