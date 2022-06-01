@@ -4,13 +4,14 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\Mlistlomba;
 use App\Models\Mlomba;
+use App\Models\Mtim;
 
 
 class Pengumuman extends BaseController
 {
     public function __construct(){
         $this->datalomba = new Mlomba();
-        $this->datafinal = new Mlistlomba();
+        $this->datatim = new Mtim();
     }
 
     public function index()
@@ -22,19 +23,28 @@ class Pengumuman extends BaseController
     {
         $data = array(
             'nama' => $this->datalomba->detail($id_lomba),
-            'list_lomba' => $this->datafinal->final($id_lomba,$id_tim),
+            'tim' => $this->datatim->final($id_lomba,$id_tim),
         );
         return view('user/v_pengumumanfinal', $data);
     }
 
-    public function juara($id_lomba){
+    public function notfinal($id_tim,$id_lomba)
+    {
+        $data = array(
+            'nama' => $this->datalomba->detail($id_lomba),
+            'tim' => $this->datatim->notfinal($id_lomba,$id_tim),
+        );
+        return view('user/v_pengumumanfinal_notfinal', $data);
+    }
+
+    public function juara($id_tim,$id_lomba){
         $ada = $this->datalomba->juara($id_lomba);
         if($ada){
             $data = array(
                 'nama' => $this->datalomba->detail($id_lomba),
-                'juara1' => $this->datafinal->juara1($id_lomba),
-                'juara2' => $this->datafinal->juara2($id_lomba),
-                'juara3' => $this->datafinal->juara3($id_lomba),
+                'juara1' => $this->datatim->juara1($id_lomba),
+                'juara2' => $this->datatim->juara2($id_lomba),
+                'juara3' => $this->datatim->juara3($id_lomba),
             );
             return view('user/v_pengumuman', $data);
         }

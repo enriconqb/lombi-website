@@ -13,6 +13,7 @@ class Mlomba extends Model
     'tgl_daftar','tgl_kumpul','tgl_pengumuman',
     'file_poster','link_booklet','biaya_registrasitim','biaya_registrasiindividu',
     'link_template_penilaianjuri', 'id_user',
+    'status_juara',
     ];
 
     function get_lomba_home(){

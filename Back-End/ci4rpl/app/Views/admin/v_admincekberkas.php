@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <td width="200px"><label for="user">Surat Keterangan Orisinalitas Karya        </label></td>
-                            <td style="margin-left: 10px; width: 500px; margin-top: 10px;" class="form-control" placeholder="Surat Keterangan Orisinalitas Karya">"<?php echo $tim_detail['link_orisinalitas']?></td>
+                            <td style="margin-left: 10px; width: 500px; margin-top: 10px;" class="form-control" placeholder="Surat Keterangan Orisinalitas Karya"><?php echo $tim_detail['link_orisinalitas']?></td>
                         </tr>
                         <tr>
                             <td width="200px"><label for="user">Kartu Pelajar/KTM Ketua        </label></td>
