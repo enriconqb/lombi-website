@@ -8,5 +8,5 @@ class Mberkas extends Model
 {
     protected $table      = 'berkas';
 
-    protected $allowedFields = ['id_tim','nama_tim','status_kelengkapanberkas','id_lomba'];
+    protected $allowedFields = ['id_tim','nama_tim','status_kelengkapanberkas','id_lomba','status_final'];
 }

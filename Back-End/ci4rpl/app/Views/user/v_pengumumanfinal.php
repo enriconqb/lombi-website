@@ -26,16 +26,16 @@
 	<div class="container">
 		<div class="text-center">
 			<h2 class="text-uppercase">
-              ✨ selamat <?= $list_lomba->nama_tim; ?>!! ✨
+              ✨ selamat <?= $tim->nama_tim; ?>!! ✨
             </h2>
             <h3 class="text-uppercase">kamu merupakan finalis dari lomba <?= $nama->nama_lomba; ?></h3>
             <h3 class="text-uppercase">dengan perolehan skor sebesar:</h3>
             <h2 class="text-uppercase">
-                <?= $list_lomba->skor; ?>
+                <?= $tim->skor; ?>
             </h2>
             <br>
             <h3 class="text-uppercase">Jangan lupa untuk melakukan pendaftaran ulang pada link berikut ya!!</h3>
-            <a href="<?php echo base_url(); ?>/Finalis/daftar/<?= $list_lomba->id_tim; ?>/<?= $list_lomba->id_lomba; ?>"><button type="button" class="btn btn-success">DAFTAR ULANG</button></a>
+            <a href="<?php echo base_url(); ?>/Finalis/daftar/<?= $tim->id_tim; ?>/<?= $tim->id_lomba; ?>"><button type="button" class="btn btn-success">DAFTAR ULANG</button></a>
 		</div>
 	</div>
 </section>

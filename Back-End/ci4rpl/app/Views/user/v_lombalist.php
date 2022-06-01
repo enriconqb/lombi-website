@@ -30,16 +30,20 @@
 				<td><?php echo $dt['status_kelengkapanberkas']?></td>
 				<td>
 					<?php
-					if( $dt['status_verif_bayar'] === 'Belum Verifikasi'){?>
+					if( $dt['status_verif_bayar'] === 'Belum Verifikasi' || $dt['status_verif_bayar'] === 'Gagal Verifikasi'){?>
 						<a href="<?php echo base_url(); ?>/Clomba/vpayment/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-danger">Bayar</button></a>
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa' && $dt['status_final'] === 'ya'){?>
-						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
+						<a href="<?php echo base_url(); ?>/pengumuman/juara/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman Juara</button></a>
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_kelengkapanberkas'] === 'Sudah Diperiksa'){?>
-						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman</button></a>
+						<a href="<?php echo base_url(); ?>/pengumuman/notfinal/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-success">Pengumuman Finalis</button></a>
+					<?php
+					}
+					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi' && $dt['status_final'] === 'ya'){?>
+						<a href="<?php echo base_url(); ?>/pengumuman/final/<?php echo $dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-warning">Berkas</button></a>
 					<?php
 					}
 					else if($dt['status_verif_bayar'] === 'Sudah Verifikasi'){?>

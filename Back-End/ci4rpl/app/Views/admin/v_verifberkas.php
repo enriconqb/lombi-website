@@ -38,6 +38,7 @@
                     <th>Nama Tim</th>
                     <th>Status Kelengkapan </th>
                     <th>Status Berkas</th>
+                    <th>Status Final</th>
                     <th>Lihat Berkas</th>
                   </tr>
                 </thead>
@@ -61,6 +62,16 @@
                           <button class="btn btn-warning">Kurang</button>
                         <?php
                         }
+                      }?>
+                    </td>
+                    <td>
+                      <?php if ($dt['status_final']==='ya')
+                      {?>
+                        <button class="btn btn-success">Final</button>
+                      <?php 
+                      }else{?>
+                        <button class="btn btn-outline-danger">Tidak</button>
+                      <?php
                       }?>
                     </td>
                     <td>

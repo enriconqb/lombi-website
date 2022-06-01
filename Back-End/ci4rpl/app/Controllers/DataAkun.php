@@ -4,6 +4,11 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 
 use App\Models\Mlomba;
+use App\Models\Mbayar;
+use App\Models\Mberkas;
+use App\Models\Mjuri;
+use App\Models\Mlistlomba;
+use App\Models\Mtim;
 use App\Models\Muser;
 
 class DataAkun extends BaseController
@@ -106,8 +111,36 @@ class DataAkun extends BaseController
     }
 
     public function delete($id_user){
-        $model = new Muser();
-        $data = $model->whereIn('id_user', [$id_user])->delete();
+        $modelbayar         = new Mbayar();
+        $modelberkas        = new Mberkas();
+        $modeljuri          = new Mjuri();
+        $modellistlomba     = new Mlistlomba();
+        $modellomba         = new Mlomba();
+        $modeltim           = new Mtim();
+        $modeluser          = new Muser();
+
+        $isStaff = false;
+        if($modeluser->whereIn('id_user',[$id_user])->first()['id_lomba'] !== NULL){
+            $isStaff = true;
+        }
+
+        if (! $isStaff){
+            $datalomba = $modellomba->whereIn('id_user', [$id_user])->findAll();
+            foreach($datalomba as $data){
+                $id_lomba = $data['id_lomba'];
+                $data = $modelbayar->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modelberkas->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modeljuri->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modellistlomba->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modellomba->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modeltim->whereIn('id_lomba', [$id_lomba])->delete();
+                $data = $modeluser->whereIn('id_lomba', [$id_lomba])->delete();
+            }
+            $data = $modeluser->whereIn('id_user', [$id_user])->delete();
+        }
+        else{
+            $data = $modeluser->whereIn('id_user', [$id_user])->delete();
+        }
         return redirect()->to(base_url('dataakun'));
     }
 }
