@@ -10,7 +10,7 @@ use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 
 // === add Auth === 
-use App\Filters\AuthFilter;
+use App\Filters\Auth;
 
 class Filters extends BaseConfig
 {
@@ -26,7 +26,8 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'authFilter' => \App\Filters\AuthFilter::class,
+        // === add Auth === 
+        'auth'          => Auth::class,
     ];
 
     /**

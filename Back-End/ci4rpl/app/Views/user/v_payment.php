@@ -45,7 +45,7 @@
                         </tr>
                     </table>
                     
-                    <form action="<?='daftarlomba/verifpayment/'.$detailtim->id_tim?>" method="post">
+                    <form action="<?= base_url('clomba/verifikasi/'.$detailtim['id_tim'])?>" method="post">
                         <fieldset class="p-4">
                             <input type="text" class="border p-3 w-100 my-2" name="link_buktibayar" placeholder="Link Bukti Pembayaran" required>
                             <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Simpan</button>
