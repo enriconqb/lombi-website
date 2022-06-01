@@ -55,4 +55,8 @@ class Mlomba extends Model
         return $value;
     }
 
+    function juara($id_lomba){
+        $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba AND status_juara = 'sudah' ");
+        return $hsl->getRow();
+    }
 }

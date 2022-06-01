@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-11 col-md-11 align-item-center">
                 <div class="text-center">
-                    <img src="<?= base_url();  ?>/images/daftardanpayment/progress_bar_1.png" class="w-75">
+                    <img src="<?= base_url();  ?>/images/daftardanpayment/tl_final.png" class="w-50">
                 </div>
             </div>
         </div>
@@ -21,69 +21,84 @@
         <div class="row justify-content-center">
             <div class="col-lg-11 col-md-11 align-item-center">
                 <div class="border">
-                    <form action="<?='daftarlomba/payment'; ?>" method="post">
+                    <form action="<?='/finalis/daftar_ulang/'.$data->id_tim; ?>" method="post">
                         <fieldset class="p-4">
+                            <input type="hidden" name="id_tim" value="<?= $data->id_tim; ?>">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td colspan="3" class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="namatim" placeholder="Nama Tim">
+											<select class="border w-100 my-2" name="id_lomba">
+												<option value="<?=$detail->id_lomba?>"><?= $detail->nama_lomba; ?> - Tim: Rp. <?= $detail->biaya_registrasitim; ?> - Individu: Rp. <?= $detail->biaya_registrasiindividu; ?></option>
+											</select>
+										</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="ketua_nama" placeholder="Nama Ketua" value="<?=$data->ketua_nama?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="ketua_nim" placeholder="NIM/NIS Ketua" value="<?=$data->ketua_nim?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_ktm_ketua" placeholder="Kartu Pelajar/KTM Ketua" value="<?=$data->link_ktm_ketua?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="norek" placeholder="Nomor Rekening Ketua" value="<?=$data->norek?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="jenisbank" placeholder="Bank" value="<?=$data->jenisbank?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota1_nama" placeholder="Nama Anggota 1" value="<?=$data->anggota1_nama?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota1_nim" placeholder="NIM/NIS Anggota1" value="<?=$data->anggota1_nim?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_ktm_anggota1" placeholder="Link KTM / Kartu Pelajar Anggota 1" value="<?=$data->link_ktm_anggota1?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota2_nama" placeholder="Nama Anggota 2" value="<?=$data->anggota2_nama?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota2_nim" placeholder="NIM/NIS Anggota 2" value="<?=$data->anggota2_nim?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_ktm_anggota2" placeholder="Link KTM / Kartu Pelajar Anggota 2" value="<?=$data->link_ktm_anggota2?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota3_nama" placeholder="Nama Anggota 3" value="<?=$data->anggota3_nama?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota3_nim" placeholder="NIM/NIS Anggota 3" value="<?=$data->anggota3_nim?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_ktm_anggota3" placeholder="Link KTM / Kartu Pelajar Anggota 3" value="<?=$data->link_ktm_anggota3?>">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota4_nama" placeholder="Nama Anggota 4" value="<?=$data->anggota4_nama?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="anggota4_nim" placeholder="NIM/NIS Anggota 4" value="<?=$data->anggota4_nim?>">
+                                        </td>
+                                        <td class="col-md-2">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_ktm_anggota4" placeholder="Link KTM / Kartu Pelajar Anggota 4" value="<?=$data->link_ktm_anggota4?>">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="jenislomba" placeholder="Jenis Lomba">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="namaketua" placeholder="Nama Ketua">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="nimketua" placeholder="NIM/NIS Ketua">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="ktmketua" placeholder="Kartu Pelajar/KTM Ketua">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="norek" placeholder="Nomor Rekening Ketua">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="bank" placeholder="Bank">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="anggota1" placeholder="Nama Anggota 1">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="nimanggota1" placeholder="NIM/NIS Anggota1">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="anggota2" placeholder="Nama Anggota 2">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="nimanggota2" placeholder="NIM/NIS Anggota 2">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="anggota3" placeholder="Nama Anggota 3">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="nimanggota3" placeholder="NIM/NIS Anggota 3">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="anggota4" placeholder="Nama Anggota 4">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" class="border p-3 w-100 my-2" name="nimanggota4" placeholder="NIM/NIS Anggota 4">
+                                            <input type="text" class="border p-3 w-100 my-2" name="link_suratfinalis" placeholder="Link Capture Bukti Finalis" value="<?=$data->link_suratfinalis?>">
                                         </td>
                                     </tr>
                                     <tr>

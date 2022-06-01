@@ -26,4 +26,23 @@ class Pengumuman extends BaseController
         );
         return view('user/v_pengumumanfinal', $data);
     }
+
+    public function juara($id_lomba){
+        $ada = $this->datalomba->juara($id_lomba);
+        if($ada){
+            $data = array(
+                'nama' => $this->datalomba->detail($id_lomba),
+                'juara1' => $this->datafinal->juara1($id_lomba),
+                'juara2' => $this->datafinal->juara2($id_lomba),
+                'juara3' => $this->datafinal->juara3($id_lomba),
+            );
+            return view('user/v_pengumuman', $data);
+        }
+        else{
+            $nama = array(
+                'nama' => $this->datalomba->detail($id_lomba),
+            );
+            return view('user/v_pengumumankosong', $nama);
+        }
+    }
 }

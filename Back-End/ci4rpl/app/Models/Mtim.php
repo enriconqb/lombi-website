@@ -16,11 +16,11 @@ class Mtim extends Model
     'anggota3_nama', 'anggota3_nim',
     'anggota4_nama', 'anggota4_nim',
     'link_buktibayar','status_verif_bayar',
-    'link_karya','link_orisinalitas','status_finalist',
+    'link_karya','link_orisinalitas','status_final',
     'link_ktm_anggota1',
     'link_ktm_anggota2',
     'link_ktm_anggota3',
-    'link_ktm_anggota4',
+    'link_ktm_anggota4', 'link_suratfinalis'
     ];
 
     function getDetailTim($id_tim){
@@ -35,4 +35,8 @@ class Mtim extends Model
         return $data;
     }
 
+    function detail($id_tim){
+        $hsl = $this->db->query("SELECT * FROM tim WHERE id_tim = $id_tim");
+        return $hsl->getRow();
+    }
 }
