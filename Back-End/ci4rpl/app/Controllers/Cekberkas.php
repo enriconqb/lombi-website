@@ -2,11 +2,10 @@
 
 namespace App\Controllers;
 use CodeIgniter\Controller;
-
 use App\Models\Mtim;
 use App\Models\Mlomba;
 
-class Peserta extends BaseController
+class CekBerkas extends BaseController
 {
     public function index()
     {
@@ -16,20 +15,22 @@ class Peserta extends BaseController
         $data = [
             'id_lomba' => $id_lomba,
             'nama_lomba' => $model->whereIn('id_lomba',[$id_lomba])->first()['nama_lomba'],
-            'tbl_tim' => $modeltim->whereIn('id_lomba',[$id_lomba])->findAll(),
+            'tbl_berkas' => $model->whereIn('id_lomba',[$id_lomba])->findAll(),
         ];
-        return view('admin/v_peserta',$data);
+        return view('admin/v_admincekberkas',$data);
     }
 
-    public function data($id_tim){
+    public function linkberkas($id_tim)
+    {
         $model = new Mtim();
         $data= [
             'tim_detail'=> $model->whereIn('id_tim', [$id_tim])->first(),
         ]; 
-        return view('admin/v_detaildatapeserta',$data);
+        return view('admin/v_admincekberkas',$data);
     }
 
-    public function update($id_tim){
+    public function update($id_tim)
+    {
         //include helper form
         helper(['form']);
         $model = new Mtim();
@@ -100,6 +101,6 @@ class Peserta extends BaseController
             'link_ktm_anggota4' => $data['link_ktm_anggota4'],
             ])
         ->update();
-        return view('admin/v_detaildatapeserta');      
+        return view('admin/v_admincekberkas');      
     }
 }

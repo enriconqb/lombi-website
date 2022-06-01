@@ -24,7 +24,7 @@
           <div class="card">
             <div class="card-header bg-secondary">
               <div class="d-flex align-items-center">
-                <h3 class="card-title">Data Akun Staff Lomba <b><?php echo $nama_lomba?></b></h3>
+                <h3 class="card-title">Data Akun Staff Lomba <?php echo $nama_lomba?></h3>
                 <a href="<?php echo base_url('akunstaff/create'); ?>"><button type="button" class="btn btn-success ml-3">Add Akun Staff</button></a>
               </div>
               <div class="card-tools">

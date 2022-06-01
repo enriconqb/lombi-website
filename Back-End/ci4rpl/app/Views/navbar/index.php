@@ -129,6 +129,16 @@
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo base_url('superadmin')?>">Admin</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('clistlomba/read')?>">Lomba</a>
+                </li>
+              <?php
+              }?>
+              <?php 
+              if(session()->get('hak_akses') === 'Staff Juri'){?>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('juri')?>">Juri</a>
+                </li>
               <?php
               }?>
               <?php
@@ -136,13 +146,13 @@
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo base_url('admin')?>">Panitia Lomba</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white add-button" href="<?php echo base_url('clistlomba/read')?>">Lomba</a>
+                </li>
               <?php
               }?>
               <?php 
               if(session()->get('log')){?>
-                <li class="nav-item">
-                  <a class="nav-link text-white add-button" href="<?php echo base_url('clistlomba/read')?>">Lomba</a>
-                </li>
                 <li class="nav-item">
                   <a class="nav-link text-white add-button" href="<?php echo base_url('/logout')?>">Logout</a>
                 </li>

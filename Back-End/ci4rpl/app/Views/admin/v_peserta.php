@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <!-- <div class="row mb-2"> -->
           <div class="col-sm-6">
-            <h1 class="m-0"><b>Data Peserta Lomba</b></h1>
+            <h1 class="m-0"><b>Data Peserta</b></h1>
       </div> <!-- /.container-fluid -->
     </div>
 
@@ -23,7 +23,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header bg-secondary">
-              <h3 class="card-title">Data Peserta Website </h3>
+              <h3 class="card-title">Data Peserta <?php echo $nama_lomba?></h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -35,58 +35,25 @@
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>Nama Tim/Sekolah</th>
-                    <th>Nama Anggota</th>
-                    <th>NIS/NIM</th>
-                    <th>Alamat</th>
+                    <th>Nama Tim</th>
+                    <th>Instansi</th>
+                    <th>Nama Ketua</th>
                     <th>Cek Peserta</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                  $i=0; foreach($tbl_tim as $dt){?>
                   <tr>
-                    <td>Tim Ganjil/Sekolah1</td>
-                    <td>Nama Anggota</td>
-                    <td>1234567</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    <td><?php echo $dt['nama_tim']?></td>
+                    <td><?php echo $dt['nama_instansi']?></td>
+                    <td><?php echo $dt['ketua_nama']?></td>
                     <td>
-                      <a href="#" class="btn btn-success">
-                        <span class="far fa-envelope"></span> Cek 
-                      </a>
+                      <a href="<?php echo base_url('peserta/data'); ?><?php echo '/'.$dt['id_tim']; ?>"><button type="button" class="btn btn-warning me-3">Cek</button></a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Genap/Sekolah1</td>
-                    <td>Nama Anggota</td>
-                    <td>1234567</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <td>
-                      <a href="#" class="btn btn-success">
-                        <span class="far fa-envelope"></span> Cek 
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil/Sekolah2</td>
-                    <td>Nama Anggota</td>
-                    <td>1234567</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <td>
-                      <a href="#" class="btn btn-success">
-                        <span class="far fa-envelope"></span> Cek 
-                      </a>
-                    </td>                  
-                  </tr>
-                  <tr>
-                    <td>Tim Ganjil/Sekolah1</td>
-                    <td>Nama Anggota</td>
-                    <td>1234567</td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <td>
-                      <a href="#" class="btn btn-success">
-                        <span class="far fa-envelope"></span> Cek 
-                      </a>
-                    </td>
-                  </tr>
+                    </tr>
+                  <?php
+                  }?>
                 </tbody>
               </table>
             </div>
