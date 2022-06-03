@@ -1,5 +1,0 @@
-logo navbar (done)
-kondisi pengumuman finalis (done) nambah skor di list_lomba
-kondisi pengumuman pemenang (done) -> nambah kolom status_juara di tbl lomba
-kondisi daftar lomba (done)
-halaman daftar ulang (done)

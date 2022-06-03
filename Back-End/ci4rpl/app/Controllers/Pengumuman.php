@@ -19,6 +19,15 @@ class Pengumuman extends BaseController
         return view('user/v_pengumuman');
     }
 
+    public function kosong($id_tim,$id_lomba)
+    {
+        $data = array(
+            'nama' => $this->datalomba->detail($id_lomba),
+            'tim' => $this->datatim->notfinal($id_lomba,$id_tim),
+        );
+        return view('user/v_pengumumanfinal_kosong', $data);
+    }
+
     public function final($id_tim,$id_lomba)
     {
         $data = array(
@@ -37,7 +46,7 @@ class Pengumuman extends BaseController
         return view('user/v_pengumumanfinal_notfinal', $data);
     }
 
-    public function juara($id_tim,$id_lomba){
+    public function juara($id_lomba){
         $ada = $this->datalomba->juara($id_lomba);
         if($ada){
             $data = array(

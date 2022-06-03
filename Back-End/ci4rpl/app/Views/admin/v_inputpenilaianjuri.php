@@ -1,4 +1,4 @@
-<?= $this->extend('admin/template/base_juri'); ?>
+<?= $this->extend('admin/template/base_admin'); ?>
 
 <?= $this->section('title');?>
 <title>Juri</title>
@@ -32,43 +32,37 @@
             </div> -->
             <div class="card-body">
               <div class="card-login">
-                <form action="" method="POST">
-                 
+                <form action="<?php echo base_url('juri/nilai')?>" method="POST">
+                    <input type="hidden" name="id_tim" value="<?php echo $tim_detail['id_tim']?>">
                     <tr>
                       <td><label for="user">Nama Tim</label></td>
                     </tr>
                     <tr>
-                      <td><input type="text" class="form-control" name="user" placeholder="Nama Tim" required></td>
+                      <td><input type="text" class="form-control" name="nama_tim" placeholder="Nama Tim" value="<?php echo $tim_detail['nama_tim']?>" readonly></td>
                     </tr>
                     <tr>
-                      <td><label for="berkas">Berkas Tim</label></td>
+                      <td><label for="link_karya">Karya</label></td>
                     </tr>
                     <tr>
-                      <td><input type="text" class="form-control" name="berkas" placeholder="Berkas Tim" required></td>
+                      <td><input type="text" class="form-control" name="link_karya" placeholder="Link Karya" value="<?php echo $tim_detail['link_karya']?>" readonly></td>
                     </tr>
                     <tr>
-                      <td><label for="tamplate">Tamplate Penilaian Juri</label></td>
+                      <td><label for="tamplate">Template Penilaian Juri</label></td>
                     </tr>
                     <tr>
-                      <td><input type="text" class="form-control" name="tamplate" placeholder="Tamplate Penilaian Juri" required></td>
+                      <td><input type="text" class="form-control" name="link_template_penilaianjuri" placeholder="Tamplate Penilaian Juri" value="<?php echo $juri_detail['link_template_penilaianjuri']?>" readonly></td>
+                    </tr>
+                    <tr>
+                      <td><label for="tamplate">Penilaian Juri</label></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="link_penilaianjuri" placeholder="Link Penilaian Juri" required></td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="form-control" name="skor" placeholder="Skor (1-1000)" required></td>
                     </tr>
                     
-                    <div class="form-group">
-                      <label for="exampleInputFile">Tamplate Penilaian Juri</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="exampleInputFile">
-                          <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                        </div>
-                        <div class="input-group-append">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+                    
                   </div>
                   <!-- /.card-body -->
   

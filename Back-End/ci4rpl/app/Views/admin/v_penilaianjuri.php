@@ -1,4 +1,4 @@
-<?= $this->extend('admin/template/base_juri'); ?>
+<?= $this->extend('admin/template/base_admin'); ?>
 
 <?= $this->section('title');?>
 <title>Juri</title>
@@ -35,9 +35,10 @@
                 <thead>
                   <tr>
                     <th>Nama Tim</th>
-                    <th>Berkas Tim</th>
-                    <th>Berkas Penilaian Tim</th>
                     <th>Status Penilaian</th>
+                    <th>Status Final</th>
+                    <th>Juara</th>
+                    <th>Lihat Berkas</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -46,15 +47,13 @@
                   $i=0; foreach($tbl_juri as $dt){?>
                   <tr>
                     <td><?php echo $dt['nama_tim']?></td>
-                    <td><?php echo $dt['tgl_dibayar']?></td>
-                    <td><?php echo $dt['link_penilaian juri']?></td>
                     <td>
                       <?php if ($dt['status_penilaian_juri']==='belum')
                       {?>
                          <p class="text-warning"><b>Belum</b></p>
                       <?php 
                       }else{
-                        if($dt['status_verif_bayar']==='sudah'
+                        if($dt['status_penilaian_juri']==='sudah'
                         ){?>
                           <p class="text-success"><b>Sudah</b></p>
                         <?php
@@ -64,15 +63,33 @@
                         }
                       }?>
                     </td>
+                    <td><?php echo $dt['status_final']?></td>
+                    <td><?php echo $dt['juara']?></td>
                     <td>
-                      <form action="pembayaran/cek/<?php echo $dt['id_tim']?>" class="d-flex flex-colomn">
-                        <select class="form-control col-6"  name="status_verif_bayar">
-                          <option selected="Belum Verifikasi">Pilih Status Pembayaran</option>
-                          <option value="Belum">Belum</option>
-                          <option value="Sudah">Sudah</option>
-                        </select>
-                        <input class="btn btn-success" type="submit" value="Cek"></input>
-                      </form>
+                      <a href="<?php echo base_url('juri/linkberkas'); ?><?php echo '/'.$dt['id_tim'].'/'.$dt['id_lomba']; ?>"><button type="button" class="btn btn-info me-3">Cek</button></a>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column">
+                        <form action="juri/final/<?php echo $dt['id_tim']?><?php echo '/'.$dt['id_lomba']?>" class="d-flex flex-colomn">
+                          <select class="form-control col-6"  name="status_final">
+                            <option selected="" value="">Pilih Status Final</option>
+                            <option value="tidak">Tidak</option>
+                            <option value="ya">Ya</option>
+                          </select>
+                          <input class="btn btn-success" type="submit" value="Cek"></input>
+                        </form>
+                        <form action="juri/juara/<?php echo $dt['id_tim']?><?php echo '/'.$dt['id_lomba']?>" class="d-flex flex-colomn">
+                          <select class="form-control col-6"  name="juara">
+                            <option selected value="">Pilih Juara</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="">Tidak Juara</option>
+
+                          </select>
+                          <input class="btn btn-success" type="submit" value="Cek"></input>
+                        </form>
+                      </div>
                     </td>
                   </tr>
                   <?php

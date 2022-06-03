@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2022 at 08:19 PM
+-- Generation Time: Jun 03, 2022 at 12:18 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -52,7 +52,14 @@ INSERT INTO `bayar` (`id_tim`, `nama_tim`, `tgl_dibayar`, `status_verif_bayar`, 
 (154, 'Bebek2', '2022-06-01', 'Sudah Verifikasi', '100000', '', 'Bebek2', 33),
 (155, 'Bebek3', '2022-06-01', 'Sudah Verifikasi', '100000', '', 'Bebek3', 33),
 (156, 'Bebek4', '2022-06-01', 'Sudah Verifikasi', '100000', '', 'Bebek4', 33),
-(157, 'Bebek5', '2022-06-01', 'Sudah Verifikasi', '100000', '', 'Bebek5', 33);
+(157, 'Bebek5', '2022-06-01', 'Sudah Verifikasi', '100000', '', 'Bebek5', 33),
+(158, 'CeritanyaTim1', '2022-06-03', 'Sudah Verifikasi', '', '', 'CeritanyaTim1', 31),
+(159, 'CeritanyaTim2', '2022-06-03', 'Sudah Verifikasi', '', '', 'CeritanyaTim2', 31),
+(160, 'CeritanyaTim3', '2022-06-03', 'Sudah Verifikasi', '', '', 'CeritanyaTim3', 31),
+(161, 'CeritanyaTim4', '2022-06-03', 'Sudah Verifikasi', '', '', 'CeritanyaTim4', 31),
+(162, 'CeritanyaTim5', '2022-06-03', 'Sudah Verifikasi', '100000', '', 'CeritanyaTim5', 31),
+(163, 'CeritanyaTim6', '2022-06-03', 'Sudah Verifikasi', '100000', '', 'CeritanyaTim6', 31),
+(164, 'CeritanyaTim7', '2022-06-03', 'Gagal Verifikasi', '100000', '', 'CeritanyaTim7', 31);
 
 -- --------------------------------------------------------
 
@@ -73,14 +80,20 @@ CREATE TABLE `berkas` (
 --
 
 INSERT INTO `berkas` (`id_tim`, `nama_tim`, `status_kelengkapanberkas`, `id_lomba`, `status_final`) VALUES
-(148, 'Tim1', 'Sudah Diperiksa', 34, 'ya'),
+(148, 'Tim1', 'Sudah Diperiksa', 34, NULL),
 (149, 'Tim2', 'Berkas Kurang', 34, NULL),
 (152, 'Tim5', 'Sudah Diperiksa', 34, NULL),
-(153, 'Bebek1', 'Sudah Diperiksa', 33, 'ya'),
-(154, 'Bebek2', 'Sudah Diperiksa', 33, 'ya'),
-(155, 'Bebek3', 'Sudah Diperiksa', 33, 'ya'),
-(156, 'Bebek4', 'Sudah Diperiksa', 33, 'ya'),
-(157, 'Bebek5', 'Sudah Diperiksa', 33, NULL);
+(153, 'Bebek1', 'Sudah Diperiksa', 33, NULL),
+(154, 'Bebek2', 'Sudah Diperiksa', 33, NULL),
+(155, 'Bebek3', 'Sudah Diperiksa', 33, NULL),
+(156, 'Bebek4', 'Sudah Diperiksa', 33, NULL),
+(157, 'Bebek5', 'Sudah Diperiksa', 33, NULL),
+(158, 'CeritanyaTim1', 'Sudah Diperiksa', 31, 'ya'),
+(159, 'CeritanyaTim2', 'Sudah Diperiksa', 31, 'ya'),
+(160, 'CeritanyaTim3', 'Sudah Diperiksa', 31, 'ya'),
+(161, 'CeritanyaTim4', 'Belum Diperiksa', 31, 'ya'),
+(162, 'CeritanyaTim5', 'Sudah Diperiksa', 31, NULL),
+(163, 'CeritanyaTim6', 'Berkas Kurang', 31, NULL);
 
 -- --------------------------------------------------------
 
@@ -93,9 +106,25 @@ CREATE TABLE `juri` (
   `id_tim` int(5) NOT NULL,
   `nama_tim` varchar(255) NOT NULL,
   `status_penilaian_juri` varchar(100) NOT NULL,
-  `link_template_penilaian_juri` varchar(255) NOT NULL,
-  `link_penilaianjuri` varchar(255) NOT NULL
+  `link_template_penilaianjuri` varchar(255) NOT NULL,
+  `link_penilaianjuri` varchar(255) NOT NULL,
+  `skor` varchar(255) DEFAULT NULL,
+  `status_final` varchar(255) DEFAULT NULL,
+  `juara` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `juri`
+--
+
+INSERT INTO `juri` (`id_lomba`, `id_tim`, `nama_tim`, `status_penilaian_juri`, `link_template_penilaianjuri`, `link_penilaianjuri`, `skor`, `status_final`, `juara`) VALUES
+(33, 153, 'Bebek1', 'sudah', 'Sastra3', 'BebekJuri', '980', 'ya', '1'),
+(33, 154, 'Bebek2', 'sudah', 'Sastra3', 'WEW', '999', 'ya', '2'),
+(31, 158, 'CeritanyaTim1', 'sudah', 'Sastra2', 'Tim1', '1000', 'ya', '1'),
+(31, 159, 'CeritanyaTim2', 'sudah', 'Sastra2', 'Tim2', '999', 'ya', '2'),
+(31, 160, 'CeritanyaTim3', 'sudah', 'Sastra2', 'Tim3', '998', 'ya', '3'),
+(31, 161, 'CeritanyaTim4', 'sudah', 'Sastra2', 'Tim4', '996', 'ya', NULL),
+(31, 162, 'CeritanyaTim5', 'belum', 'Sastra2', '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -113,24 +142,32 @@ CREATE TABLE `list_lomba` (
   `id_tim` int(5) NOT NULL,
   `status_final` varchar(255) DEFAULT NULL,
   `skor` int(11) DEFAULT NULL,
-  `juara` varchar(255) DEFAULT NULL
+  `juara` varchar(255) DEFAULT NULL,
+  `status_juara` varchar(255) NOT NULL DEFAULT 'belum'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `list_lomba`
 --
 
-INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bayar`, `status_kelengkapanberkas`, `id_lomba`, `id_tim`, `status_final`, `skor`, `juara`) VALUES
-(26, 'Sastra4', 'Tim1', 'Sudah Verifikasi', 'Sudah Diperiksa', 34, 148, 'ya', 985, '1'),
-(26, 'Sastra4', 'Tim2', 'Sudah Verifikasi', 'Berkas Kurang', 34, 149, 'ya', 990, NULL),
-(26, 'Sastra4', 'Tim3', 'Gagal Verifikasi', NULL, 34, 150, NULL, NULL, NULL),
-(26, 'Sastra4', 'Tim4', 'Belum Verifikasi', NULL, 34, 151, NULL, NULL, NULL),
-(26, 'Sastra4', 'Tim5', 'Sudah Verifikasi', 'Sudah Diperiksa', 34, 152, NULL, NULL, NULL),
-(26, 'Sastra3', 'Bebek1', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 153, 'ya', NULL, '1'),
-(26, 'Sastra3', 'Bebek2', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 154, 'ya', NULL, '2'),
-(26, 'Sastra3', 'Bebek3', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 155, 'ya', NULL, '3'),
-(26, 'Sastra3', 'Bebek4', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 156, 'ya', NULL, NULL),
-(26, 'Sastra3', 'Bebek5', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 157, NULL, NULL, NULL);
+INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bayar`, `status_kelengkapanberkas`, `id_lomba`, `id_tim`, `status_final`, `skor`, `juara`, `status_juara`) VALUES
+(26, 'Sastra4', 'Tim1', 'Sudah Verifikasi', 'Sudah Diperiksa', 34, 148, 'ya', 985, '1', 'belum'),
+(26, 'Sastra4', 'Tim2', 'Sudah Verifikasi', 'Berkas Kurang', 34, 149, 'ya', 990, NULL, 'belum'),
+(26, 'Sastra4', 'Tim3', 'Gagal Verifikasi', NULL, 34, 150, NULL, NULL, NULL, 'belum'),
+(26, 'Sastra4', 'Tim4', 'Belum Verifikasi', NULL, 34, 151, NULL, NULL, NULL, 'belum'),
+(26, 'Sastra4', 'Tim5', 'Sudah Verifikasi', 'Sudah Diperiksa', 34, 152, NULL, NULL, NULL, 'belum'),
+(26, 'Sastra3', 'Bebek1', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 153, 'ya', 980, '1', 'belum'),
+(26, 'Sastra3', 'Bebek2', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 154, 'ya', 999, '2', 'belum'),
+(26, 'Sastra3', 'Bebek3', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 155, 'ya', NULL, '3', 'belum'),
+(26, 'Sastra3', 'Bebek4', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 156, 'ya', NULL, NULL, 'belum'),
+(26, 'Sastra3', 'Bebek5', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 157, NULL, NULL, NULL, 'belum'),
+(26, 'Sastra2', 'CeritanyaTim1', 'Sudah Verifikasi', 'Sudah Diperiksa', 31, 158, 'ya', 1000, '1', 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim2', 'Sudah Verifikasi', 'Sudah Diperiksa', 31, 159, 'ya', 999, '2', 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim3', 'Sudah Verifikasi', 'Sudah Diperiksa', 31, 160, 'ya', 998, '3', 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim4', 'Sudah Verifikasi', 'Belum Diperiksa', 31, 161, 'ya', 996, NULL, 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim5', 'Sudah Verifikasi', 'Sudah Diperiksa', 31, 162, NULL, NULL, NULL, 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim6', 'Sudah Verifikasi', 'Berkas Kurang', 31, 163, NULL, NULL, NULL, 'sudah'),
+(26, 'Sastra2', 'CeritanyaTim7', 'Gagal Verifikasi', NULL, 31, 164, NULL, NULL, NULL, 'sudah');
 
 -- --------------------------------------------------------
 
@@ -164,7 +201,7 @@ CREATE TABLE `lomba` (
 
 INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomba`, `nama_penyelenggara`, `persyaratan_lomba`, `hadiah`, `tgl_daftar`, `tgl_kumpul`, `tgl_pengumuman`, `file_poster`, `link_booklet`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_template_penilaianjuri`, `id_user`, `status_juara`) VALUES
 (30, 'Sastra1', '1', 'Sastra1', 'Sastra1', 'Sastra1', 'Sastra1', '2022-06-05', '2022-06-22', '2022-06-25', 'stupid.png', 'Sastra1', '50000', '', 'Sastra1', 26, 'belum'),
-(31, 'Sastra2', '1', 'Sastra2', 'Sastra2', 'Sastra2', 'Sastra2', '2022-06-21', '2022-06-17', '2022-07-01', 'stupid.png', 'Sastra2', '', '', 'Sastra2', 26, 'belum'),
+(31, 'Sastra2', '1', 'Sastra2', 'Sastra2', 'Sastra2', 'Sastra2', '2022-06-21', '2022-06-17', '2022-07-01', 'stupid.png', 'Sastra2', '100000', '', 'Sastra2', 26, 'sudah'),
 (33, 'Sastra3', '1', 'Sastra3', 'Sastra3', 'Sastra3', 'Sastra3', '2022-06-29', '2022-06-22', '2022-06-23', 'stupid.png', 'Sastra3', '100000', '', 'Sastra3', 26, 'sudah'),
 (34, 'Sastra4', '1', 'Sastra4', 'Sastra4', 'Sastra4', 'Sastra4', '2022-07-07', '2022-06-29', '2022-06-30', 'stupid.png', 'Sastra4', '100000', '', 'Sastra4', 26, 'belum'),
 (35, 'Sastra5', '1', 'Sastra5', 'Sastra5', 'Sastra5', 'Sastra5', '2022-06-21', '2022-06-30', '2022-07-01', 'stupid.png', 'Sastra5', '100000', '100000', 'Sastra5', 26, 'belum'),
@@ -231,11 +268,18 @@ INSERT INTO `tim` (`id_tim`, `emailketua`, `id_lomba`, `id_user`, `nama_tim`, `n
 (150, 'Tim3@gmail.com', 34, 26, 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', '', '', 'Tim3', 'Gagal Verifikasi', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (151, 'Tim4@gmail.com', 34, 26, 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Belum Verifikasi', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (152, 'Tim5@gmail.com', 34, 26, 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Tim5', 'Sudah Verifikasi', 'Tim5', 'Tim5', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
-(153, 'Bebek1@gmail.com', 33, 26, 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', NULL, '1'),
-(154, 'Bebek2@gmail.com', 33, 26, 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', NULL, '2'),
+(153, 'Bebek1@gmail.com', 33, 26, 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Bebek1', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 980, '1'),
+(154, 'Bebek2@gmail.com', 33, 26, 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Bebek2', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 999, '2'),
 (155, 'Bebek3@gmail.com', 33, 26, 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Bebek3', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', NULL, '3'),
 (156, 'Bebek4@gmail.com', 33, 26, 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Bebek4', 'Sudah Verifikasi', 'Bebek', 'Bebek', 'ya', 'Bebek', 'Bebek', 'Bebek', 'Bebek', 'Bebek', NULL, NULL),
-(157, 'Bebek5@gamicl.com', 33, 26, 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Sudah Verifikasi', 'Bebek', 'Bebek', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL);
+(157, 'Bebek5@gamicl.com', 33, 26, 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Bebek5', 'Sudah Verifikasi', 'Bebek', 'Bebek', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
+(158, 'CeritanyaTim1@gmail.com', 31, 26, 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', 'CeritanyaTim1', '', '', 'CeritanyaTim1', 'Sudah Verifikasi', 'Tim1', 'Tim1', 'ya', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 'Tim1', 1000, '1'),
+(159, 'CeritanyaTim2@gmail.com', 31, 26, 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'CeritanyaTim2', 'Sudah Verifikasi', 'Tim1', 'Tim1', 'ya', 'Tim2', 'Tim2', 'Tim2', 'Tim2', 'Tim2', 999, '2'),
+(160, 'CeritanyaTim3@gmail.com', 31, 26, 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'CeritanyaTim3', 'Sudah Verifikasi', 'Tim1', 'Tim1', 'ya', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 'Tim3', 998, '3'),
+(161, 'CeritanyaTim4@gmai.com', 31, 26, 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'Sudah Verifikasi', 'Tim4', 'Tim4', 'ya', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 996, NULL),
+(162, 'CeritanyaTim5@gmail.com', 31, 26, 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'Sudah Verifikasi', 'Tim5', 'Tim5', NULL, '', NULL, NULL, NULL, NULL, 995, NULL),
+(163, 'CeritanyaTim6@gmail.com', 31, 26, 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'Sudah Verifikasi', 'Tim6', 'Tim6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
+(164, 'CeritanyaTim7@gmail.com', 31, 26, 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'Gagal Verifikasi', '', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -340,7 +384,7 @@ ALTER TABLE `lomba`
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
 -- AUTO_INCREMENT for table `user`
