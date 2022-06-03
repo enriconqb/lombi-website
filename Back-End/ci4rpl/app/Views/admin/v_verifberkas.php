@@ -78,7 +78,7 @@
                       <a href="<?php echo base_url('cekberkas/linkberkas'); ?><?php echo '/'.$dt['id_tim']; ?>"><button type="button" class="btn btn-info me-3">Cek</button></a>
                     </td>
                     <td>
-                      <form action="verifberkas/cek/<?php echo $dt['id_tim']?>" class="d-flex flex-colomn">
+                      <form action="verifberkas/cek/<?php echo $dt['id_tim']?><?php echo '/'.$dt['id_lomba']?>" class="d-flex flex-colomn">
                         <select class="form-control col-6"  name="status_kelengkapanberkas">
                           <option selected="Belum Diperiksa">Pilih Status Pembayaran</option>
                           <option value="Belum Diperiksa">Belum</option>
