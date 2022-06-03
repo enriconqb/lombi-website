@@ -90,7 +90,7 @@
 											<input type="text" class="border p-3 w-100 my-2" name="anggota4_nama" placeholder="Nama Anggota 4" value="<?=$data->anggota4_nama?>"readonly>
 										</td>
 										<td class="col-md-2">
-											<input type="text" class="border p-3 w-100 my-2" name="anggota4_nim" placeholder="NIM/NIS Anggota 4" value="<?=$data->anggota4_nim?>">
+											<input type="text" class="border p-3 w-100 my-2" name="anggota4_nim" placeholder="NIM/NIS Anggota 4" value="<?=$data->anggota4_nim?>" readonly>
 										</td>
 										<td class="col-md-2">
 											<input type="text" class="border p-3 w-100 my-2" name="link_ktm_anggota4" placeholder="Link KTM / Kartu Pelajar Anggota 4" value="<?=$data->link_ktm_anggota4?>">

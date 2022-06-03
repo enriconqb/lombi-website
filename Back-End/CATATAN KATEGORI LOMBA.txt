@@ -1,3 +1,0 @@
-seni = 3
-programming = 2
-sastra = 1

@@ -80,7 +80,7 @@
                     <td>
                       <form action="verifberkas/cek/<?php echo $dt['id_tim']?><?php echo '/'.$dt['id_lomba']?>" class="d-flex flex-colomn">
                         <select class="form-control col-6"  name="status_kelengkapanberkas">
-                          <option selected="Belum Diperiksa">Pilih Status Pembayaran</option>
+                          <option selected="Belum Diperiksa">Pilih Status Berkas</option>
                           <option value="Belum Diperiksa">Belum</option>
                           <option value="Sudah Diperiksa">Sudah</option>
                           <option value="Berkas Kurang">Kurang</option>

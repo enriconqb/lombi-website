@@ -64,15 +64,17 @@ class VerifBerkas extends BaseController
         $modellistlomba = new Mlistlomba();
         $modellomba = new Mlomba();
         if($status === 'Sudah Diperiksa'){
-            // === Add Data Link Bukti Bayar di database Juri ====
-            $data = [
-                'id_lomba' => $id_lomba,
-                'id_tim' => $id_tim,
-                'nama_tim' => $modellistlomba->whereIn('id_tim',[$id_tim])->first()['nama_tim'],
-                'status_penilaian_juri' => 'belum',
-                'link_template_penilaianjuri' => $modellomba->whereIn('id_lomba',[$id_lomba])->first()['link_template_penilaianjuri'],
-            ];
-            $modeljuri->save($data);
+            if(! isset($modeljuri->whereIn('id_tim',[$id_tim])->first()['id_tim'])){
+                // === Add Data Link Bukti Bayar di database Juri ====
+                $data = [
+                    'id_lomba' => $id_lomba,
+                    'id_tim' => $id_tim,
+                    'nama_tim' => $modellistlomba->whereIn('id_tim',[$id_tim])->first()['nama_tim'],
+                    'status_penilaian_juri' => 'belum',
+                    'link_template_penilaianjuri' => $modellomba->whereIn('id_lomba',[$id_lomba])->first()['link_template_penilaianjuri'],
+                ];
+                $modeljuri->save($data);
+            }
             // ----- END add -----
         }
         else{

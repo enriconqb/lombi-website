@@ -6,6 +6,7 @@ use App\Models\Mtim;
 use App\Models\Mjuri;
 use App\Models\Mlistlomba;
 use App\Models\Mlomba;
+use App\Models\Mberkas;
 
 class Juri extends BaseController
 {
@@ -81,6 +82,22 @@ class Juri extends BaseController
         // === Update Data Link Bukti Bayar di database juri ====
         helper(['form']);
         $model = new Mjuri();
+
+        $data = [ //ambil data form
+            'status_final' => $this->request->getVar('status_final'),
+        ];
+         
+        
+        $save = $model
+        ->whereIn('id_tim', [$id_tim])
+        ->set([
+            'status_final'=>$data['status_final']])
+        ->update();
+        // ----- END update -----
+
+        // === Update Data Link Bukti Bayar di database berkas ====
+        helper(['form']);
+        $model = new Mberkas();
 
         $data = [ //ambil data form
             'status_final' => $this->request->getVar('status_final'),
