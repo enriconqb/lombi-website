@@ -36,7 +36,7 @@
         <section>
             <div class="card-body">
               <div class="card-login">
-                <form action="uploadlomba/add" method="post">
+                <form action="uploadlomba/add" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_user"  value="<?=$user?>" >
                     <tr>
                       <td><label for="nama_lomba" required>Nama Lomba</label></td>
@@ -130,7 +130,7 @@
                       <td><label for="">Upload Poster Lomba</label></td>
                     </tr>
                     <tr>
-                      <td><input type="file" name="file_poster"></td>
+                      <td><input type="file" name="file_poster" class="form-control"></td>
                     </tr>
                   </table>
                   

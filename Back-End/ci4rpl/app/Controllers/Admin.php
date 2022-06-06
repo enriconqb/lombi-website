@@ -13,6 +13,10 @@ use App\Models\Muser;
 
 class Admin extends BaseController
 {
+    public function __construct(){
+        $this->Lomba = new Mlomba();
+    }
+
     public function index()
     {
         $model = new Mlomba();
@@ -84,46 +88,54 @@ class Admin extends BaseController
     public function update($id_lomba){
         //include helper form
         helper(['form']);
-        $model = new Mlomba();
+        $modellomba = new Mlomba();
         
-        $data = [
-            'id_lomba'                      => $this->request->getVar('id_lomba'),
-            'nama_lomba'                    => $this->request->getVar('nama_lomba'),
-            'kategori_lomba'                => $this->request->getVar('kategori_lomba'),
-            'deskripsi_lomba'               => $this->request->getVar('deskripsi_lomba'),
-            'nama_penyelenggara'            => $this->request->getVar('nama_penyelenggara'),
-            'persyaratan_lomba'             => $this->request->getVar('persyaratan_lomba'),
-            'hadiah'                        => $this->request->getVar('hadiah'),
-            'tgl_daftar'                    => $this->request->getVar('tgl_daftar'),
-            'tgl_kumpul'                    => $this->request->getVar('tgl_kumpul'),
-            'tgl_pengumuman'                => $this->request->getVar('tgl_pengumuman'),
-            'file_poster'                   => $this->request->getVar('file_poster'),
-            'link_booklet'                  => $this->request->getVar('link_booklet'),
-            'biaya_registrasitim'           => $this->request->getVar('biaya_registrasitim'),
-            'biaya_registrasiindividu'      => $this->request->getVar('biaya_registrasiindividu'),
-            'link_template_penilaianjuri'   => $this->request->getVar('link_template_penilaianjuri'),
-        ];
-
-        $save = $model
-        ->whereIn('id_lomba', [$id_lomba])
-        ->set([
-            'id_lomba'                      => $data['id_lomba'],
-            'nama_lomba'                    => $data['nama_lomba'],
-            'kategori_lomba'                => $data['kategori_lomba'],
-            'deskripsi_lomba'               => $data['deskripsi_lomba'],
-            'nama_penyelenggara'            => $data['nama_penyelenggara'],
-            'persyaratan_lomba'             => $data['persyaratan_lomba'],
-            'hadiah'                        => $data['hadiah'],
-            'tgl_daftar'                    => $data['tgl_daftar'],
-            'tgl_kumpul'                    => $data['tgl_kumpul'],
-            'tgl_pengumuman'                => $data['tgl_pengumuman'],
-            'file_poster'                   => $data['file_poster'],
-            'link_booklet'                  => $data['link_booklet'],
-            'biaya_registrasitim'           => $data['biaya_registrasitim'],
-            'biaya_registrasiindividu'      => $data['biaya_registrasiindividu'],
-            'link_template_penilaianjuri'   => $data['link_template_penilaianjuri'],
-            ])
-        ->update();
+        $file_poster = $this->request->getFile('file_poster');
+            if ($file_poster->getError() == 4) {
+                $data = array(
+                    'id_lomba' => $id_lomba,
+                    'nama_lomba' => $this->request->getPost('nama_lomba'),
+                    'kategori_lomba' => $this->request->getPost('kategori_lomba'),
+                    'deskripsi_lomba' => $this->request->getPost('deskripsi_lomba'),
+                    'nama_penyelenggara' => $this->request->getPost('nama_penyelenggara'),
+                    'persyaratan_lomba' => $this->request->getPost('persyaratan_lomba'),
+                    'hadiah' => $this->request->getPost('hadiah'),
+                    'tgl_daftar' => $this->request->getPost('tgl_daftar'),
+                    'tgl_kumpul' => $this->request->getPost('tgl_kumpul'),
+                    'tgl_pengumuman' => $this->request->getPost('tgl_pengumuman'),
+                    'link_booklet' => $this->request->getPost('link_booklet'),
+                    'biaya_registrasitim' => $this->request->getPost('biaya_registrasitim'),
+                    'biaya_registrasiindividu' => $this->request->getPost('biaya_registrasiindividu'),
+                    'link_template_penilaianjuri' => $this->request->getPost('link_template_penilaianjuri'),
+                );
+                $this->Lomba->edit($data);
+            }
+            else{
+                $lomba = $this->Lomba->detail($id_lomba);
+                if($lomba->file_poster != ""){
+                    unlink('images/poster_lomba/'.$lomba->file_poster);
+                }
+                $nama_file = $file_poster->getRandomName();
+                $data = array(
+                    'id_lomba' => $id_lomba,
+                    'nama_lomba' => $this->request->getPost('nama_lomba'),
+                    'kategori_lomba' => $this->request->getPost('kategori_lomba'),
+                    'deskripsi_lomba' => $this->request->getPost('deskripsi_lomba'),
+                    'nama_penyelenggara' => $this->request->getPost('nama_penyelenggara'),
+                    'persyaratan_lomba' => $this->request->getPost('persyaratan_lomba'),
+                    'hadiah' => $this->request->getPost('hadiah'),
+                    'tgl_daftar' => $this->request->getPost('tgl_daftar'),
+                    'tgl_kumpul' => $this->request->getPost('tgl_kumpul'),
+                    'tgl_pengumuman' => $this->request->getPost('tgl_pengumuman'),
+                    'link_booklet' => $this->request->getPost('link_booklet'),
+                    'biaya_registrasitim' => $this->request->getPost('biaya_registrasitim'),
+                    'biaya_registrasiindividu' => $this->request->getPost('biaya_registrasiindividu'),
+                    'link_template_penilaianjuri' => $this->request->getPost('link_template_penilaianjuri'),
+                    'file_poster' => $nama_file,
+                );
+                $file_poster->move('images/poster_lomba', $nama_file);
+                $this->Lomba->edit($data);
+            }
         return redirect()->to(base_url('admin'));        
     }
 }

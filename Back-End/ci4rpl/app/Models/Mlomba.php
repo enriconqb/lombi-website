@@ -60,4 +60,14 @@ class Mlomba extends Model
         $hsl = $this->db->query("SELECT * FROM lomba WHERE id_lomba = $id_lomba AND status_juara = 'sudah' ");
         return $hsl->getRow();
     }
+
+    public function add($data){
+        $this->db->table('lomba')->insert($data);
+    }
+
+    public function edit($data){
+        $this->db->table('lomba')
+        ->where('id_lomba', $data['id_lomba'])
+        ->update($data);
+    }
 }
