@@ -36,7 +36,7 @@
         <section>
             <div class="card-body">
               <div class="card-login">
-                <form action="<?php echo base_url('admin/update').'/'.$lomba_detail['id_lomba']?>" method="post">
+                <form action="<?php echo base_url('admin/update').'/'.$lomba_detail['id_lomba']?>" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_lomba" value="<?php echo $id_lomba?>">
                     <tr>
                       <td><label for="nama_lomba" required>Nama Lomba</label></td>
@@ -51,10 +51,10 @@
                       <td>
                         <div class="form-group">
                             <select class="form-control" id="pilih" name="kategori_lomba">
-                                <option <?php if($lomba_detail['kategori_lomba'] === '1'){echo 'selected';} ?>>Sastra</option>
-                                <option <?php if($lomba_detail['kategori_lomba'] === '2'){echo 'selected';} ?>>Programming</option>
-                                <option <?php if($lomba_detail['kategori_lomba'] === '3'){echo 'selected';} ?>>Seni</option>
-                                <option <?php if($lomba_detail['kategori_lomba'] === '4'){echo 'selected';} ?>>Lain-Lain</option>
+                                <option value="1" <?php if($lomba_detail['kategori_lomba'] === '1'){echo 'selected';} ?>>Sastra</option>
+                                <option value="2" <?php if($lomba_detail['kategori_lomba'] === '2'){echo 'selected';} ?>>Programming</option>
+                                <option value="3" <?php if($lomba_detail['kategori_lomba'] === '3'){echo 'selected';} ?>>Seni</option>
+                                <option value="4" <?php if($lomba_detail['kategori_lomba'] === '4'){echo 'selected';} ?>>Lain-Lain</option>
                             </select>
                         </div>
                       </td>
@@ -131,7 +131,7 @@
                       <td><label for="">Upload Poster Lomba</label></td>
                     </tr>
                     <tr>
-                      <td><input type="file" name="file_poster" value="<?php echo $lomba_detail['file_poster']?>"></td>
+                      <td><input type="file" name="file_poster" class="form-control"></td>
                     </tr>
                   </table>
                   

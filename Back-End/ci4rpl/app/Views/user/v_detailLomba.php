@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-7 pt-5 pt-lg-0">
                 <div class="about-content">
-                    <h1 class="font-weight-bold"><?= $detail->nama_lomba; ?></h1>
+                    <h1 class="font-weight-bold text-capitalize"><?= $detail->nama_lomba; ?></h1>
                     <p class="text-justify"><?= $detail->deskripsi_lomba; ?></p>
                     <div class="row text-center pb-1">
                         <div class="col-sm-6">

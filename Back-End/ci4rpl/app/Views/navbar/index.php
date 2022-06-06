@@ -103,24 +103,11 @@
 							<li class="nav-item active">
 								<a class="nav-link" href="/home">Beranda</a>
 							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Kategori<span><i class="fa fa-angle-down"></i></span>
-								</a>
-
-								<!-- Dropdown list -->
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="dashboard.html">Sastra</a>
-									<a class="dropdown-item" href="dashboard-my-ads.html">Programming</a>
-									<a class="dropdown-item" href="dashboard-favourite-ads.html">Seni</a>
-									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
-									<a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
-								</div>
-							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/tentang">Tentang Kami</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="index.html">Hubungi Kami</a>
+								<a class="nav-link" href="wa.me/6281394466896">Hubungi Kami</a>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10 d-flex flex-colomn">
@@ -190,9 +177,7 @@
           <!-- footer logo -->
           <img src="<?= base_url();  ?>/images/logo-footer.png" alt="">
           <!-- description -->
-          <p class="alt-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="alt-color">Website untuk mengasah kemampuan dengan mengikuti berbagai perlombaan yang disediakan</p>
         </div>
       </div>
       <!-- Link list -->
@@ -200,25 +185,19 @@
         <div class="block">
           <h4>Site Pages</h4>
           <ul>
-            <li><a href="#">Boston</a></li>
-            <li><a href="#">How It works</a></li>
-            <li><a href="#">Deals & Coupons</a></li>
-            <li><a href="#">Articls & Tips</a></li>
-            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+            <li><a href="/tentang">Tentang Kami</a></li>
+            <li><a href="wa.me/6281394466896">Hubungi Kamu</a></li>
           </ul>
         </div>
       </div>
       <!-- Link list -->
       <div class="col-lg-1 ">
         <div class="block">
-          <h4>Admin Pages</h4>
+          <h4>Sosial Media</h4>
           <ul>
-            <li><a href="<?= base_url();  ?>/category.html">Category</a></li>
-            <li><a href="<?= base_url();  ?>/single.html">Single Page</a></li>
-            <li><a href="<?= base_url();  ?>/store.html">Store Single</a></li>
-            <li><a href="<?= base_url();  ?>/single-blog.html">Single Post</a>
-            </li>
-            <li><a href="<?= base_url();  ?>/blog.html">Blog</a></li>
+            <li><a href="instagram.com">Instagram</a></li>
+            <li><a href="facebook.com">Facebook</a></li>
+            <li><a href="twitter.com">Twitter</a></li>
           </ul>
         </div>
       </div>

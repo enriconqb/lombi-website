@@ -91,11 +91,11 @@
 							<div class="card">
 								<div class="thumb-content">
 									<a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>">
-										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
+										<img class="card-img-top img-fluid" style="height:120px; width:auto;" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
+									<h4 class="card-title text-uppercase"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
 											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
@@ -127,11 +127,11 @@
 							<div class="card">
 								<div class="thumb-content">
 									<a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>">
-										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
+										<img class="card-img-top img-fluid" style="height:120px; width:auto;" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
+									<h4 class="card-title text-uppercase"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
 											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>
@@ -163,11 +163,11 @@
 							<div class="card">
 								<div class="thumb-content">
 									<a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>">
-										<img class="card-img-top img-fluid" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
+										<img class="card-img-top img-fluid" style="height:120px; width:auto;" src="<?php echo 'images/poster_lomba/'.$row->file_poster?>" alt="Card image cap">
 									</a>
 								</div>
 								<div class="card-body">
-									<h4 class="card-title"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
+									<h4 class="card-title text-uppercase"><a href="<?php echo base_url('home/detail/'.$row->id_lomba);?>"><?= $row->nama_lomba;?></a></h4>
 									<ul class="list-inline product-meta">
 										<li class="list-inline-item">
 											<a href="#"><i class="fa fa-calendar"></i><?= $row->tgl_daftar.'...';?></a>

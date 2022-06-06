@@ -9,6 +9,10 @@ use App\Models\Mlomba;
 
 class UploadLomba extends BaseController
 {
+
+    public function __construct(){
+        $this->Lomba = new Mlomba();
+    }
     public function index()
     {
         $data =  [
@@ -33,32 +37,29 @@ class UploadLomba extends BaseController
         $msg = 'Please select a valid file';
  
         if ($validated) {
-            $imageFile = $this->request->getFile('file_poster');
-            // $imageFile->move(WRITEPATH .'uploads');
-            $form = $this->request->getPost(); //ambil semua data form
-            $data = [
-                // 'file_poster'                   => $imageFile->getName(),
-                'file_poster'                   => 'stupid.png',
-                'id_user'                       => $form['id_user'],
-                'nama_lomba'                    => $form['nama_lomba'],
-                'kategori_lomba'                => $form['kategori_lomba'],
-                'deskripsi_lomba'               => $form['deskripsi_lomba'],
-                'nama_penyelenggara'            => $form['nama_penyelenggara'],
-                'persyaratan_lomba'             => $form['persyaratan_lomba'],
-                'hadiah'                        => $form['hadiah'],
-                'tgl_daftar'                    => $form['tgl_daftar'],
-                'tgl_kumpul'                    => $form['tgl_kumpul'],
-                'tgl_pengumuman'                => $form['tgl_pengumuman'],
-                'link_booklet'                  => $form['link_booklet'],
-                'biaya_registrasitim'           => $form['biaya_registrasitim'],
-                'biaya_registrasiindividu'      => $form['biaya_registrasiindividu'],
-                'link_template_penilaianjuri'   => $form['link_template_penilaianjuri'],
-            ];
-            $modellomba->save($data); //save data ke database tim
+            $file_poster = $this->request->getFile('file_poster');
+            $nama_file = $file_poster->getRandomName();
+            $data = array(
+                'id_user' => $this->request->getPost('id_user'),
+                'nama_lomba' => $this->request->getPost('nama_lomba'),
+                'kategori_lomba' => $this->request->getPost('kategori_lomba'),
+                'deskripsi_lomba' => $this->request->getPost('deskripsi_lomba'),
+                'nama_penyelenggara' => $this->request->getPost('nama_penyelenggara'),
+                'persyaratan_lomba' => $this->request->getPost('persyaratan_lomba'),
+                'hadiah' => $this->request->getPost('hadiah'),
+                'tgl_daftar' => $this->request->getPost('tgl_daftar'),
+                'tgl_kumpul' => $this->request->getPost('tgl_kumpul'),
+                'tgl_pengumuman' => $this->request->getPost('tgl_pengumuman'),
+                'link_booklet' => $this->request->getPost('link_booklet'),
+                'biaya_registrasitim' => $this->request->getPost('biaya_registrasitim'),
+                'biaya_registrasiindividu' => $this->request->getPost('biaya_registrasiindividu'),
+                'link_template_penilaianjuri' => $this->request->getPost('link_template_penilaianjuri'),
+                'file_poster' => $nama_file,
+            );
+            $file_poster->move('images/poster_lomba', $nama_file);
+            $this->Lomba->add($data);
             return redirect()->to(base_url('admin'));
         }
         else return redirect()->base_url('uploadlomba')->with('msg', $msg);
-
     }
-
 }
