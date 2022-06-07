@@ -63,15 +63,6 @@
 
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/logo_akunstaff.png" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('akunstaff')?>" class="d-block">Akun Staff</a>
-        </div>
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
           <img src="<?= base_url() ?>/template/dist/img/pembayaran.jpg" class="" alt="User Image">
         </div>
         <div class="info">
