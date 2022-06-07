@@ -21,8 +21,6 @@
 					<h2>Terbuka untuk Seluruh Anak Muda Indonesia</h2>
 					<div class="d-flex justify-content-center align-items-center">
 						<button type="button" class="btn btn-primary mx-3">Cari lomba</button>
-						<p class="align-self-center my-3">atau</p>
-						<a class="btn btn-primary mx-3" href="<?php echo base_url('admin')?>">Daftarkan lomba kamu</a>
 					</div>					
 				</div>
 				<!-- Advance Search -->
