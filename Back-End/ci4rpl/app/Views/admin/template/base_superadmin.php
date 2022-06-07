@@ -32,6 +32,11 @@
         <a href="<?php echo base_url('home')?>" class="nav-link text-light ">Home</a>
       </li>
     </ul>
+    <ul class="navbar-nav">
+      <li class="d-none d-sm-inline-block">
+        <a href="<?php echo base_url('/logout')?>" class="nav-link text-light ">Logout</a>
+      </li>
+    </ul>
   </nav>
 
   <!-- Main Sidebar Container -->
