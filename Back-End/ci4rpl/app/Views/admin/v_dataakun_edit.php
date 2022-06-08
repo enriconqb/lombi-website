@@ -56,12 +56,8 @@
                     <div class="form-group">
                       <label for="sel1">Hak Akses</label>
                       <select class="form-control" id="pilih" name="hak_akses">
-                        <option <?php if($user_detail['hak_akses'] === 'Super Admin'){echo 'selected';} ?>>Super Admin</option>
-                        <option <?php if($user_detail['hak_akses'] === 'Staff Juri'){echo 'selected';} ?>>Staff Juri</option>
-                        <option <?php if($user_detail['hak_akses'] === 'Staff Konten'){echo 'selected';} ?>>Staff Konten</option>
-                        <option <?php if($user_detail['hak_akses'] === 'Staff Peserta'){echo 'selected';} ?>>Staff Peserta</option>
-                        <option <?php if($user_detail['hak_akses'] === 'Staff Berkas'){echo 'selected';} ?>>Staff Berkas</option>
-                        <option <?php if($user_detail['hak_akses'] === 'Staff Keuangan'){echo 'selected';} ?>>Staff Keuangan</option>
+                        <option <?php if($user_detail['hak_akses'] === 'super_admin'){echo 'selected';} ?>>super_admin</option>
+                        <option <?php if($user_detail['hak_akses'] === 'admin-lomba'){echo 'selected';} ?>>admin-lomba</option>
                       </select>
                     </div>
                   </div>

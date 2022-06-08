@@ -41,7 +41,7 @@ class Login extends BaseController
                 ];
                 $session->set($ses_data);// ses_data masuk ke session
                 if($data['hak_akses'] === 'super_admin'){
-                    return redirect()->to(base_url('/superadmin'));
+                    return redirect()->to(base_url('/dataakun'));
                 }
                 else if($data['hak_akses'] === 'admin-lomba'){
                     return redirect()->to(base_url('/admin'));
