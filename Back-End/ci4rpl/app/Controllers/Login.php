@@ -40,7 +40,15 @@ class Login extends BaseController
                     'log'           => TRUE //sebagai acuan session
                 ];
                 $session->set($ses_data);// ses_data masuk ke session
-                return redirect()->to(base_url('/home'));
+                if($data['hak_akses'] === 'super_admin'){
+                    return redirect()->to(base_url('/dataakun'));
+                }
+                else if($data['hak_akses'] === 'admin-lomba'){
+                    return redirect()->to(base_url('/admin'));
+                }
+                else{
+                    return redirect()->to(base_url('/home'));
+                }
             }
             else{ //False (password tidak cocok)
                 $session->setFlashdata('errors', 'Pasword salah');

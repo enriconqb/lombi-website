@@ -59,12 +59,8 @@
                     <div class="form-group">
                       <label for="sel1">Hak Akses</label>
                       <select class="form-control" id="pilih" name="hak_akses">
-                        <option>Super Admin</option>
-                        <option>Staff Juri</option>
-                        <option>Staff Konten</option>
-                        <option>Staff Peserta</option>
-                        <option>Staff Berkas</option>
-                        <option>Staff Keuangan</option>
+                        <option>super_admin</option>
+                        <option>admin-lomba</option>
                       </select>
                     </div>
                   </div>

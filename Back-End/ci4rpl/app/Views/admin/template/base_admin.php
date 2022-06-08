@@ -32,6 +32,11 @@
         <a href="<?php echo base_url('home')?>" class="nav-link text-light ">Home</a>
       </li>
     </ul>
+    <ul class="navbar-nav">
+      <li class="d-none d-sm-inline-block">
+        <a href="<?php echo base_url('/logout')?>" class="nav-link text-light ">Logout</a>
+      </li>
+    </ul>
   </nav>
 
   <!-- Main Sidebar Container -->
@@ -58,15 +63,6 @@
         </div>
         <div class="info">
           <a href="<?php echo base_url('uploadlomba')?>" class="d-block">Upload Lomba</a>
-        </div>
-      </div>
-
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="<?= base_url() ?>/template/dist/img/logo_akunstaff.png" class="" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="<?php echo base_url('akunstaff')?>" class="d-block">Akun Staff</a>
         </div>
       </div>
 

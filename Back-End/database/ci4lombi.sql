@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 12:18 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Jun 07, 2022 at 01:39 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,11 @@ INSERT INTO `bayar` (`id_tim`, `nama_tim`, `tgl_dibayar`, `status_verif_bayar`, 
 (161, 'CeritanyaTim4', '2022-06-03', 'Sudah Verifikasi', '', '', 'CeritanyaTim4', 31),
 (162, 'CeritanyaTim5', '2022-06-03', 'Sudah Verifikasi', '100000', '', 'CeritanyaTim5', 31),
 (163, 'CeritanyaTim6', '2022-06-03', 'Sudah Verifikasi', '100000', '', 'CeritanyaTim6', 31),
-(164, 'CeritanyaTim7', '2022-06-03', 'Gagal Verifikasi', '100000', '', 'CeritanyaTim7', 31);
+(164, 'CeritanyaTim7', '2022-06-03', 'Gagal Verifikasi', '100000', '', 'CeritanyaTim7', 31),
+(165, 'haha', '2022-06-03', 'Belum Verifikasi', '100000', '', 'link', 46),
+(169, 'abc', '2022-06-07', 'Sudah Verifikasi', '100000', '', 'whatsapp.com', 40),
+(170, 'haha', '2022-06-07', 'Sudah Verifikasi', '100000', '', 'whatsapp.com', 40),
+(171, 'lompat', '2022-06-07', 'Sudah Verifikasi', '100000', '', 'whatsapp.com', 40);
 
 -- --------------------------------------------------------
 
@@ -83,7 +87,7 @@ INSERT INTO `berkas` (`id_tim`, `nama_tim`, `status_kelengkapanberkas`, `id_lomb
 (148, 'Tim1', 'Sudah Diperiksa', 34, NULL),
 (149, 'Tim2', 'Berkas Kurang', 34, NULL),
 (152, 'Tim5', 'Sudah Diperiksa', 34, NULL),
-(153, 'Bebek1', 'Sudah Diperiksa', 33, NULL),
+(153, 'Bebek1', 'Belum Diperiksa', 33, NULL),
 (154, 'Bebek2', 'Sudah Diperiksa', 33, NULL),
 (155, 'Bebek3', 'Sudah Diperiksa', 33, NULL),
 (156, 'Bebek4', 'Sudah Diperiksa', 33, NULL),
@@ -93,7 +97,10 @@ INSERT INTO `berkas` (`id_tim`, `nama_tim`, `status_kelengkapanberkas`, `id_lomb
 (160, 'CeritanyaTim3', 'Sudah Diperiksa', 31, 'ya'),
 (161, 'CeritanyaTim4', 'Belum Diperiksa', 31, 'ya'),
 (162, 'CeritanyaTim5', 'Sudah Diperiksa', 31, NULL),
-(163, 'CeritanyaTim6', 'Berkas Kurang', 31, NULL);
+(163, 'CeritanyaTim6', 'Berkas Kurang', 31, NULL),
+(169, 'abc', 'Sudah Diperiksa', 40, 'ya'),
+(170, 'haha', 'Sudah Diperiksa', 40, 'ya'),
+(171, 'lompat', 'Sudah Diperiksa', 40, 'ya');
 
 -- --------------------------------------------------------
 
@@ -124,7 +131,10 @@ INSERT INTO `juri` (`id_lomba`, `id_tim`, `nama_tim`, `status_penilaian_juri`, `
 (31, 159, 'CeritanyaTim2', 'sudah', 'Sastra2', 'Tim2', '999', 'ya', '2'),
 (31, 160, 'CeritanyaTim3', 'sudah', 'Sastra2', 'Tim3', '998', 'ya', '3'),
 (31, 161, 'CeritanyaTim4', 'sudah', 'Sastra2', 'Tim4', '996', 'ya', NULL),
-(31, 162, 'CeritanyaTim5', 'belum', 'Sastra2', '', NULL, NULL, NULL);
+(31, 162, 'CeritanyaTim5', 'belum', 'Sastra2', '', NULL, NULL, NULL),
+(40, 169, 'abc', 'sudah', 'Programming5', 'link', '689', 'ya', '3'),
+(40, 170, 'haha', 'sudah', 'Programming5', 'link', '567', 'ya', '2'),
+(40, 171, 'lompat', 'sudah', 'Programming5', 'link', '800', 'ya', '1');
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,7 @@ INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bay
 (26, 'Sastra4', 'Tim3', 'Gagal Verifikasi', NULL, 34, 150, NULL, NULL, NULL, 'belum'),
 (26, 'Sastra4', 'Tim4', 'Belum Verifikasi', NULL, 34, 151, NULL, NULL, NULL, 'belum'),
 (26, 'Sastra4', 'Tim5', 'Sudah Verifikasi', 'Sudah Diperiksa', 34, 152, NULL, NULL, NULL, 'belum'),
-(26, 'Sastra3', 'Bebek1', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 153, 'ya', 980, '1', 'belum'),
+(26, 'Sastra3', 'Bebek1', 'Sudah Verifikasi', 'Belum Diperiksa', 33, 153, 'ya', 980, '1', 'belum'),
 (26, 'Sastra3', 'Bebek2', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 154, 'ya', 999, '2', 'belum'),
 (26, 'Sastra3', 'Bebek3', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 155, 'ya', NULL, '3', 'belum'),
 (26, 'Sastra3', 'Bebek4', 'Sudah Verifikasi', 'Sudah Diperiksa', 33, 156, 'ya', NULL, NULL, 'belum'),
@@ -167,7 +177,11 @@ INSERT INTO `list_lomba` (`id_user`, `nama_lomba`, `nama_tim`, `status_verif_bay
 (26, 'Sastra2', 'CeritanyaTim4', 'Sudah Verifikasi', 'Belum Diperiksa', 31, 161, 'ya', 996, NULL, 'sudah'),
 (26, 'Sastra2', 'CeritanyaTim5', 'Sudah Verifikasi', 'Sudah Diperiksa', 31, 162, NULL, NULL, NULL, 'sudah'),
 (26, 'Sastra2', 'CeritanyaTim6', 'Sudah Verifikasi', 'Berkas Kurang', 31, 163, NULL, NULL, NULL, 'sudah'),
-(26, 'Sastra2', 'CeritanyaTim7', 'Gagal Verifikasi', NULL, 31, 164, NULL, NULL, NULL, 'sudah');
+(26, 'Sastra2', 'CeritanyaTim7', 'Gagal Verifikasi', NULL, 31, 164, NULL, NULL, NULL, 'sudah'),
+(26, 'Sastra6', 'haha', 'Belum Verifikasi', NULL, 46, 165, NULL, NULL, NULL, 'belum'),
+(36, 'Programming5', 'abc', 'Sudah Verifikasi', 'Sudah Diperiksa', 40, 169, 'ya', 689, '3', 'sudah'),
+(35, 'Programming5', 'haha', 'Sudah Verifikasi', 'Sudah Diperiksa', 40, 170, 'ya', 567, '2', 'sudah'),
+(37, 'Programming5', 'lompat', 'Sudah Verifikasi', 'Sudah Diperiksa', 40, 171, 'ya', 800, '1', 'sudah');
 
 -- --------------------------------------------------------
 
@@ -200,23 +214,26 @@ CREATE TABLE `lomba` (
 --
 
 INSERT INTO `lomba` (`id_lomba`, `nama_lomba`, `kategori_lomba`, `deskripsi_lomba`, `nama_penyelenggara`, `persyaratan_lomba`, `hadiah`, `tgl_daftar`, `tgl_kumpul`, `tgl_pengumuman`, `file_poster`, `link_booklet`, `biaya_registrasitim`, `biaya_registrasiindividu`, `link_template_penilaianjuri`, `id_user`, `status_juara`) VALUES
-(30, 'Sastra1', '1', 'Sastra1', 'Sastra1', 'Sastra1', 'Sastra1', '2022-06-05', '2022-06-22', '2022-06-25', 'stupid.png', 'Sastra1', '50000', '', 'Sastra1', 26, 'belum'),
+(30, 'Sastra1', 'Sastra', 'Ini lomba sastra', 'Sastra1', 'Sastra1', 'Sastra1', '2022-06-05', '2022-06-22', '2022-06-25', 'IMG_5629.JPG', 'Sastra1', '50000', '10000', 'Sastra1', 26, 'belum'),
 (31, 'Sastra2', '1', 'Sastra2', 'Sastra2', 'Sastra2', 'Sastra2', '2022-06-21', '2022-06-17', '2022-07-01', 'stupid.png', 'Sastra2', '100000', '', 'Sastra2', 26, 'sudah'),
 (33, 'Sastra3', '1', 'Sastra3', 'Sastra3', 'Sastra3', 'Sastra3', '2022-06-29', '2022-06-22', '2022-06-23', 'stupid.png', 'Sastra3', '100000', '', 'Sastra3', 26, 'sudah'),
 (34, 'Sastra4', '1', 'Sastra4', 'Sastra4', 'Sastra4', 'Sastra4', '2022-07-07', '2022-06-29', '2022-06-30', 'stupid.png', 'Sastra4', '100000', '', 'Sastra4', 26, 'belum'),
 (35, 'Sastra5', '1', 'Sastra5', 'Sastra5', 'Sastra5', 'Sastra5', '2022-06-21', '2022-06-30', '2022-07-01', 'stupid.png', 'Sastra5', '100000', '100000', 'Sastra5', 26, 'belum'),
 (36, 'Programming1', '2', 'Programming1', 'Programming1', 'Programming1', 'Programming1', '2022-06-15', '2022-06-23', '2022-07-08', 'stupid.png', 'Programming1', '100000', '', 'Programming1', 26, 'belum'),
 (37, 'Programming2', '2', 'Programming2', 'Programming2', 'Programming2', 'Programming2', '2022-06-23', '2022-06-30', '2022-07-08', 'stupid.png', 'Programming2', '100000', '100000', 'Programming2', 26, 'belum'),
-(38, 'Programming3', '2', 'Programming3', 'Programming3', 'Programming3', 'Programming3', '2022-06-23', '2022-06-23', '2022-06-24', 'stupid.png', 'Programming3', '100000', '', 'Programming3', 26, 'belum'),
 (39, 'Programming4', '2', 'Programming4', 'Programming4', 'Programming4', 'Programming4', '2022-06-09', '2022-06-16', '2022-06-24', 'stupid.png', 'Programming4', '100000', '', 'Programming4', 26, 'belum'),
-(40, 'Programming5', '2', 'Programming5', 'Programming5', 'Programming5', 'Programming5', '2022-06-08', '2022-06-23', '2022-06-25', 'stupid.png', 'Programming5', '100000', '', 'Programming5', 26, 'belum'),
+(40, 'Programming5', '2', 'Programming5', 'Programming5', 'Programming5', 'Programming5', '2022-06-08', '2022-06-23', '2022-06-25', 'stupid.png', 'Programming5', '100000', '', 'Programming5', 26, 'sudah'),
 (41, 'Seni1', '3', 'Seni1', 'Seni1', 'Seni1', 'Seni1', '2022-06-24', '2022-06-09', '2022-06-16', 'stupid.png', 'Seni1', '100000', '', 'Seni1', 26, 'belum'),
 (42, 'Seni2', '3', 'Seni2', 'Seni2', 'Seni2', 'Seni2', '2022-06-16', '2022-06-23', '2022-06-22', 'stupid.png', 'Seni2', '100000', '', 'Seni2', 26, 'belum'),
 (43, 'Seni3', '3', 'Seni3', 'Seni3', 'Seni3', 'Seni3', '2022-06-23', '2022-06-18', '2022-06-24', 'stupid.png', 'Seni3', '100000', '', 'Seni3', 26, 'belum'),
 (44, 'Seni4', '3', 'Seni4', 'Seni4', 'Seni4', 'Seni4', '2022-06-22', '2022-06-23', '2022-07-01', 'stupid.png', 'Seni4', '100000', '100000', 'Seni4', 26, 'belum'),
 (45, 'Seni5', '3', 'Seni5', 'Seni5', 'Seni5', 'Seni5', '2022-06-15', '2022-06-17', '2022-06-13', 'stupid.png', 'Seni5', '100000', '', 'Seni5', 26, 'belum'),
 (46, 'Sastra6', '1', 'Sastra6', 'Sastra6', 'Sastra6', 'Sastra6', '2022-06-22', '2022-06-30', '2022-06-18', 'stupid.png', 'Sastra6', '100000', '', 'Sastra6', 26, 'belum'),
-(47, 'Sastra7', '1', 'Sastra7', 'Sastra7', 'Sastra7', 'Sastra7', '2022-06-23', '2022-06-23', '2022-06-18', 'stupid.png', 'Sastra7', '100000', '', 'Sastra7', 26, 'belum');
+(47, 'Sastra7', '1', 'Sastra7', 'Sastra7', 'Sastra7', 'Sastra7', '2022-06-23', '2022-06-23', '2022-06-18', 'stupid.png', 'Sastra7', '100000', '', 'Sastra7', 26, 'belum'),
+(48, 'Ini lomba apa', '1', 'ga jelas', 'gatau', 'bebas', 'kepo', '2022-06-10', '2022-06-17', '2022-06-19', 'stupid.png', 'link', '100000', '50000', 'link', 26, 'belum'),
+(52, 'hehe', '1', 'pp', 'p', 'p', 'p', '2022-10-12', '2022-10-12', '2022-10-12', '1654493559_67470a9efaced4f3a953.jpg', 'p', 'p', 'p', 'p', 34, 'belum'),
+(53, 'nama', '3', 'deskripsi', 'gatau', 'bebas', 'kepo', '2022-12-05', '2022-12-10', '2022-12-12', '1654494930_4c709f488411ad5a5784.jpg', 'p', '100000', '10000', 'link', 34, 'belum'),
+(54, 'Bahasa C', '2', 'Bahasa C', 'siapa', 'apa', 'gatau', '2022-12-10', '2022-12-10', '2022-12-10', '1654597743_6f145ee47865e100e269.jpg', 'link', '100000', '10000', 'link', 26, 'belum');
 
 -- --------------------------------------------------------
 
@@ -279,7 +296,10 @@ INSERT INTO `tim` (`id_tim`, `emailketua`, `id_lomba`, `id_user`, `nama_tim`, `n
 (161, 'CeritanyaTim4@gmai.com', 31, 26, 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'CeritanyaTim4', 'Sudah Verifikasi', 'Tim4', 'Tim4', 'ya', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 'Tim4', 996, NULL),
 (162, 'CeritanyaTim5@gmail.com', 31, 26, 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'CeritanyaTim5', 'Sudah Verifikasi', 'Tim5', 'Tim5', NULL, '', NULL, NULL, NULL, NULL, 995, NULL),
 (163, 'CeritanyaTim6@gmail.com', 31, 26, 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'CeritanyaTim6', 'Sudah Verifikasi', 'Tim6', 'Tim6', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
-(164, 'CeritanyaTim7@gmail.com', 31, 26, 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'Gagal Verifikasi', '', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL);
+(164, 'CeritanyaTim7@gmail.com', 31, 26, 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'CeritanyaTim7', 'Gagal Verifikasi', '', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL),
+(169, 'inooo@gmail.com', 40, 36, 'abc', 'sekolah', 'Inoo Kei', '1234', 'wa.me/', '0909', 'abc', '', '', '', '', '', '', '', '', 'whatsapp.com', 'Sudah Verifikasi', 'instagram.com', 'drive.google.com', 'ya', 'ss', '', '', '', '', 689, '3'),
+(170, 'yurii@gmail.com', 40, 35, 'haha', 'janis', 'chinen', 'pppp', 'wa.me/', 'ppp', 'abc', '', '', '', '', '', '', '', '', 'whatsapp.com', 'Sudah Verifikasi', 'instagram.com', 'drive.google.com', 'ya', 'link', '', '', '', '', 567, '2'),
+(171, 'lompat@gmail.com', 40, 37, 'lompat', 'janis', 'gatauu', '1234', 'wa.me/', '1234', 'abc', '', '', '', '', '', '', '', '', 'whatsapp.com', 'Sudah Verifikasi', 'instagram.com', 'drive.google.com', 'ya', 'link', '', '', '', '', 800, '1');
 
 -- --------------------------------------------------------
 
@@ -302,13 +322,16 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `email`, `username`, `password`, `hak_akses`, `id_lomba`) VALUES
 (16, 'admin@gmail.com', 'admin', 'admin', 'super_admin', NULL),
-(26, 'user@gmail.com', 'user', 'user', 'user', NULL),
-(27, 'staffsastra1@gmail.com', 'staffsastra1', 'staffsastra1', 'Staff Juri', 30),
+(26, 'user@gmail.com', 'user', 'user', 'admin-lomba', NULL),
+(27, 'staffsastra1@gmail.com', 'staffsastra1', 'staffsastra11', 'Staff Juri', 30),
 (28, 'staffsastra2@gmail.com', 'staffsastra2', 'staffsastra2', 'Staff Konten', 30),
 (29, 'staffsastra3@gmail.com', 'staffsastra3', 'staffsastra3', 'Staff Peserta', 30),
 (30, 'staffsastra4@gmail.com', 'staffsastra4', 'staffsastra4', 'Staff Berkas', 30),
 (31, 'staffsastra5@gmail.com', 'staffsastra5', 'staffsastra5', 'Staff Keuangan', 30),
-(32, 'bambang@gmail.com', 'bambang', 'bambang', 'Staff Juri', 31);
+(32, 'bambang@gmail.com', 'bambang', 'bambang', 'Staff Juri', 31),
+(35, 'yurii@gmail.com', 'sabonen', 'chinenyuri', 'user', NULL),
+(36, 'inooo@gmail.com', 'inoteri', 'inookei', 'user', NULL),
+(37, 'lompat@gmail.com', 'lompat', 'heysayjump', 'user', NULL);
 
 --
 -- Indexes for dumped tables
@@ -378,19 +401,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `lomba`
 --
 ALTER TABLE `lomba`
-  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_lomba` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tim`
 --
 ALTER TABLE `tim`
-  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `id_tim` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
